@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} — Neb Tawy{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="gold-divider">◈</div>
+    <span class="blog-date">{{ post.created_at|date:"F j, Y" }}</span>
+    <h1>{{ post.title }}</h1>
+</section>
+
+<section class="section" style="max-width: 750px;">
+    <div class="post-content">
+        {{ post.content|linebreaks }}
+    </div>
+    <div style="margin-top: 3rem; text-align: center;">
+        <a href="{% url 'blog' %}" class="btn-outline">← Back to blog</a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Confirmed — Neb Tawy{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="gold-divider">◈</div>
+    <h1>Booking Confirmed</h1>
+    <p class="hero-tagline">Your reading has been reserved.</p>
+    <p class="text-muted" style="font-style: italic; margin-bottom: 2rem;">
+        You will receive a confirmation email shortly.
+    </p>
+    <a href="{% url 'index' %}" class="btn-gold">Return home</a>
+</section>
+{% endblock %}

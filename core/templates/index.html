@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home — Neb Tawy{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="gold-divider">◈</div>
+    <h1>Neb Tawy</h1>
+    <p class="hero-subtitle">Divination & spiritual guidance</p>
+    <p class="hero-tagline">Reveal what the stars have to tell you</p>
+    <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+</section>
+
+<section class="section text-center">
+    <div class="gold-divider">✦</div>
+    <h2>Welcome</h2>
+    <p class="text-muted" style="max-width: 600px; margin: 1.5rem auto; font-style: italic;">
+        Through the arcana of tarot and the wisdom of the stars, I guide you
+        in the reading of your life's path.
+    </p>
+</section>
+
+{% endblock %}

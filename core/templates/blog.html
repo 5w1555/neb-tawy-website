@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog — Neb Tawy{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="gold-divider">◈</div>
+    <h1>Blog</h1>
+    <p class="hero-tagline">Insights, guidance & celestial musings</p>
+</section>
+
+<section class="section">
+    {% if posts %}
+        <div class="blog-grid">
+            {% for post in posts %}
+            <article class="blog-card">
+                <div class="gold-divider">✦</div>
+                <span class="blog-date">{{ post.created_at|date:"F j, Y" }}</span>
+                <h2 class="blog-title">{{ post.title }}</h2>
+                <p class="blog-excerpt">{{ post.content|truncatewords:30 }}</p>
+                <a href="{% url 'post_detail' post.slug %}" class="btn-outline">Read more</a>
+            </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-muted text-center" style="font-style: italic;">
+            No posts yet — come back soon.
+        </p>
+    {% endif %}
+</section>
+
+{% endblock %}

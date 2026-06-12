@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block title %}Book a Reading — Neb Tawy{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<style>
+    .flatpickr-calendar {
+        background: var(--bg-secondary) !important;
+        border: 1px solid var(--border-gold) !important;
+    }
+    .flatpickr-day {
+        color: var(--text-primary) !important;
+    }
+    .flatpickr-day.selected {
+        background: var(--gold) !important;
+        border-color: var(--gold) !important;
+        color: var(--bg-primary) !important;
+    }
+    .flatpickr-day.disabled {
+        color: var(--text-muted) !important;
+        opacity: 0.3;
+    }
+    .flatpickr-months,
+    .flatpickr-weekdays {
+        background: var(--bg-secondary) !important;
+        color: var(--gold) !important;
+    }
+    .flatpickr-current-month,
+    .flatpickr-weekday {
+        color: var(--gold) !important;
+    }
+    .flatpickr-day:hover {
+        background: var(--border-gold) !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="gold-divider">◈</div>
+    <h1>Book a Reading</h1>
+    <p class="hero-tagline">Choose your session and let the stars guide you</p>
+</section>
+
+<section class="section" style="max-width: 750px;">
+
+    <!-- STEP 1: SERVICE -->
+    <div class="booking-step">
+        <h2 class="booking-step-title">1. Choose your service</h2>
+        <div class="service-grid">
+            <div class="service-card" data-service="tarot" onclick="selectService(this)">
+                <div class="gold-divider">✦</div>
+                <h3>Card Reading</h3>
+                <p class="text-muted">An in-depth tarot reading to illuminate your path.</p>
+                <span class="service-price">€XX</span>
+            </div>
+            <div class="service-card" data-service="personal" onclick="selectService(this)">
+                <div class="gold-divider">✦</div>
+                <h3>Personal Séance</h3>
+                <p class="text-muted">A deeply personal session tailored to your journey.</p>
+                <span class="service-price">€XX</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 2: DATE -->
+    <div class="booking-step">
+        <h2 class="booking-step-title">2. Choose a date</h2>
+        <p class="text-muted" style="margin-bottom: 1.5rem; font-style: italic;">
+            Each day is limited to two sessions. Unavailable dates are greyed out.
+        </p>
+        <input type="text" id="booking-date" placeholder="Select a date" class="booking-input" readonly>
+    </div>
+
+    <!-- STEP 3: YOUR DETAILS -->
+    <div class="booking-step">
+        <h2 class="booking-step-title">3. Your details</h2>
+        <form id="booking-form" method="POST" action="{% url 'booking' %}">
+            {% csrf_token %}
+            <input type="hidden" name="service" id="service-input">
+            <input type="hidden" name="date" id="date-input">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">First name</label>
+                    <input type="text" name="first_name" class="booking-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Last name</label>
+                    <input type="text" name="last_name" class="booking-input" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email address</label>
+                <input type="email" name="email" class="booking-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Your message <span class="text-muted">(optional)</span></label>
+                <textarea name="message" class="booking-input" rows="4" placeholder="Share anything you'd like me to know before your reading..."></textarea>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button type="submit" class="btn-gold">Proceed to payment</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    let selectedService = null;
+
+    function selectService(el) {
+        document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedService = el.dataset.service;
+        document.getElementById('service-input').value = selectedService;
+    }
+
+    fetch("{% url 'unavailable_dates' %}")
+        .then(res => res.json())
+        .then(data => {
+            flatpickr("#booking-date", {
+                minDate: "today",
+                disable: data.unavailable,
+                dateFormat: "Y-m-d",
+                onChange: function(selectedDates, dateStr) {
+                    document.getElementById('date-input').value = dateStr;
+                }
+            });
+        });
+
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+        if (!selectedService) {
+            e.preventDefault();
+            alert('Please select a service before proceeding.');
+            return;
+        }
+        if (!document.getElementById('date-input').value) {
+            e.preventDefault();
+            alert('Please select a date before proceeding.');
+        }
+    });
+</script>
+{% endblock %}
