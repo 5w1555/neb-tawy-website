@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: neb-tawy-website
+    env: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    releaseCommand: python manage.py migrate --noinput
+    startCommand: gunicorn divination_site.wsgi --log-file -
+    disk:
+      name: sqlite-disk
+      path: /data
+      size_gb: 1
+    envVars:
+      - key: DATABASE_URL
+        value: "sqlite:////data/db.sqlite3"
+      - key: STATIC_ROOT
+        value: "/data/staticfiles"
+      - key: ALLOWED_HOSTS
+        value: "*"
+# Notes:
+# - Do NOT hardcode secrets here. Add SECRET_KEY, STRIPE_*, EMAIL_*, and other sensitive values
+#   in the Render dashboard under the service's Environment tab or use Render Secrets.
+# - The persistent disk is mounted at /data and keeps the sqlite database file and collected
+#   static files between deploys. For production, consider using Managed Postgres instead of SQLite.

@@ -27,7 +27,11 @@ SECRET_KEY = config("SECRET_KEY", default="django-insecure-!+@p2nn%s3%l4n^yppx6)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = [h for h in config("ALLOWED_HOSTS", default="localhost").split(",") if h]
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in config("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
+    if h.strip()
+]
 
 
 # Application definition
@@ -141,9 +145,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# Static files
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / 'core' / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Allow overriding STATIC_ROOT from environment (e.g. Render persistent disk)
+STATIC_ROOT = Path(config("STATIC_ROOT", default=BASE_DIR / 'staticfiles'))
 # Enable WhiteNoise storage for static files
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -157,22 +163,27 @@ STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY", default="sk_test_xxx")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET", default="whsec_xxx")
 
 # =========================
-# EMAIL SETTINGS - PLACEHOLDER
+# EMAIL SETTINGS
 # =========================
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = config(
+    "EMAIL_BACKEND",
+    default="django.core.mail.backends.smtp.EmailBackend",
+)
 
-# Brevo SMTP placeholder
-EMAIL_HOST = "smtp-relay.brevo.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = config("EMAIL_HOST", default="smtp-relay.brevo.com")
+EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
 
-# Replace with Brevo SMTP login + SMTP key
-EMAIL_HOST_USER = "YOUR_BREVO_SMTP_LOGIN"
-EMAIL_HOST_PASSWORD = "YOUR_BREVO_SMTP_KEY"
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
 
-# This should ideally be a verified sender/domain in Brevo
-DEFAULT_FROM_EMAIL = "Website Booking <no-reply@yourdomain.com>"
+DEFAULT_FROM_EMAIL = config(
+    "DEFAULT_FROM_EMAIL",
+    default="Website Booking <no-reply@example.com>",
+)
 
-# The website owner / client receives booking notifications here
-BOOKING_NOTIFICATION_EMAIL = "client@example.com"
+BOOKING_NOTIFICATION_EMAIL = config(
+    "BOOKING_NOTIFICATION_EMAIL",
+    default="client@example.com",
+)
