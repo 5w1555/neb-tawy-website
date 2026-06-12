@@ -4,41 +4,13 @@ services:
     env: python
     plan: free
     region: frankfurt
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
-    releaseCommand: python manage.py migrate --noinput
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --noinput
     startCommand: gunicorn divination_site.wsgi --log-file -
-    disk:
-      name: sqlite-disk
-      path: /data
-      size_gb: 1
     envVars:
-      - key: DATABASE_URL
-        value: "sqlite:////data/db.sqlite3"
-      - key: STATIC_ROOT
-        value: "/data/staticfiles"
       - key: ALLOWED_HOSTS
         value: "*"
-services:
-  - type: web
-    name: neb-tawy-website
-    env: python
-    plan: free
-    region: frankfurt
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
-    releaseCommand: python manage.py migrate --noinput
-    startCommand: gunicorn divination_site.wsgi --log-file -
-    disk:
-      name: sqlite-disk
-      path: /data
-      size_gb: 1
-    envVars:
-      - key: DATABASE_URL
-        value: "sqlite:////data/db.sqlite3"
       - key: STATIC_ROOT
-        value: "/data/staticfiles"
-      - key: ALLOWED_HOSTS
-        value: "*"
-
+        value: "/opt/render/project/src/staticfiles"
 # Notes:
 # - Do not commit secrets here; add SECRET_KEY, STRIPE_*, EMAIL_* in the Render dashboard.
 # - The persistent disk at /data keeps the sqlite DB and collected static files between deploys.
