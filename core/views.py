@@ -4,8 +4,8 @@ from django.db.models import Count
 from django.shortcuts import render, redirect
 from .models import Post, Booking
 
-import sib_api_v3_sdk
-from sib_api_v3_sdk.rest import ApiException
+import brevo_python
+from brevo_python.rest import ApiException
 
 from django.core.mail import EmailMessage
 from django.utils.html import strip_tags
@@ -100,14 +100,14 @@ def payment(request, booking_id):
     return redirect(session.url, permanent=False)
 
 def send_booking_notification(booking):
-    configuration = sib_api_v3_sdk.Configuration()
+    configuration = brevo_python.Configuration()
     configuration.api_key['api-key'] = settings.BREVO_API_KEY
 
-    api_instance = sib_api_v3_sdk.TransactionalEmailsApi(
-        sib_api_v3_sdk.ApiClient(configuration)
+    api_instance = brevo_python.TransactionalEmailsApi(
+        brevo_python.ApiClient(configuration)
     )
 
-    email = sib_api_v3_sdk.SendSmtpEmail(
+    email = brevo_python.SendSmtpEmail(
         to=[{"email": settings.BOOKING_NOTIFICATION_EMAIL}],
         sender={"email": "marwanewafik2@gmail.com", "name": "Neb Tawy"},
         reply_to={"email": booking.email},
