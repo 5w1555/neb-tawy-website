@@ -187,3 +187,5 @@ BOOKING_NOTIFICATION_EMAIL = config(
     "BOOKING_NOTIFICATION_EMAIL",
     default="client@example.com",
 )
+
+BREVO_API_KEY = config("BREVO_API_KEY", default="")

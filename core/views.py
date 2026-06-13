@@ -4,6 +4,9 @@ from django.db.models import Count
 from django.shortcuts import render, redirect
 from .models import Post, Booking
 
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+
 from django.core.mail import EmailMessage
 from django.utils.html import strip_tags
 
@@ -97,9 +100,19 @@ def payment(request, booking_id):
     return redirect(session.url, permanent=False)
 
 def send_booking_notification(booking):
-    subject = f"New paid booking: {SERVICE_NAMES.get(booking.service, booking.service)}"
+    configuration = sib_api_v3_sdk.Configuration()
+    configuration.api_key['api-key'] = settings.BREVO_API_KEY
 
-    body = f"""
+    api_instance = sib_api_v3_sdk.TransactionalEmailsApi(
+        sib_api_v3_sdk.ApiClient(configuration)
+    )
+
+    email = sib_api_v3_sdk.SendSmtpEmail(
+        to=[{"email": settings.BOOKING_NOTIFICATION_EMAIL}],
+        sender={"email": "marwanewafik2@gmail.com", "name": "Neb Tawy"},
+        reply_to={"email": booking.email},
+        subject=f"New booking: {SERVICE_NAMES.get(booking.service, booking.service)}",
+        text_content=f"""
 New paid booking received.
 
 Service: {SERVICE_NAMES.get(booking.service, booking.service)}
@@ -111,17 +124,10 @@ Email: {booking.email}
 
 Message:
 {booking.message or "No message provided."}
-""".strip()
-
-    email = EmailMessage(
-        subject=subject,
-        body=body,
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        to=[settings.BOOKING_NOTIFICATION_EMAIL],
-        reply_to=[booking.email] if booking.email else None,
+        """.strip()
     )
 
-    email.send(fail_silently=False)
+    api_instance.send_transac_email(email)
 
 @csrf_exempt
 def stripe_webhook(request):
