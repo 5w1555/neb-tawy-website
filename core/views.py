@@ -5,10 +5,6 @@ from django.shortcuts import render, redirect
 from .models import Post, Booking
 
 import brevo_python
-from brevo_python.rest import ApiException
-
-from django.core.mail import EmailMessage
-from django.utils.html import strip_tags
 
 import stripe
 from django.conf import settings
@@ -146,15 +142,17 @@ def stripe_webhook(request):
 
         try:
             booking = Booking.objects.get(id=booking_id)
-
             if not booking.paid:
                 booking.paid = True
                 booking.save(update_fields=["paid"])
-
-                send_booking_notification(booking)
-
+                try:
+                    send_booking_notification(booking)
+                except Exception as email_error:
+                    print(f"EMAIL ERROR: {email_error}")
         except Booking.DoesNotExist:
             print(f"BOOKING NOT FOUND: {booking_id}")
+        except Exception as e:
+            print(f"WEBHOOK ERROR: {e}")
 
     return JsonResponse({'status': 'ok'})
 
