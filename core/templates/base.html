@@ -12,6 +12,8 @@
 </head>
 <body>
 
+    <div class="custom-cursor" id="cursor"></div>
+
     <nav class="navbar">
         <div class="nav-logo">✦ Neb Tawy</div>
         <ul class="nav-links">
@@ -52,6 +54,16 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
     </script>
 
