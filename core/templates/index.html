@@ -34,6 +34,33 @@
     </div>
 </section>
 
+<section class="services-preview">
+    <div class="services-preview-header reveal">
+        <div class="gold-divider">◈</div>
+        <h2>The Offerings</h2>
+        <p class="text-muted" style="font-style: italic; margin-top: 1rem;">
+            Each session is a doorway. Choose yours.
+        </p>
+    </div>
+
+    <div class="services-preview-grid">
+        <div class="service-preview-card reveal reveal-delay-1">
+            <div class="service-preview-symbol">✋</div>
+            <h3>Palm Reading</h3>
+            <p>The lines of your hand carry the map of your life. A reading that goes beyond fortune — into character, pattern, and potential.</p>
+            <span class="service-preview-price">€XX</span>
+            <a href="{% url 'booking' %}" class="btn-outline">Book this session</a>
+        </div>
+        <div class="service-preview-card reveal reveal-delay-2">
+            <div class="service-preview-symbol">◈</div>
+            <h3>Personal Reading</h3>
+            <p>A deeply tailored session built around your question, your moment, your path. No scripts — only presence and precision.</p>
+            <span class="service-preview-price">€XX</span>
+            <a href="{% url 'booking' %}" class="btn-outline">Book this session</a>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
 
 {% block extra_js %}
