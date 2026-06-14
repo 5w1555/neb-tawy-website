@@ -23,7 +23,8 @@
     </button>
 </section>
 
-<section class="scene" id="welcome" style="background-image: url('/static/img/nebula.jpg')">
+<section class="scene" id="welcome">
+    <div class="scene-bg" id="scene-bg"></div>
     <div class="scene-overlay"></div>
     <div class="scene-content reveal">
         <div class="gold-divider" style="justify-content: flex-start;">✦</div>
@@ -37,6 +38,7 @@
 
 {% block extra_js %}
 <script>
+    // Particles
     const particles = document.getElementById('particles');
     const symbols = ['✦', '✧', '◈', '⋆', '·', '☽', '★', '✵', '△', '☥'];
 
@@ -51,5 +53,37 @@
         p.style.fontSize = `${0.4 + Math.random() * 0.6}rem`;
         particles.appendChild(p);
     }
+
+    const sceneBg = document.getElementById('scene-bg');
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                const sceneTop = document.getElementById('welcome').offsetTop;
+                const offset = (scrolled - sceneTop) * 0.3;
+                if (sceneBg) {
+                    sceneBg.style.transform = `translateY(${offset}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Mouse tilt on hero
+    const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+
+    hero.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 12;
+        const y = (e.clientY / window.innerHeight - 0.5) * 12;
+        heroContent.style.transform = `perspective(1000px) rotateX(${-y}deg) rotateY(${x}deg)`;
+    });
+
+    hero.addEventListener('mouseleave', () => {
+        heroContent.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
 </script>
 {% endblock %}

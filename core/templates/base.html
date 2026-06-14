@@ -33,6 +33,7 @@
     {% block extra_js %}{% endblock %}
 
     <script>
+        // Reveal on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -42,6 +43,16 @@
         }, { threshold: 0.15 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Navbar transparent → dark on scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     </script>
 
 </body>

@@ -49,11 +49,33 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 3rem;
-    border-bottom: 1px solid var(--border-gold);
-    position: sticky;
+    border-bottom: 1px solid transparent;
+    position: fixed;
     top: 0;
-    background-color: var(--bg-primary);
+    left: 0;
+    right: 0;
+    background-color: transparent;
     z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-gold);
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-gold);
 }
 
 .nav-logo {
@@ -85,6 +107,7 @@ h1, h2, h3 {
 .nav-links a.active {
     color: var(--gold);
 }
+
 
 /* ============================================================
    HERO
@@ -126,6 +149,9 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.15s ease;
+    will-change: transform;
+    
 }
 
 .particles {
@@ -562,11 +588,12 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* removed background-attachment: fixed */
     position: relative;
     display: flex;
     align-items: flex-end;
     padding: 5rem;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .scene-overlay {
@@ -574,6 +601,7 @@ html {
     inset: 0;
     background: linear-gradient(to top, rgba(13,10,7,0.95) 0%, rgba(13,10,7,0.4) 50%, rgba(13,10,7,0.1) 100%);
     z-index: 0;
+    pointer-events: none;
 }
 
 .scene-content {
@@ -595,6 +623,14 @@ html {
     font-size: 1.1rem;
     margin-bottom: 2rem;
     text-align: left;
+}
+
+.scene-bg {
+    position: absolute;
+    inset: -20%;
+    background: url('/static/img/nebula.jpg') center/cover no-repeat;
+    z-index: 0;
+    will-change: transform;
 }
 
 /* ============================================================
