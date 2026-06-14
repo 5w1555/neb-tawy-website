@@ -5,20 +5,49 @@
 {% block content %}
 
 <section class="hero">
-    <div class="gold-divider">◈</div>
-    <h1>Neb Tawy</h1>
-    <p class="hero-subtitle">Divination & spiritual guidance</p>
-    <p class="hero-tagline">Reveal what the stars have to tell you</p>
-    <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+    <div class="hero-bg"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="hero-content">
+        <div class="gold-divider">◈</div>
+        <h1>Neb Tawy</h1>
+        <p class="hero-subtitle">Divination & spiritual guidance</p>
+        <p class="hero-tagline">Reveal what the stars have to tell you</p>
+        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        Scroll
+    </div>
 </section>
 
 <section class="section text-center">
     <div class="gold-divider">✦</div>
     <h2>Welcome</h2>
     <p class="text-muted" style="max-width: 600px; margin: 1.5rem auto; font-style: italic;">
-        Through the arcana of tarot and the wisdom of the stars, I guide you
-        in the reading of your life's path.
+        Through the wisdom of the ancients and the language of the stars,
+        I guide you in the reading of your life's path.
     </p>
 </section>
 
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const particles = document.getElementById('particles');
+    const symbols = ['✦', '✧', '◈', '·', '⋆'];
+
+    for (let i = 0; i < 25; i++) {
+        const p = document.createElement('span');
+        p.classList.add('particle');
+        p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        p.style.left = `${Math.random() * 100}%`;
+        p.style.top = `${Math.random() * 100}%`;
+        p.style.setProperty('--duration', `${4 + Math.random() * 6}s`);
+        p.style.setProperty('--delay', `${Math.random() * 5}s`);
+        p.style.fontSize = `${0.4 + Math.random() * 0.6}rem`;
+        particles.appendChild(p);
+    }
+</script>
 {% endblock %}

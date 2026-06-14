@@ -103,7 +103,8 @@ def send_booking_notification(booking):
         brevo_python.ApiClient(configuration)
     )
 
-    email = brevo_python.SendSmtpEmail(
+    # Email to her — new booking notification
+    owner_email = brevo_python.SendSmtpEmail(
         to=[{"email": settings.BOOKING_NOTIFICATION_EMAIL}],
         sender={"email": "marwanewafik2@gmail.com", "name": "Neb Tawy"},
         reply_to={"email": booking.email},
@@ -123,7 +124,31 @@ Message:
         """.strip()
     )
 
-    api_instance.send_transac_email(email)
+    # Email to client — confirmation
+    client_email = brevo_python.SendSmtpEmail(
+        to=[{"email": booking.email, "name": f"{booking.first_name} {booking.last_name}"}],
+        sender={"email": "marwanewafik2@gmail.com", "name": "Neb Tawy"},
+        reply_to={"email": settings.BOOKING_NOTIFICATION_EMAIL},
+        subject="Your booking is confirmed — Neb Tawy",
+        text_content=f"""
+Dear {booking.first_name},
+
+Your booking has been confirmed. Here are your details:
+
+Service: {SERVICE_NAMES.get(booking.service, booking.service)}
+Date: {booking.date.strftime('%B %d, %Y')}
+
+Your reading will be delivered to this email address within 2 business days of your chosen date.
+
+If you have any questions, simply reply to this email.
+
+With light,
+Neb Tawy
+        """.strip()
+    )
+
+    api_instance.send_transac_email(owner_email)
+    api_instance.send_transac_email(client_email)
 
 @csrf_exempt
 def stripe_webhook(request):
