@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home — Neb Tawy{% endblock %}
 
@@ -16,10 +17,10 @@
         <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
     </div>
 
-    <a href="#welcome" class="scroll-indicator">
+    <button onclick="document.getElementById('welcome').scrollIntoView({behavior: 'smooth'})" class="scroll-indicator">
         <div class="scroll-line"></div>
         Scroll
-    </a>
+    </button>
 </section>
 
 <section class="section text-center" id="welcome">
@@ -31,12 +32,22 @@
     </p>
 </section>
 
+<section class="scene" style="background-image: url('/static/img/Test_image_background.jpeg')">
+    <div class="scene-overlay"></div>
+    <div class="scene-content reveal">
+        <div class="gold-divider">✦</div>
+        <h2>Read the unseen.</h2>
+        <p>Ancient wisdom, personal revelations.</p>
+        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+    </div>
+</section>
+
 {% endblock %}
 
 {% block extra_js %}
 <script>
     const particles = document.getElementById('particles');
-    const symbols = ['✦', '✧', '◈', '⋆', '·', '☽', '★', '✵', '△', '☥'];;
+    const symbols = ['✦', '✧', '◈', '⋆', '·', '☽', '★', '✵', '△', '☥'];
 
     for (let i = 0; i < 25; i++) {
         const p = document.createElement('span');
@@ -49,15 +60,5 @@
         p.style.fontSize = `${0.4 + Math.random() * 0.6}rem`;
         particles.appendChild(p);
     }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 {% endblock %}
