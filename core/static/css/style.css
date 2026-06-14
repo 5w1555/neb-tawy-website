@@ -149,12 +149,30 @@ h1, h2, h3 {
     100% { opacity: 0; transform: translateY(-80px) scale(1.2); }
 }
 
-.hero h1 {
+.hero-content h1 {
     font-size: 4rem;
     letter-spacing: 0.3em;
     margin-bottom: 1rem;
     opacity: 0;
-    animation: fadeUp 1.2s ease 0.2s forwards;
+    animation: fadeUp 1.2s ease 0.2s forwards, shimmer 4s linear 1.4s infinite;
+    background: linear-gradient(
+        90deg,
+        var(--gold-light) 0%,
+        #ffb300 40%,
+        var(--gold) 50%,
+        #f8e0a6 60%,
+        var(--gold-light) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
 }
 
 .hero-subtitle {
@@ -215,6 +233,12 @@ h1, h2, h3 {
     z-index: 2;
     opacity: 0;
     animation: fadeUp 1.2s ease 1.2s forwards;
+    /* Reset button defaults */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
 }
 
 .scroll-line {
@@ -538,7 +562,7 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* removed background-attachment: fixed */
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -548,7 +572,8 @@ html {
 .scene-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(13,10,7,0.95) 0%, rgba(13,10,7,0.3) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(13,10,7,0.95) 0%, rgba(13,10,7,0.4) 50%, rgba(13,10,7,0.1) 100%);
+    z-index: 0;
 }
 
 .scene-content {
@@ -569,6 +594,7 @@ html {
     color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
 /* ============================================================
