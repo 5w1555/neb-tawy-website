@@ -16,16 +16,16 @@
         <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
     </div>
 
-    <div class="scroll-indicator">
+    <a href="#welcome" class="scroll-indicator">
         <div class="scroll-line"></div>
         Scroll
-    </div>
+    </a>
 </section>
 
-<section class="section text-center">
-    <div class="gold-divider">✦</div>
-    <h2>Welcome</h2>
-    <p class="text-muted" style="max-width: 600px; margin: 1.5rem auto; font-style: italic;">
+<section class="section text-center" id="welcome">
+    <div class="gold-divider reveal">✦</div>
+    <h2 class="reveal reveal-delay-1">Welcome</h2>
+    <p class="text-muted reveal reveal-delay-2" style="max-width: 600px; margin: 1.5rem auto; font-style: italic;">
         Through the wisdom of the ancients and the language of the stars,
         I guide you in the reading of your life's path.
     </p>
@@ -49,5 +49,15 @@
         p.style.fontSize = `${0.4 + Math.random() * 0.6}rem`;
         particles.appendChild(p);
     }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 {% endblock %}

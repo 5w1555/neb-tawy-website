@@ -7,14 +7,14 @@
 <section class="hero">
     <div class="gold-divider">◈</div>
     <h1>Blog</h1>
-    <p class="hero-tagline">Insights, guidance & celestial musings</p>
+    <p class="hero-tagline">My thoughts and musings</p>
 </section>
 
 <section class="section">
     {% if posts %}
         <div class="blog-grid">
             {% for post in posts %}
-            <article class="blog-card">
+            <article class="blog-card reveal">
                 <div class="gold-divider">✦</div>
                 <span class="blog-date">{{ post.created_at|date:"F j, Y" }}</span>
                 <h2 class="blog-title">{{ post.title }}</h2>
@@ -24,7 +24,7 @@
             {% endfor %}
         </div>
     {% else %}
-        <p class="text-muted text-center" style="font-style: italic;">
+        <p class="text-muted text-center reveal" style="font-style: italic;">
             No posts yet — come back soon.
         </p>
     {% endif %}

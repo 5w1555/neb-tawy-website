@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,6 @@
             <li><a href="{% url 'blog' %}">Blog</a></li>
             <li><a href="{% url 'legal' %}">Legal Notice</a></li>
         </ul>
-        <div id="google_translate_element"></div>
     </nav>
 
     <main>
@@ -28,10 +27,22 @@
     </main>
 
     <footer class="footer">
-        <p>© 2026 Neb Tawy — Tous droits réservés &nbsp;·&nbsp; <a href="{% url 'legal' %}">Mentions légales</a></p>
+        <p>© 2026 Neb Tawy — All rights reserved &nbsp;·&nbsp; <a href="{% url 'legal' %}">Legal Notice</a></p>
     </footer>
 
     {% block extra_js %}{% endblock %}
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
