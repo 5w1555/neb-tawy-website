@@ -1100,6 +1100,210 @@ html {
 }
 
 /* ============================================================
+   INTRO SECTION
+   ============================================================ */
+.intro-section {
+    text-align: center;
+}
+
+.intro-copy {
+    max-width: 650px;
+    margin: 1.5rem auto 4rem;
+    font-style: italic;
+    line-height: 2;
+}
+
+.trust-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-gold);
+}
+
+.trust-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.trust-item span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.trust-item p {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   INTENTION CARDS
+   ============================================================ */
+.intention-section {
+    text-align: center;
+}
+
+.intention-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+}
+
+.intention-card {
+    padding: 3rem 2rem;
+    border-left: 1px solid var(--border-gold);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    text-decoration: none;
+    transition: border-color 0.3s, background 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+
+.intention-card:first-child {
+    border-left: none;
+}
+
+.intention-card:hover {
+    border-left-color: var(--gold);
+    background: var(--bg-secondary);
+}
+
+.intention-symbol {
+    font-size: 1.5rem;
+    color: var(--gold);
+    opacity: 0.6;
+}
+
+.intention-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-align: left;
+    color: var(--gold-light);
+}
+
+.intention-card p {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   SYMBOL BREAK
+   ============================================================ */
+.symbol-break {
+    padding: 4rem 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.symbol-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.symbol-large {
+    font-size: 2rem;
+    color: var(--gold);
+    opacity: 0.2;
+    transition: opacity 0.3s;
+}
+
+.symbol-large:hover {
+    opacity: 0.8;
+}
+
+.symbol-break-line {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 3rem auto 0;
+    opacity: 0.3;
+}
+
+/* ============================================================
+   PROCESS SECTION
+   ============================================================ */
+.process-section {
+    text-align: center;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+}
+
+.process-card {
+    padding: 3rem 2rem;
+    border-left: 1px solid var(--border-gold);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.process-card:first-child {
+    border-left: none;
+}
+
+.process-card:hover {
+    border-left-color: var(--gold);
+    background: var(--bg-secondary);
+}
+
+.process-number {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.6;
+}
+
+.process-card h3 {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: var(--gold-light);
+}
+
+.process-card p {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+/* ============================================================
+   ETHICS / FINAL CTA
+   ============================================================ */
+.ethics-section {
+    text-align: center;
+    border-top: 1px solid var(--border-gold);
+}
+
+.ethics-section .intro-copy {
+    margin-bottom: 2.5rem;
+}
+
+/* ============================================================
    SECTIONS & UTILITIES
    ============================================================ */
 .section {
