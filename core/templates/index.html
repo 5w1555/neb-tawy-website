@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Home — Neb Tawy{% endblock %}
+{% block title %}Palm Readings & Spiritual Guidance — Neb Tawy{% endblock %}
 
 {% block content %}
 
@@ -12,8 +12,10 @@
     <div class="hero-content">
         <div class="gold-divider">◈</div>
         <h1>Neb Tawy</h1>
-        <p class="hero-subtitle">Divination & spiritual guidance</p>
-        <p class="hero-tagline">Reveal what the stars have to tell you</p>
+        <p class="hero-subtitle">Palm readings & spiritual guidance</p>
+        <p class="hero-tagline">
+            A private space for clarity, intuition, and unseen patterns.
+        </p>
         <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
     </div>
 
@@ -26,11 +28,42 @@
 <section class="scene" id="welcome">
     <div class="scene-bg" id="scene-bg"></div>
     <div class="scene-overlay"></div>
+
     <div class="scene-content reveal">
         <div class="gold-divider" style="justify-content: flex-start;">✦</div>
         <h2>Read the unseen.</h2>
-        <p></p>
-        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+        <p>
+            Through the language of the hand, symbols, and intuition, Neb Tawy offers personal readings
+            for those seeking guidance, reflection, and a deeper sense of direction.
+        </p>
+        <a href="{% url 'booking' %}" class="btn-gold">Begin your reading</a>
+    </div>
+</section>
+
+<section class="section intro-section">
+    <div class="reveal text-center">
+        <div class="gold-divider">◈</div>
+        <h2>Guidance with care</h2>
+        <p class="text-muted intro-copy">
+            Each session is private, thoughtful, and centered on your question or intention.
+            Whether you are looking for emotional clarity, insight into your path, or a symbolic reading
+            of your present moment, the experience is designed to feel calm, respectful, and personal.
+        </p>
+    </div>
+
+    <div class="trust-row reveal reveal-delay-1">
+        <div class="trust-item">
+            <span>Private</span>
+            <p>Every reading is handled with discretion and care.</p>
+        </div>
+        <div class="trust-item">
+            <span>Personal</span>
+            <p>Your session is shaped around your question and situation.</p>
+        </div>
+        <div class="trust-item">
+            <span>Reflective</span>
+            <p>Guidance is offered as insight, not pressure or fear.</p>
+        </div>
     </div>
 </section>
 
@@ -39,7 +72,7 @@
         <div class="gold-divider">◈</div>
         <h2>The Offerings</h2>
         <p class="text-muted" style="font-style: italic; margin-top: 1rem;">
-            Choose yours.
+            Choose the session that matches your intention.
         </p>
     </div>
 
@@ -47,17 +80,70 @@
         <div class="service-preview-card reveal reveal-delay-1">
             <div class="service-preview-symbol">✋</div>
             <h3>Palm Reading</h3>
-            <p>The lines of your hand carry the map of your life. A reading that goes into your character, patterns, and potential.</p>
+            <p>
+                A personal reading of the lines, shapes, and signs of your hand to explore character,
+                emotional patterns, relationships, direction, and potential.
+            </p>
             <span class="service-preview-price">€XX</span>
             <a href="{% url 'booking' %}" class="btn-outline">Book this session</a>
         </div>
+
         <div class="service-preview-card reveal reveal-delay-2">
             <div class="service-preview-symbol">◈</div>
             <h3>Personal Reading</h3>
-            <p>A deeply tailored session built around your questions, your moments, your path. </p>
+            <p>
+                A tailored intuitive session built around your question, your moment, and your path.
+                Suitable for clarity, transition, emotional reflection, or spiritual guidance.
+            </p>
             <span class="service-preview-price">€XX</span>
             <a href="{% url 'booking' %}" class="btn-outline">Book this session</a>
         </div>
+    </div>
+</section>
+
+<section class="section process-section">
+    <div class="reveal text-center">
+        <div class="gold-divider">✦</div>
+        <h2>How it works</h2>
+    </div>
+
+    <div class="process-grid">
+        <div class="process-card reveal reveal-delay-1">
+            <span class="process-number">01</span>
+            <h3>Choose your reading</h3>
+            <p>
+                Select the session that best matches what you are seeking: palm reading, personal guidance,
+                or a deeper intuitive reading.
+            </p>
+        </div>
+
+        <div class="process-card reveal reveal-delay-2">
+            <span class="process-number">02</span>
+            <h3>Share your intention</h3>
+            <p>
+                During booking, you can share your question, theme, or situation so the reading has a clear focus.
+            </p>
+        </div>
+
+        <div class="process-card reveal reveal-delay-3">
+            <span class="process-number">03</span>
+            <h3>Receive your guidance</h3>
+            <p>
+                Your reading is prepared privately and delivered with care, clarity, and respect for your situation.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section ethics-section">
+    <div class="reveal text-center">
+        <div class="gold-divider">◈</div>
+        <h2>A respectful practice</h2>
+        <p class="text-muted intro-copy">
+            Readings are offered as spiritual insight, symbolic reflection, and personal guidance.
+            They are not intended to replace medical, psychological, legal, or financial advice.
+        </p>
+        <a href="{% url 'booking' %}" class="btn-gold">Book a private reading</a>
     </div>
 </section>
 
@@ -103,14 +189,16 @@
     const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
 
-    hero.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 12;
-        const y = (e.clientY / window.innerHeight - 0.5) * 12;
-        heroContent.style.transform = `perspective(1000px) rotateX(${-y}deg) rotateY(${x}deg)`;
-    });
+    if (hero && heroContent) {
+        hero.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 12;
+            const y = (e.clientY / window.innerHeight - 0.5) * 12;
+            heroContent.style.transform = `perspective(1000px) rotateX(${-y}deg) rotateY(${x}deg)`;
+        });
 
-    hero.addEventListener('mouseleave', () => {
-        heroContent.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-    });
+        hero.addEventListener('mouseleave', () => {
+            heroContent.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+    }
 </script>
 {% endblock %}

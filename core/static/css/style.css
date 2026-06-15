@@ -765,6 +765,341 @@ html {
 }
 
 /* ============================================================
+   SAFE POLISH PATCH — append-only
+   ============================================================ */
+
+/* Better text selection */
+::selection {
+    background: rgba(201, 168, 76, 0.28);
+    color: var(--text-primary);
+}
+
+/* Keep nav usable after scroll instead of fully disappearing */
+.navbar.scrolled {
+    background: rgba(13, 10, 7, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.14);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Make logo visible consistently */
+.nav-logo {
+    opacity: 1;
+}
+
+/* Make booking link feel like the primary nav action */
+.nav-links a[href*="booking"] {
+    color: var(--gold-light);
+    border: 1px solid var(--border-gold);
+    padding: 0.45rem 0.85rem;
+}
+
+.nav-links a[href*="booking"]:hover,
+.nav-links a[href*="booking"].active {
+    color: var(--bg-primary);
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+/* More premium card depth without changing layout */
+.service-preview-card,
+.service-card {
+    position: relative;
+    background:
+        linear-gradient(180deg, rgba(201, 168, 76, 0.035), transparent 55%),
+        rgba(26, 18, 8, 0.22);
+}
+
+.service-preview-card:hover,
+.service-card:hover,
+.service-card.selected {
+    background:
+        radial-gradient(circle at top left, rgba(201, 168, 76, 0.10), transparent 45%),
+        var(--bg-secondary);
+    box-shadow: 0 0 42px rgba(201, 168, 76, 0.065);
+}
+
+/* Clearer selected booking card */
+.service-card.selected {
+    border-left-color: var(--gold-light);
+    box-shadow:
+        inset 0 0 0 1px rgba(201, 168, 76, 0.18),
+        0 0 42px rgba(201, 168, 76, 0.065);
+}
+
+.service-card.selected::after {
+    content: 'Selected';
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+}
+
+/* Slightly more luxurious buttons */
+.btn-gold,
+.btn-outline {
+    border-radius: 999px;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), #8B6914);
+    box-shadow: 0 0 28px rgba(201, 168, 76, 0.14);
+}
+
+.btn-gold:hover {
+    background: linear-gradient(135deg, #F3D98C, var(--gold-light), var(--gold));
+    transform: translateY(-1px);
+    box-shadow: 0 0 38px rgba(201, 168, 76, 0.22);
+}
+
+.btn-outline:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 28px rgba(201, 168, 76, 0.12);
+}
+
+/* Better input focus */
+.booking-input:focus {
+    border-bottom-color: var(--gold-light);
+    box-shadow: 0 12px 22px -22px rgba(201, 168, 76, 0.55);
+}
+
+/* Elegant section title underline */
+.section h2::after,
+.services-preview-header h2::after {
+    content: '';
+    display: block;
+    width: 72px;
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    opacity: 0.65;
+}
+
+/* Safer mobile behavior */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.25rem;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 0.85rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .nav-links a {
+        font-size: 0.55rem;
+        letter-spacing: 0.14em;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.45rem;
+        letter-spacing: 0.18em;
+    }
+
+    .hero-subtitle {
+        font-size: 0.65rem;
+        letter-spacing: 0.22em;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    h1, h2, h3 {
+        letter-spacing: 0.1em;
+    }
+
+    .services-preview {
+        padding: 5rem 1.5rem;
+    }
+
+    .services-preview-grid,
+    .service-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .service-preview-card {
+        padding: 2.5rem 1.5rem;
+        border-left: none;
+        border-top: 1px solid var(--border-gold);
+    }
+
+    .service-card {
+        border-left: none;
+        border-top: 1px solid var(--border-gold);
+    }
+
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .scene {
+        height: auto;
+        min-height: 70vh;
+        padding: 4rem 1.5rem;
+    }
+
+    .scene-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .gold-divider::before,
+    .gold-divider::after {
+        width: 48px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 420px) {
+    .hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 0.14em;
+    }
+
+    .btn-gold,
+    .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================================
+   HOMEPAGE PROFESSIONAL SECTIONS
+   ============================================================ */
+
+.intro-copy {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    font-size: 1.2rem;
+    line-height: 2;
+    font-style: italic;
+}
+
+.trust-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.trust-item {
+    border-top: 1px solid var(--border-gold);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.trust-item span {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+}
+
+.trust-item p {
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.process-card {
+    border-left: 1px solid var(--border-gold);
+    padding: 2rem;
+    background:
+        linear-gradient(180deg, rgba(201,168,76,0.035), transparent 55%),
+        rgba(26,18,8,0.22);
+}
+
+.process-number {
+    display: block;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 1.25rem;
+}
+
+.process-card h3 {
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 1rem;
+}
+
+.process-card p {
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.ethics-section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .trust-row,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-copy {
+        font-size: 1.05rem;
+    }
+
+    .process-card {
+        border-left: none;
+        border-top: 1px solid var(--border-gold);
+    }
+}
+
+/* ============================================================
    SECTIONS & UTILITIES
    ============================================================ */
 .section {
