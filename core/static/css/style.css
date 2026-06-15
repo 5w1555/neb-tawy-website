@@ -15,32 +15,10 @@
 /* ============================================================
    RESET
    ============================================================ */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    cursor: none;
-}
 
 /* ============================================================
    CURSOR
    ============================================================ */
-.custom-cursor {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    transform: translate(-50%, -50%);
-}
-
-.custom-cursor.hover {
-    transform: translate(-50%, -50%) scale(3);
-    opacity: 0.5;
-}
 
 /* ============================================================
    BASE
