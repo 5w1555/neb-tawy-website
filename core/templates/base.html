@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Neb Tawy{% endblock %}</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     {% block extra_css %}{% endblock %}
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-logo">✦ Neb Tawy</div>
+
         <ul class="nav-links">
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'booking' %}">Reservations</a></li>
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="{% url 'legal' %}">Legal Notice</a></li>
+            <li><a href="{% url 'booking' %}">Book</a></li>
+
+            {# Hidden for demo, still accessible by direct URL #}
+            {# <li><a href="{% url 'blog' %}">Blog</a></li> #}
+            {# <li><a href="{% url 'legal' %}">Legal Notice</a></li> #}
         </ul>
     </nav>
 
@@ -27,7 +32,10 @@
     </main>
 
     <footer class="footer">
-        <p>© 2026 Neb Tawy — All rights reserved &nbsp;·&nbsp; <a href="{% url 'legal' %}">Legal Notice</a></p>
+        <p>© 2026 Neb Tawy — All rights reserved</p>
+
+        {# Hidden for demo, still accessible by direct URL #}
+        {# <p><a href="{% url 'legal' %}">Legal Notice</a></p> #}
     </footer>
 
     {% block extra_js %}{% endblock %}
@@ -46,13 +54,16 @@
 
         // Navbar transparent → dark on scroll
         const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
     </script>
 
 </body>
