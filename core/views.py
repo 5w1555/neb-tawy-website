@@ -4,6 +4,9 @@ from django.db.models import Count
 from django.shortcuts import render, redirect
 from .models import Post, Booking
 
+from django_ratelimit.decorators import ratelimit
+from django.http import Http404
+
 import brevo_python
 
 import stripe
@@ -15,6 +18,10 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def index(request):
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'about.html')
+
+@ratelimit(key='ip', rate='5/m', method='POST', block=True)
 def booking(request):
     if request.method == 'POST':
         service = request.POST.get('service')
@@ -74,8 +81,16 @@ SERVICE_NAMES = {
     'personal': 'Personal Séance',
 }
 
+@ratelimit(key='ip', rate='10/m', block=True)
 def payment(request, booking_id):
-    booking = Booking.objects.get(id=booking_id)
+    try:
+        booking = Booking.objects.get(id=booking_id)
+    except Booking.DoesNotExist:
+        raise Http404("Booking not found")
+
+    if booking.paid:
+        return redirect('payment_success')
+    
     session = stripe.checkout.Session.create(
         payment_method_types=['card'],
         line_items=[{
@@ -142,7 +157,6 @@ Your reading will be delivered to this email address within 2 business days of y
 
 If you have any questions, simply reply to this email.
 
-With light,
 Neb Tawy
         """.strip()
     )
@@ -163,9 +177,9 @@ def stripe_webhook(request):
 
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
-        booking_id = session['metadata']['booking_id']
 
         try:
+            booking_id = session['metadata']['booking_id']
             booking = Booking.objects.get(id=booking_id)
             if not booking.paid:
                 booking.paid = True
@@ -174,6 +188,8 @@ def stripe_webhook(request):
                     send_booking_notification(booking)
                 except Exception as email_error:
                     print(f"EMAIL ERROR: {email_error}")
+        except KeyError:
+            print("WEBHOOK ERROR: missing booking_id in metadata")
         except Booking.DoesNotExist:
             print(f"BOOKING NOT FOUND: {booking_id}")
         except Exception as e:

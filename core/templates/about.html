@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About — Neb Tawy{% endblock %}
+
+{% block content %}
+
+<!-- ABOUT HERO -->
+<section class="section intro-section">
+    <div class="reveal text-center">
+        <div class="gold-divider">◈</div>
+        <h1>About Neb Tawy</h1>
+        <p class="text-muted intro-copy">
+            Placeholder — a short introduction goes here: who you are, how you came to readings,
+            and the spirit you bring to each session.
+        </p>
+    </div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+    <div class="reveal text-center">
+        <div class="gold-divider">✦</div>
+        <h2>My path</h2>
+        <p class="text-muted intro-copy">
+            Placeholder — a paragraph or two about your background, your relationship to tarot/palm
+            reading, and what guides your practice.
+        </p>
+    </div>
+</section>
+
+<!-- VALUES / APPROACH -->
+<section class="section intention-section">
+    <div class="reveal text-center">
+        <div class="gold-divider">✦</div>
+        <h2>How I work</h2>
+        <p class="text-muted intro-copy">Placeholder — your approach, tone, and what people can expect.</p>
+    </div>
+    <div class="trust-row">
+        <div class="trust-item reveal reveal-delay-1">
+            <span>Placeholder</span>
+            <p>Short supporting line.</p>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+            <span>Placeholder</span>
+            <p>Short supporting line.</p>
+        </div>
+        <div class="trust-item reveal reveal-delay-3">
+            <span>Placeholder</span>
+            <p>Short supporting line.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section ethics-section reveal">
+    <div class="text-center">
+        <div class="gold-divider">◈</div>
+        <h2>Curious to know more?</h2>
+        <p class="text-muted intro-copy">
+            Placeholder closing line inviting people to book a reading.
+        </p>
+        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+    </div>
+</section>
+
+{% endblock %}

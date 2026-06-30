@@ -259,7 +259,8 @@ h1, h2, h3 {
         radial-gradient(ellipse at 60% 30%, rgba(201,168,76,0.12) 0%, transparent 60%),
         radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 50%),
         radial-gradient(ellipse at 85% 70%, rgba(139,105,20,0.08) 0%, transparent 40%),
-        var(--bg-primary);
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('../img/hieroglyphs.jpeg') center / cover no-repeat;
     animation: breathe 8s ease-in-out infinite alternate;
     z-index: 0;
 }
@@ -759,7 +760,7 @@ html {
 .scene-bg {
     position: absolute;
     inset: -20%;
-    background: url('/static/img/nebula.jpg') center/cover no-repeat;
+    background: url('/static/img/bg-1.jpeg') center/cover no-repeat;
     z-index: 0;
     will-change: transform;
 }
