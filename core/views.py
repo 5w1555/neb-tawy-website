@@ -72,13 +72,17 @@ def post_detail(request, slug):
     return render(request, 'post_detail.html', {'post': post})
 
 PRICES = {
-    'tarot': 5000,      # €50.00 in cents — change to real price
-    'personal': 8000,   # €80.00 in cents — change to real price
+    'focused_reading':    2500,   # €25
+    'indepth_guidance':   5000,   # €50
+    'signature_guidance': 13500,  # €135
+    'zoom_session':       15000,  # €150
 }
 
 SERVICE_NAMES = {
-    'tarot': 'Card Reading',
-    'personal': 'Personal Séance',
+    'focused_reading':    'Focused Reading',
+    'indepth_guidance':   'In-Depth Guidance',
+    'signature_guidance': 'Signature Guidance',
+    'zoom_session':       'Zoom Session',
 }
 
 @ratelimit(key='ip', rate='10/m', block=True)
