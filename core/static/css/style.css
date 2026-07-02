@@ -265,6 +265,16 @@ h1, h2, h3 {
     z-index: 0;
 }
 
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 60% 30%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        url('../img/About.jpeg') 40% center / cover no-repeat;
+    animation: breathe 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
 @keyframes breathe {
     0%   { filter: brightness(1); }
     100% { filter: brightness(1.2); }
