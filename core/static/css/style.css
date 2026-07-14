@@ -1,4 +1,11 @@
 /* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ============================================================
    VARIABLES
    ============================================================ */
 :root {
@@ -214,7 +221,7 @@ h1, h2, h3 {
 
 .hero-subtitle {
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
+    font-size: 0.7rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -224,7 +231,7 @@ h1, h2, h3 {
 }
 
 .hero-tagline {
-    font-style: bold;
+    font-style: italic;
     font-size: 1.4rem;
     color: var(--text-muted);
     margin-bottom: 2.5rem;
@@ -548,8 +555,8 @@ h1, h2, h3 {
 .booking-hero .hero-content h1,
 .booking-intro h1 {
     white-space: nowrap;
-    font-size: 3.1rem;
-    letter-spacing: 0.28em;
+    font-size: 2.4rem;
+    letter-spacing: 0.2em;
     text-align: center;
     margin: 0 auto;
     max-width: 100%;
@@ -583,7 +590,7 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     position: relative;
     display: flex;
-    align-items: center;      
+    align-items: center;
     justify-content: center;
     padding: 5rem;
     overflow: hidden;
@@ -602,7 +609,7 @@ h1, h2, h3 {
     position: relative;
     z-index: 1;
     max-width: 600px;
-    text-align: center;   
+    text-align: center;
 }
 
 .scene-content h2 {
@@ -613,7 +620,7 @@ h1, h2, h3 {
 }
 
 .scene-content p {
-    font-style: bold;
+    font-weight: italic;
     color: var(--text-muted);
     font-size: 1.7rem;
     margin-bottom: 2rem;
@@ -1014,6 +1021,15 @@ html {
         font-size: 2.2rem;
     }
 
+    .scene-content p {
+        font-size: 1.15rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .services-preview {
         padding: 5rem 1.5rem;
     }
@@ -1060,27 +1076,53 @@ html {
     }
 }
 
-/* Very small phones */
-@media (max-width: 420px) {
+/* Very small phones (iPhone SE and similar, ~375px and under) */
+@media (max-width: 380px) {
     .hero-content h1,
     .booking-hero .hero-content h1,
     .booking-intro h1 {
-        font-size: 1.95rem;
-        letter-spacing: 0.14em;
+        font-size: 1.7rem;
+        letter-spacing: 0.1em;
     }
 
-    .hero-tagline {
+    .about-hero .hero-content h1 {
+        font-size: 1.85rem;
+        letter-spacing: 0.18em;
+    }
+
+    .scene-content h2 {
+        font-size: 1.75rem;
+        letter-spacing: 0.08em;
+    }
+
+    .scene-content p {
         font-size: 1rem;
-        padding: 0 1rem;
+    }
+
+    .trust-item span {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+    }
+
+    .process-number {
+        letter-spacing: 0.18em;
+    }
+
+    .nav-logo {
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+    }
+
+    .nav-links a {
+        font-size: 0.5rem;
+        letter-spacing: 0.08em;
     }
 
     .btn-gold,
     .btn-outline {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.15em;
+        padding: 0.75rem 1.5rem;
     }
 }
 
