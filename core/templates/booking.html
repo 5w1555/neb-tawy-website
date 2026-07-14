@@ -68,7 +68,7 @@
     }
 
     .booking-step {
-        border-top: 1px solid var(--border-gold);
+        border-top: none;
         padding-top: 2.5rem;
     }
 
@@ -164,11 +164,10 @@
     <div class="particles" id="particles"></div>
 
     <div class="hero-content booking-intro">
-        <div class="gold-divider">◈</div>
-        <h1>Book a Reading</h1>
+        <h1>Book a Private Reading</h1>
         <p class="hero-subtitle">Private guidance · from €25</p>
         <p class="hero-tagline">
-            Choose your session, share your intention, and receive a reading prepared with care.
+            Set your intentions, choose a session and received a reading prepared with care.
         </p>
     </div>
 </section>
@@ -191,7 +190,6 @@
 
             <div class="service-card reveal reveal-delay-1" data-service="focused_reading" data-price="25" data-label="Focused Reading" onclick="selectService(this)">
                 <div>
-                    <div class="gold-divider">✦</div>
                     <h3>Focused Reading</h3>
                     <p class="text-muted">
                         Are you looking for clarity on a specific situation? This reading is ideal for
@@ -210,7 +208,6 @@
 
             <div class="service-card reveal reveal-delay-2" data-service="indepth_guidance" data-price="50" data-label="In-Depth Guidance" onclick="selectService(this)">
                 <div>
-                    <div class="gold-divider">◈</div>
                     <h3>In-Depth Guidance</h3>
                     <p class="text-muted">
                         For those who want to explore an important area of their life in depth:
@@ -232,7 +229,6 @@
 
             <div class="service-card reveal reveal-delay-3" data-service="signature_guidance" data-price="135" data-label="Signature Guidance" onclick="selectService(this)">
                 <div>
-                    <div class="gold-divider">☥</div>
                     <h3>Signature Guidance</h3>
                     <p class="text-muted">
                         Designed for those seeking a complete view of their situation. Three themes
@@ -254,7 +250,6 @@
 
             <div class="service-card reveal reveal-delay-1" data-service="zoom_session" data-price="150" data-label="Zoom Session" onclick="selectService(this)">
                 <div>
-                    <div class="gold-divider">✵</div>
                     <h3>Zoom Session</h3>
                     <p class="text-muted">
                         The most complete experience Neb Tawy offers. For 45 minutes, we connect
@@ -332,20 +327,6 @@
         </form>
     </div>
 
-</section>
-
-<section class="section reveal">
-    <div class="text-center" style="max-width: 680px; margin: 0 auto;">
-        <div class="gold-divider">◈</div>
-        <h2>Good to know</h2>
-        <p class="text-muted" style="line-height: 2; font-style: italic;">
-            Bookings are intentionally limited to preserve the quality of every reading.
-            The usual turnaround time is 48 hours. In the rare event of an exceptional delay,
-            you will be notified and can choose to keep your booking or request a refund.
-            These readings are offered as a space for reflection and personal support;
-            they do not replace medical, legal, or psychological advice.
-        </p>
-    </div>
 </section>
 
 {% endblock %}
