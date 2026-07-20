@@ -28,7 +28,7 @@
     <div class="scene-content reveal">
         <h2>Guidance for the Path Ahead</h2>
         <p>Thoughtful tarot readings for moments of uncertainty, growth, and transformation.</p>
-        <a href="{% url 'booking' %}" class="btn-gold">Book your private reading</a>
+        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
     </div>
 </section>
 
@@ -36,11 +36,14 @@
 <section class="section intro-section">
     <div class="reveal text-center">
         <h2>Guidance with care</h2>
+        <div class="gold-divider">◈</div>
         <p class="text-muted intro-copy">
             With Neb Tawy, tarot readings are a space for reflection, insight, and meaningful conversation. Each reading is designed to help you explore your questions, recognize patterns, and move forward with greater clarity and intention.
         </p>
     </div>
 </section>
+
+<div class="section-line reveal"></div>
 
 <!-- OFFERINGS -->
 <section class="services-preview">
@@ -173,75 +176,8 @@
             Readings are offered as spiritual insight, symbolic reflection, and personal guidance.
             They are not intended to replace medical, psychological, legal, or financial advice.
         </p>
-        <a href="{% url 'booking' %}" class="btn-gold">Book a private reading</a>
+        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
     </div>
 </section>
 
-{% endblock %}
-
-{% block extra_js %}
-<script>
-    // Particles
-    const particles = document.getElementById('particles');
-    const symbols = ['✦', '✧', '◈', '⋆', '·', '☽', '★', '✵', '△', '☥'];
-
-    for (let i = 0; i < 25; i++) {
-        const p = document.createElement('span');
-        p.classList.add('particle');
-        p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-        p.style.left = `${Math.random() * 100}%`;
-        p.style.top = `${Math.random() * 100}%`;
-        p.style.setProperty('--duration', `${4 + Math.random() * 6}s`);
-        p.style.setProperty('--delay', `${Math.random() * 5}s`);
-        p.style.fontSize = `${0.4 + Math.random() * 0.6}rem`;
-        particles.appendChild(p);
-    }
-
-    const sceneBg = document.getElementById('scene-bg');
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const scrolled = window.scrollY;
-                const sceneTop = document.getElementById('atmosphere').offsetTop;
-                const offset = (scrolled - sceneTop) * 0.3;
-                if (sceneBg) {
-                    sceneBg.style.transform = `translateY(${offset}px)`;
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-
-    // Mouse tilt on hero
-    const hero = document.querySelector('.hero');
-    const heroContent = document.querySelector('.hero-content');
-
-    if (hero && heroContent) {
-        hero.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 12;
-            const y = (e.clientY / window.innerHeight - 0.5) * 12;
-            heroContent.style.transform = `perspective(1000px) rotateX(${-y}deg) rotateY(${x}deg)`;
-        });
-        hero.addEventListener('mouseleave', () => {
-            heroContent.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-        });
-    }
-
-    // Intention cards hover effect
-    document.querySelectorAll('.intention-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.intention-card').forEach(c => {
-                if (c !== card) c.style.opacity = '0.4';
-            });
-        });
-        card.addEventListener('mouseleave', () => {
-            document.querySelectorAll('.intention-card').forEach(c => {
-                c.style.opacity = '1';
-            });
-        });
-    });
-</script>
 {% endblock %}
