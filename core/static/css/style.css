@@ -146,7 +146,8 @@ h1, h2, h3 {
 .about-hero-bg {
     position: absolute;
     inset: 0;
-    background:
+    background-color: var(--bg-primary);
+    background-image:
         linear-gradient(
             to bottom,
             rgba(0,0,0,0.35) 0%,
@@ -154,8 +155,11 @@ h1, h2, h3 {
             rgba(0,0,0,0.45) 60%,
             rgba(0,0,0,0.35) 100%
         ),
-        url('../img/About2.jpg') center 60% / 50% no-repeat;
-    filter: blur(0px);
+        url('../img/About2.jpg');
+    background-size: auto 100%;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    filter: blur(6px);
     z-index: 0;
 }
 
@@ -292,6 +296,7 @@ h1, h2, h3 {
    ============================================================ */
 .about-hero {
     min-height: 100vh;
+    max-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -317,7 +322,7 @@ h1, h2, h3 {
    PORTRAIT SECTION (Dedicated section below hero)
    ============================================================ */
 .portrait-section {
-    padding: 3rem 1.5rem 5rem;
+    padding: 3rem 1.5rem 4rem;
     text-align: center;
     background: var(--bg-primary);
 }
@@ -325,7 +330,7 @@ h1, h2, h3 {
 .about-portrait {
     max-width: 900px;
     width: 100%;
-    height: 1300px;
+    height: 480px;
     object-fit: contain;
     border-radius: 0px;
     display: inline-block;
@@ -966,11 +971,11 @@ html {
 /* ============================================================
    MOBILE (Consolidated - All in one place)
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 1px) {
     .navbar {
-        padding: 1rem 1.25rem;
-        align-items: flex-start;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     .nav-links {
@@ -1010,7 +1015,14 @@ html {
 
     .about-hero-bg {
         background-size: cover;
-        background-position: 60% 15%;
+        background-position: 60% 5%;
+    }
+
+    .about-hero {
+        aspect-ratio: 3 / 4;
+        height: auto;
+        min-height: 480px;
+        max-height: 650px;
     }
 
     .about-portrait {
@@ -1098,7 +1110,7 @@ html {
 }
 
 /* Very small phones (iPhone SE and similar, ~375px and under) */
-@media (max-width: 380px) {
+@media (max-width: 600px) {
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -1136,11 +1148,14 @@ html {
 
     .about-hero-bg {
         background-size: cover;
-        background-position: 60% 15%;
+        background-position: 60% 5%;
     }
 
     .about-hero {
-        min-height: 80vh;
+        aspect-ratio: 3 / 4;
+        height: auto;
+        min-height: 480px;
+        max-height: 650px;
     }
 
     .scene-content h2 {
