@@ -33,6 +33,12 @@ ALLOWED_HOSTS = [
     if h.strip()
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = ["https://nebtawy.com", "https://www.nebtawy.com"]
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 

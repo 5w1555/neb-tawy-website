@@ -381,7 +381,7 @@ h1, h2, h3 {
     color: var(--bg-primary);
     background: linear-gradient(135deg, var(--gold-light), var(--gold), #8B6914);
     border: none;
-    padding: 0.85rem 2.5rem;
+    padding: 2rem 2.5rem;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
