@@ -224,6 +224,10 @@ h1, h2, h3 {
     color: transparent;
 }
 
+.hero-content .btn-gold {
+    margin-top: 2.5rem;
+}
+
 @keyframes shimmer {
     0%   { background-position: 200% center; }
     100% { background-position: -200% center; }
@@ -259,8 +263,13 @@ h1, h2, h3 {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeUpCentered {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
 .scroll-indicator {
-    position: absolute;
+    position: absolute; 
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
@@ -275,7 +284,7 @@ h1, h2, h3 {
     text-transform: uppercase;
     z-index: 2;
     opacity: 0;
-    animation: fadeUp 1.2s ease 1.2s forwards;
+    animation: fadeUpCentered 1.2s ease 1.2s forwards;
     background: none;
     border: none;
     cursor: pointer;
@@ -381,7 +390,7 @@ h1, h2, h3 {
     color: var(--bg-primary);
     background: linear-gradient(135deg, var(--gold-light), var(--gold), #8B6914);
     border: none;
-    padding: 2rem 2.5rem;
+    padding: 0.85rem 2.5rem;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
