@@ -1,9 +1,10 @@
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from django.http import JsonResponse
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.shortcuts import render, redirect
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 from .models import Post, Booking
 
 from django_ratelimit.decorators import ratelimit
@@ -66,7 +67,12 @@ def booking(request):
         except ValidationError:
             return render(request, 'booking.html', {'error': 'Please enter a valid email address.'})
 
-        if Booking.objects.filter(date=parsed_date, paid=True).count() >= 2:
+        recent_cutoff = timezone.now() - timedelta(minutes=20)
+        active_count = Booking.objects.filter(date=parsed_date).filter(
+            Q(paid=True) | Q(paid=False, created_at__gte=recent_cutoff)
+        ).count()
+
+        if active_count >= 2:
             return render(request, 'booking.html', {'error': 'That date is no longer available. Please choose another.'})
 
         try:
