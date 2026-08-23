@@ -1,7 +1,9 @@
-from datetime import date
+from datetime import date, datetime
 from django.http import JsonResponse
 from django.db.models import Count
 from django.shortcuts import render, redirect
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 from .models import Post, Booking
 
 from django_ratelimit.decorators import ratelimit
@@ -14,6 +16,20 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+
+PRICES = {
+    'focused_reading':    2500,   # €25
+    'indepth_guidance':   5000,   # €50
+    'signature_guidance': 13500,  # €135
+    'zoom_session':       15000,  # €150
+}
+
+SERVICE_NAMES = {
+    'focused_reading':    'Focused Reading',
+    'indepth_guidance':   'In-Depth Guidance',
+    'signature_guidance': 'Signature Guidance',
+    'zoom_session':       'Zoom Session',
+}
 
 def index(request):
     return render(request, 'index.html')
@@ -31,10 +47,32 @@ def booking(request):
         email = request.POST.get('email')
         message = request.POST.get('message', '')
 
+        if service not in PRICES:
+            return render(request, 'booking.html', {'error': 'Please select a valid service.'})
+
+        if not date_selected:
+            return render(request, 'booking.html', {'error': 'Please select a date.'})
+
+        try:
+            parsed_date = datetime.strptime(date_selected, '%Y-%m-%d').date()
+        except ValueError:
+            return render(request, 'booking.html', {'error': 'Invalid date format.'})
+
+        if parsed_date < date.today():
+            return render(request, 'booking.html', {'error': 'Please choose a future date.'})
+
+        try:
+            validate_email(email)
+        except ValidationError:
+            return render(request, 'booking.html', {'error': 'Please enter a valid email address.'})
+
+        if Booking.objects.filter(date=parsed_date, paid=True).count() >= 2:
+            return render(request, 'booking.html', {'error': 'That date is no longer available. Please choose another.'})
+
         try:
             new_booking = Booking.objects.create(
                 service=service,
-                date=date_selected,
+                date=parsed_date,
                 first_name=first_name,
                 last_name=last_name,
                 email=email,
@@ -44,6 +82,7 @@ def booking(request):
             return redirect('payment', booking_id=new_booking.id)
         except Exception as e:
             print("BOOKING ERROR:", e)
+            return render(request, 'booking.html', {'error': 'Something went wrong. Please try again.'})
 
     return render(request, 'booking.html')
 
@@ -71,20 +110,6 @@ def post_detail(request, slug):
     post = Post.objects.get(slug=slug, published=True)
     return render(request, 'post_detail.html', {'post': post})
 
-PRICES = {
-    'focused_reading':    2500,   # €25
-    'indepth_guidance':   5000,   # €50
-    'signature_guidance': 13500,  # €135
-    'zoom_session':       15000,  # €150
-}
-
-SERVICE_NAMES = {
-    'focused_reading':    'Focused Reading',
-    'indepth_guidance':   'In-Depth Guidance',
-    'signature_guidance': 'Signature Guidance',
-    'zoom_session':       'Zoom Session',
-}
-
 @ratelimit(key='ip', rate='10/m', block=True)
 def payment(request, booking_id):
     try:
@@ -94,25 +119,29 @@ def payment(request, booking_id):
 
     if booking.paid:
         return redirect('payment_success')
-    
-    session = stripe.checkout.Session.create(
-        payment_method_types=['card'],
-        line_items=[{
-            'price_data': {
-                'currency': 'eur',
-                'product_data': {
-                    'name': SERVICE_NAMES[booking.service],
+
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            line_items=[{
+                'price_data': {
+                    'currency': 'eur',
+                    'product_data': {
+                        'name': SERVICE_NAMES[booking.service],
+                    },
+                    'unit_amount': PRICES[booking.service],
                 },
-                'unit_amount': PRICES[booking.service],
-            },
-            'quantity': 1,
-        }],
-        mode='payment',
-        success_url=request.build_absolute_uri('/booking/success/'),
-        cancel_url=request.build_absolute_uri('/booking/cancel/'),
-        metadata={'booking_id': booking.id}
-    )
-    return redirect(session.url, permanent=False)
+                'quantity': 1,
+            }],
+            mode='payment',
+            success_url=request.build_absolute_uri('/booking/success/'),
+            cancel_url=request.build_absolute_uri('/booking/cancel/'),
+            metadata={'booking_id': booking.id}
+        )
+        return redirect(session.url, permanent=False)
+    except stripe.error.StripeError as e:
+        print("STRIPE ERROR:", e)
+        return render(request, 'booking.html', {'error': 'Payment setup failed. Please try again.'})
 
 def send_booking_notification(booking):
     configuration = brevo_python.Configuration()
@@ -206,4 +235,3 @@ def payment_success(request):
 
 def payment_cancel(request):
     return render(request, 'payment_cancel.html')
-
