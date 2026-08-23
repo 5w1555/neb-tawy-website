@@ -12,8 +12,10 @@ class Post(models.Model):
 
 class Booking(models.Model):
     SERVICE_CHOICES = [
-        ('tarot', 'Reading'),
-        ('personal', 'Personal Reading'),
+        ('focused_reading',    'Focused Reading'),
+        ('indepth_guidance',   'In-Depth Guidance'),
+        ('signature_guidance', 'Signature Guidance'),
+        ('zoom_session',       'Zoom Session'),
     ]
 
     service = models.CharField(max_length=20, choices=SERVICE_CHOICES)

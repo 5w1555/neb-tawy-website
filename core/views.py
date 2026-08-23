@@ -177,7 +177,7 @@ Message:
         to=[{"email": booking.email, "name": f"{booking.first_name} {booking.last_name}"}],
         sender={"email": "marwanewafik2@gmail.com", "name": "Neb Tawy"},
         reply_to={"email": settings.BOOKING_NOTIFICATION_EMAIL},
-        subject="Your booking is confirmed — Neb Tawy",
+        subject="Your booking is confirmed",
         text_content=f"""
 Dear {booking.first_name},
 
@@ -185,8 +185,6 @@ Your booking has been confirmed. Here are your details:
 
 Service: {SERVICE_NAMES.get(booking.service, booking.service)}
 Date: {booking.date.strftime('%B %d, %Y')}
-
-Your reading will be delivered to this email address within 2 business days of your chosen date.
 
 If you have any questions, simply reply to this email.
 
