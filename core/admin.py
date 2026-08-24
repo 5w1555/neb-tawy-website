@@ -81,6 +81,7 @@ class BookingAdmin(admin.ModelAdmin):
         "customer_name",
         "service",
         "date",
+        "time_slot",
         "paid_badge",
         "email",
         "message_preview",
@@ -104,6 +105,7 @@ class BookingAdmin(admin.ModelAdmin):
     readonly_fields = [
         "service",
         "date",
+        "time_slot",
         "first_name",
         "last_name",
         "email",
@@ -118,6 +120,7 @@ class BookingAdmin(admin.ModelAdmin):
                 "paid",
                 "service",
                 "date",
+                "time_slot",
             )
         }),
         ("Customer", {

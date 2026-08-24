@@ -138,6 +138,56 @@
         font-size: 0.7rem;
     }
 
+    #slot-step {
+        display: none;
+    }
+
+    #slot-step.visible {
+        display: block;
+    }
+
+    .slot-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .slot-option {
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--border-gold);
+        background: rgba(26,18,8,0.22);
+        color: var(--text-primary);
+        cursor: pointer;
+        font-family: 'Cinzel', serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        transition: all 0.2s ease;
+    }
+
+    .slot-option:hover {
+        background: var(--border-gold);
+    }
+
+    .slot-option.selected {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--bg-primary);
+    }
+
+    .slot-option:disabled,
+    .slot-option.taken {
+        opacity: 0.3;
+        cursor: not-allowed;
+        text-decoration: line-through;
+    }
+
+    .slot-empty-note {
+        color: var(--text-muted);
+        font-style: italic;
+        margin-top: 1rem;
+    }
+
     @media (max-width: 768px) {
         .booking-hero {
             min-height: 65vh;
@@ -274,16 +324,28 @@
             Choose a date
         </h2>
 
-        <p class="text-muted" style="margin-bottom: 1.5rem; font-style: italic;">
-            Each day is limited to two readings. Unavailable dates are greyed out.
+        <p class="text-muted" id="date-help-text" style="margin-bottom: 1.5rem; font-style: italic;">
+            Please select a service first.
         </p>
 
-        <input type="text" id="booking-date" placeholder="Select a date" class="booking-input" readonly>
+        <input type="text" id="booking-date" placeholder="Select a date" class="booking-input" readonly disabled>
+    </div>
+
+    <div class="booking-step reveal" id="slot-step">
+        <h2 class="booking-step-title">
+            <span class="booking-step-number">03</span>
+            Choose a time
+        </h2>
+
+        <div class="slot-grid" id="slot-grid"></div>
+        <p class="slot-empty-note" id="slot-empty-note" style="display:none;">
+            No times remain available for this date. Please choose another date.
+        </p>
     </div>
 
     <div class="booking-step reveal">
         <h2 class="booking-step-title">
-            <span class="booking-step-number">03</span>
+            <span class="booking-step-number" id="details-step-number">03</span>
             Your details
         </h2>
 
@@ -291,6 +353,7 @@
             {% csrf_token %}
             <input type="hidden" name="service" id="service-input">
             <input type="hidden" name="date" id="date-input">
+            <input type="hidden" name="time_slot" id="time-slot-input">
 
             <div class="form-row">
                 <div class="form-group">
@@ -332,19 +395,32 @@
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
+    const SLOT_SERVICES = ['signature_guidance', 'zoom_session'];
+
     let selectedService = null;
     let selectedServiceName = null;
     let selectedServicePrice = null;
     let selectedDate = null;
+    let selectedSlot = null;
+    let fp = null; // flatpickr instance
+
+    function usesSlots(service) {
+        return SLOT_SERVICES.includes(service);
+    }
 
     function updateBookingSummary() {
         const summary = document.getElementById('booking-summary');
         if (!summary) return;
 
         const priceStr = selectedServicePrice ? `€${selectedServicePrice}` : null;
+        const needsSlot = usesSlots(selectedService);
 
-        if (selectedServiceName && selectedDate) {
+        if (needsSlot && selectedServiceName && selectedDate && selectedSlot) {
+            summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · ${selectedDate} · ${selectedSlot} · Total: ${priceStr}`;
+        } else if (!needsSlot && selectedServiceName && selectedDate) {
             summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · ${selectedDate} · Total: ${priceStr}`;
+        } else if (selectedServiceName && selectedDate && needsSlot) {
+            summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · ${selectedDate} · Choose a time · Total: ${priceStr}`;
         } else if (selectedServiceName) {
             summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · Choose a date · Total: ${priceStr}`;
         } else if (selectedDate) {
@@ -354,38 +430,132 @@
         }
     }
 
+    function resetDateAndSlot() {
+        selectedDate = null;
+        selectedSlot = null;
+        document.getElementById('date-input').value = '';
+        document.getElementById('time-slot-input').value = '';
+        if (fp) {
+            fp.clear();
+        }
+        hideSlotStep();
+    }
+
+    function hideSlotStep() {
+        const step = document.getElementById('slot-step');
+        step.classList.remove('visible');
+        document.getElementById('slot-grid').innerHTML = '';
+        document.getElementById('slot-empty-note').style.display = 'none';
+    }
+
     function selectService(el) {
         document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
         el.classList.add('selected');
 
+        const previousService = selectedService;
         selectedService = el.dataset.service;
         selectedServiceName = el.dataset.label;
         selectedServicePrice = el.dataset.price;
 
         document.getElementById('service-input').value = selectedService;
+
+        // Date/slot validity depends on the service — clear stale selections on change
+        if (previousService !== selectedService) {
+            resetDateAndSlot();
+        }
+
+        document.getElementById('booking-date').disabled = false;
+        document.getElementById('date-help-text').textContent = usesSlots(selectedService)
+            ? 'Choose an available date, then pick a time in the next step.'
+            : 'Each day is limited to two readings. Unavailable dates are greyed out.';
+
+        document.getElementById('details-step-number').textContent = usesSlots(selectedService) ? '04' : '03';
+
+        loadUnavailableDates(selectedService);
         updateBookingSummary();
     }
 
+    function loadUnavailableDates(service) {
+        fetch(`{% url 'unavailable_dates' %}?service=${encodeURIComponent(service)}`)
+            .then(res => res.json())
+            .then(data => initFlatpickr(data.unavailable))
+            .catch(err => {
+                console.error('Failed to load unavailable dates:', err);
+                initFlatpickr([]);
+            });
+    }
+
     function initFlatpickr(unavailableDates) {
-        flatpickr("#booking-date", {
+        if (fp) {
+            fp.destroy();
+        }
+        fp = flatpickr("#booking-date", {
             minDate: "today",
             disable: unavailableDates || [],
             dateFormat: "Y-m-d",
             onChange: function(selectedDates, dateStr) {
                 selectedDate = dateStr;
                 document.getElementById('date-input').value = dateStr;
+                selectedSlot = null;
+                document.getElementById('time-slot-input').value = '';
+
+                if (usesSlots(selectedService)) {
+                    loadSlots(selectedService, dateStr);
+                } else {
+                    hideSlotStep();
+                }
                 updateBookingSummary();
             }
         });
     }
 
-    fetch("{% url 'unavailable_dates' %}")
-        .then(res => res.json())
-        .then(data => initFlatpickr(data.unavailable))
-        .catch(err => {
-            console.error('Failed to load unavailable dates:', err);
-            initFlatpickr([]);
+    function loadSlots(service, dateStr) {
+        const step = document.getElementById('slot-step');
+        const grid = document.getElementById('slot-grid');
+        const emptyNote = document.getElementById('slot-empty-note');
+
+        step.classList.add('visible');
+        grid.innerHTML = '<p class="text-muted" style="font-style: italic;">Loading available times…</p>';
+        emptyNote.style.display = 'none';
+
+        fetch(`{% url 'available_slots' %}?service=${encodeURIComponent(service)}&date=${encodeURIComponent(dateStr)}`)
+            .then(res => res.json())
+            .then(data => renderSlots(data.slots || []))
+            .catch(err => {
+                console.error('Failed to load available slots:', err);
+                renderSlots([]);
+            });
+    }
+
+    function renderSlots(slots) {
+        const grid = document.getElementById('slot-grid');
+        const emptyNote = document.getElementById('slot-empty-note');
+        grid.innerHTML = '';
+
+        if (!slots.length) {
+            emptyNote.style.display = 'block';
+            return;
+        }
+        emptyNote.style.display = 'none';
+
+        slots.forEach(slot => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'slot-option';
+            btn.textContent = slot;
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.slot-option').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedSlot = slot;
+                document.getElementById('time-slot-input').value = slot;
+                updateBookingSummary();
+            });
+            grid.appendChild(btn);
         });
+    }
+
+    // Initial state: date field disabled until a service is chosen
+    document.getElementById('booking-date').disabled = true;
 
     document.getElementById('booking-form').addEventListener('submit', function(e) {
         if (!selectedService) {
@@ -396,6 +566,11 @@
         if (!document.getElementById('date-input').value) {
             e.preventDefault();
             alert('Please select a date before proceeding.');
+            return;
+        }
+        if (usesSlots(selectedService) && !document.getElementById('time-slot-input').value) {
+            e.preventDefault();
+            alert('Please select a time before proceeding.');
             return;
         }
         document.querySelector('#booking-form button[type="submit"]').disabled = true;

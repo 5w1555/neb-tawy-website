@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('booking/', views.booking, name='booking'),
     path('booking/unavailable/', views.get_unavailable_dates, name='unavailable_dates'),
+    path('booking/available-slots/', views.get_available_slots, name='available_slots'),
     path('booking/payment/<int:booking_id>/', views.payment, name='payment'),
     path('booking/success/', views.payment_success, name='payment_success'),
     path('booking/cancel/', views.payment_cancel, name='payment_cancel'),
