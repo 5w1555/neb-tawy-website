@@ -84,6 +84,7 @@ class BookingAdmin(admin.ModelAdmin):
         "time_slot",
         "paid_badge",
         "email",
+        "phone",
         "message_preview",
         "created_at",
     ]
@@ -99,6 +100,7 @@ class BookingAdmin(admin.ModelAdmin):
         "first_name",
         "last_name",
         "email",
+        "phone",
         "message",
     ]
 
@@ -109,6 +111,7 @@ class BookingAdmin(admin.ModelAdmin):
         "first_name",
         "last_name",
         "email",
+        "phone",
         "message",
         "paid",
         "created_at",
@@ -128,6 +131,7 @@ class BookingAdmin(admin.ModelAdmin):
                 "first_name",
                 "last_name",
                 "email",
+                "phone",
             )
         }),
         ("Message", {
