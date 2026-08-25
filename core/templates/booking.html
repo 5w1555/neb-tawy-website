@@ -373,6 +373,11 @@
                 <input type="email" name="email" class="booking-input" required>
             </div>
 
+            <div class="form-group" id="phone-group" style="display:none;">
+                <label class="form-label">Phone number <span class="text-muted">(we'll call you at this number)</span></label>
+                <input type="tel" name="phone" id="phone-input" class="booking-input">
+            </div>
+
             <div class="form-group">
                 <label class="form-label">Your message <span class="text-muted">(optional)</span></label>
                 <textarea name="message" class="booking-input" rows="4" placeholder="Share your question, intention, or anything you would like me to know before your reading..."></textarea>
@@ -471,6 +476,17 @@
             : 'Each day is limited to two readings. Unavailable dates are greyed out.';
 
         document.getElementById('details-step-number').textContent = usesSlots(selectedService) ? '04' : '03';
+
+        const phoneGroup = document.getElementById('phone-group');
+        const phoneInput = document.getElementById('phone-input');
+        if (selectedService === 'signature_guidance') {
+            phoneGroup.style.display = 'block';
+            phoneInput.required = true;
+        } else {
+            phoneGroup.style.display = 'none';
+            phoneInput.required = false;
+            phoneInput.value = '';
+        }
 
         loadUnavailableDates(selectedService);
         updateBookingSummary();

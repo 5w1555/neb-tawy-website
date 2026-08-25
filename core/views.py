@@ -290,6 +290,7 @@ def send_booking_notification(booking):
     sender = _get_sender_dict()
 
     slot_line = f"\nTime: {booking.time_slot}" if booking.time_slot else ""
+    zoom_line = f"\n\nZoom link: {settings.ZOOM_MEETING_LINK}" if booking.service == 'zoom_session' else ""
 
     owner_email = brevo_python.SendSmtpEmail(
         to=[{"email": settings.BOOKING_NOTIFICATION_EMAIL}],
@@ -322,7 +323,7 @@ Dear {booking.first_name},
 Your booking has been confirmed. Here are your details:
 
 Service: {SERVICE_NAMES.get(booking.service, booking.service)}
-Date: {booking.date.strftime('%B %d, %Y')}{slot_line}
+Date: {booking.date.strftime('%B %d, %Y')}{slot_line}{zoom_line}
 
 If you have any questions, simply reply to this email.
 
