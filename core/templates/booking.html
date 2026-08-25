@@ -21,9 +21,10 @@
         color: var(--bg-primary) !important;
     }
 
-    .flatpickr-day.disabled {
+    .flatpickr-day.flatpickr-disabled,
+    .flatpickr-day.flatpickr-disabled:hover {
         color: var(--text-muted) !important;
-        opacity: 0.3;
+        opacity: 0.3 !important;
     }
 
     .flatpickr-months,
@@ -494,10 +495,17 @@
             disable: unavailableDates || [],
             dateFormat: "Y-m-d",
             onChange: function(selectedDates, dateStr) {
-                selectedDate = dateStr;
+                selectedDate = dateStr || null;
                 document.getElementById('date-input').value = dateStr;
                 selectedSlot = null;
                 document.getElementById('time-slot-input').value = '';
+
+                if (!dateStr) {
+                    // fp.clear() fires onChange with an empty dateStr — nothing to fetch
+                    hideSlotStep();
+                    updateBookingSummary();
+                    return;
+                }
 
                 if (usesSlots(selectedService)) {
                     loadSlots(selectedService, dateStr);
