@@ -1,6 +1,7 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +19,24 @@
         <div class="nav-logo">✦ Neb Tawy</div>
 
         <ul class="nav-links">
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'booking' %}">Book</a></li>
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="{% url 'legal' %}">Legal Notice</a></li>
+            <li><a href="{% url 'index' %}">{% trans "Home" %}</a></li>
+            <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+            <li><a href="{% url 'booking' %}">{% trans "Book" %}</a></li>
+            <li><a href="{% url 'blog' %}">{% trans "Blog" %}</a></li>
+            <li><a href="{% url 'legal' %}">{% trans "Legal Notice" %}</a></li>
+            <li class="nav-lang-switch">
+                <form action="{% url 'set_language' %}" method="post" id="lang-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    {% get_current_language as CURRENT_LANGUAGE %}
+                    {% get_available_languages as AVAILABLE_LANGUAGES %}
+                    <select name="language" onchange="document.getElementById('lang-form').submit()">
+                        {% for code, name in AVAILABLE_LANGUAGES %}
+                            <option value="{{ code }}" {% if code == CURRENT_LANGUAGE %}selected{% endif %}>{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </li>
         </ul>
     </nav>
 
@@ -31,10 +45,10 @@
     </main>
 
     <footer class="footer">
-        <p>© 2026 Neb Tawy — All rights reserved</p>
+        <p>{% blocktrans %}© 2026 Neb Tawy — All rights reserved{% endblocktrans %}</p>
 
         {# Hidden for demo, still accessible by direct URL #}
-        {# <p><a href="{% url 'legal' %}">Legal Notice</a></p> #}
+        {# <p><a href="{% url 'legal' %}">{% trans "Legal Notice" %}</a></p> #}
     </footer>
 
     {% block extra_js %}{% endblock %}

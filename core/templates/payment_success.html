@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Booking Confirmed — Neb Tawy{% endblock %}
+{% block title %}{% trans "Booking Confirmed" %} — Neb Tawy{% endblock %}
 
 {% block content %}
 <section class="hero">
     <div class="gold-divider">◈</div>
-    <h1>Booking Confirmed</h1>
-    <p class="hero-tagline">Your reading has been reserved.</p>
+    <h1>{% trans "Booking Confirmed" %}</h1>
+    <p class="hero-tagline">{% trans "Your reading has been reserved." %}</p>
     <p class="text-muted" style="font-style: italic; margin-bottom: 2rem;">
-        You will receive a confirmation by email. If you included a question or intention, it will be used to prepare your session and may be addressed during your reading. If you have any questions or need to reschedule, please contact me at: Nebtawy@outlook.com. <a href="mailto:nebtawy@outlook.com"></a>.
+       {% blocktrans %}You will receive a confirmation by email. If you included a question or intention, it will be used to prepare your session and may be addressed during your reading. If you have any questions or need to reschedule, please contact me at{% endblocktrans %}: <a href="mailto:nebtawy@outlook.com">nebtawy@outlook.com</a>.
     </p>
-    <a href="{% url 'index' %}" class="btn-gold">Return home</a>
+    <a href="{% url 'index' %}" class="btn-gold">{% trans "Return home" %}</a>
 </section>
 {% endblock %}

@@ -12,6 +12,5 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('blog/<slug:slug>/', views.post_detail, name='post_detail'),
     path('mentions-legales/', views.legal, name='legal'),
-    path('stripe/webhook/', views.stripe_webhook, name='stripe_webhook'),
     path('about/', views.about, name='about'),
 ]

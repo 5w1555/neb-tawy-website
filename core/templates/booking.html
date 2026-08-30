@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Book a Reading — Neb Tawy{% endblock %}
+{% block title %}{% trans "Book a Reading" %} — Neb Tawy{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -215,10 +216,10 @@
     <div class="particles" id="particles"></div>
 
     <div class="hero-content booking-intro">
-        <h1>Book a Private Reading</h1>
-        <p class="hero-subtitle">Private guidance · from €25</p>
+        <h1>{% trans "Book a Private Reading" %}</h1>
+        <p class="hero-subtitle">{% blocktrans %}Private guidance · from €25{% endblocktrans %}</p>
         <p class="hero-tagline">
-            Set your intentions, choose a session and received a reading prepared with care.
+            {% trans "Set your intentions, choose a session and received a reading prepared with care." %}
         </p>
     </div>
 </section>
@@ -226,91 +227,78 @@
 <section class="section booking-shell">
 
     <p class="booking-note reveal">
-        Each reading is private and centered on your question or intention.
-        Select the service that calls to you, choose an available date, then leave a few words
-        about what you are seeking.
+        {% blocktrans %}Each reading is private and centered on your question or intention. Select the service that calls to you, choose an available date, then leave a few words about what you are seeking.{% endblocktrans %}
     </p>
 
     <div class="booking-step reveal">
         <h2 class="booking-step-title">
             <span class="booking-step-number">01</span>
-            Choose your service
+            {% trans "Choose your service" %}
         </h2>
 
         <div class="service-grid">
 
-            <div class="service-card reveal reveal-delay-1" data-service="focused_reading" data-price="25" data-label="Focused Reading" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-1" data-service="focused_reading" data-price="25" data-label="{% trans 'Focused Reading' %}" onclick="selectService(this)">
                 <div>
-                    <h3>Focused Reading</h3>
+                    <h3>{% trans "Focused Reading" %}</h3>
                     <p class="text-muted">
-                        Are you looking for clarity on a specific situation? This reading is ideal for
-                        answering a single question through a three-card draw. Every reading is fully
-                        personalized to offer you clear, nuanced guidance adapted to your situation.
+                        {% blocktrans %}Are you looking for clarity on a specific situation? This reading is ideal for answering a single question through a three-card draw. Every reading is fully personalized to offer you clear, nuanced guidance adapted to your situation.{% endblocktrans %}
                     </p>
                     <ul class="service-card-includes">
-                        <li>One specific question</li>
-                        <li>Three-card draw</li>
-                        <li>Audio or text format</li>
-                        <li>Delivered within 48 hours</li>
+                        <li>{% trans "One specific question" %}</li>
+                        <li>{% trans "Three-card draw" %}</li>
+                        <li>{% trans "Audio or text format" %}</li>
+                        <li>{% trans "Delivered within 48 hours" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€25</span>
             </div>
 
-            <div class="service-card reveal reveal-delay-2" data-service="indepth_guidance" data-price="50" data-label="In-Depth Guidance" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-2" data-service="indepth_guidance" data-price="50" data-label="{% trans 'In-Depth Guidance' %}" onclick="selectService(this)">
                 <div>
-                    <h3>In-Depth Guidance</h3>
+                    <h3>{% trans "In-Depth Guidance" %}</h3>
                     <p class="text-muted">
-                        For those who want to explore an important area of their life in depth:
-                        relationships, career, personal development, life choices, or a period of
-                        transition. Through a six-card draw, I read the energies at play, any
-                        blockages, the resources available to you, and the paths forward — to offer
-                        detailed, personalized guidance.
+                        {% blocktrans %}For those who want to explore an important area of their life in depth: relationships, career, personal development, life choices, or a period of transition. Through a six-card draw, I read the energies at play, any blockages, the resources available to you, and the paths forward — to offer detailed, personalized guidance.{% endblocktrans %}
                     </p>
                     <ul class="service-card-includes">
-                        <li>One theme of your choice</li>
-                        <li>Six-card draw</li>
-                        <li>Detailed analysis</li>
-                        <li>Delivered in audio or text format</li>
-                        <li>Delivered within 48 hours (barring exceptional delays)</li>
+                        <li>{% trans "One theme of your choice" %}</li>
+                        <li>{% trans "Six-card draw" %}</li>
+                        <li>{% trans "Detailed analysis" %}</li>
+                        <li>{% trans "Delivered in audio or text format" %}</li>
+                        <li>{% trans "Delivered within 48 hours (barring exceptional delays)" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€50</span>
             </div>
 
-            <div class="service-card reveal reveal-delay-3" data-service="signature_guidance" data-price="135" data-label="Signature Guidance" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-3" data-service="signature_guidance" data-price="135" data-label="{% trans 'Signature Guidance' %}" onclick="selectService(this)">
                 <div>
-                    <h3>Signature Guidance</h3>
+                    <h3>{% trans "Signature Guidance" %}</h3>
                 <p class="text-muted">
-                Designed for those seeking a deeper, more complete understanding of their situation.
-                During a private phone call reading, we’ll explore three themes of your choice in depth — from love and career to personal growth, family, finances, and more.
-                As the reading unfolds, we can explore what comes through, go deeper where needed, and address your questions in real time, creating a truly personal and interactive experience.
+                {% blocktrans %}Designed for those seeking a deeper, more complete understanding of their situation. During a private phone call reading, we'll explore three themes of your choice in depth — from love and career to personal growth, family, finances, and more. As the reading unfolds, we can explore what comes through, go deeper where needed, and address your questions in real time, creating a truly personal and interactive experience.{% endblocktrans %}
                 </p>
                     <ul class="service-card-includes">
-                        <li>Personalized analysis </li>
-                        <li>Explore up to 3 themes</li>
-                        <li>30-minutes private phone call reading</li>
-                        <li>Opportunity to ask questions during the reading</li>
-                        <li>Phone call can be recorded upon request</li>
+                        <li>{% trans "Personalized analysis" %}</li>
+                        <li>{% trans "Explore up to 3 themes" %}</li>
+                        <li>{% trans "30-minutes private phone call reading" %}</li>
+                        <li>{% trans "Opportunity to ask questions during the reading" %}</li>
+                        <li>{% trans "Phone call can be recorded upon request" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€135</span>
             </div>
 
-            <div class="service-card reveal reveal-delay-1" data-service="zoom_session" data-price="150" data-label="Zoom Session" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-1" data-service="zoom_session" data-price="150" data-label="{% trans 'Zoom Session' %}" onclick="selectService(this)">
                 <div>
-                    <h3>Zoom Session</h3>
+                    <h3>{% trans "Zoom Session" %}</h3>
                     <p class="text-muted">
-                        The most complete experience Neb Tawy offers. For 45 minutes, we connect
-                        live to talk through your situation. Tarot guides the session, and where it
-                        feels right, divination wands are used as well — reserved exclusively for
-                        live video sessions.
+                        {% blocktrans %}The most complete experience Neb Tawy offers. For 45 minutes, we connect live to talk through your situation. Tarot guides the session, and where it feels right, divination wands are used as well — reserved exclusively for live video sessions.{% endblocktrans %}
                     </p>
                     <ul class="service-card-includes">
-                        <li>45 minutes on Zoom</li>
-                        <li>Live tarot draw</li>
-                        <li>Personalized conversation</li>
-                        <li>Divination wands when appropriate</li>
+                        <li>{% trans "45 minutes on Zoom" %}</li>
+                        <li>{% trans "Live tarot draw" %}</li>
+                        <li>{% trans "Personalized conversation" %}</li>
+                        <li>{% trans "Divination wands when appropriate" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€150</span>
@@ -322,32 +310,32 @@
     <div class="booking-step reveal">
         <h2 class="booking-step-title">
             <span class="booking-step-number">02</span>
-            Choose a date
+            {% trans "Choose a date" %}
         </h2>
 
         <p class="text-muted" id="date-help-text" style="margin-bottom: 1.5rem; font-style: italic;">
-            Please select a service first.
+            {% trans "Please select a service first." %}
         </p>
 
-        <input type="text" id="booking-date" placeholder="Select a date" class="booking-input" readonly disabled>
+        <input type="text" id="booking-date" placeholder="{% trans 'Select a date' %}" class="booking-input" readonly disabled>
     </div>
 
     <div class="booking-step reveal" id="slot-step">
         <h2 class="booking-step-title">
             <span class="booking-step-number">03</span>
-            Choose a time
+            {% trans "Choose a time" %}
         </h2>
 
         <div class="slot-grid" id="slot-grid"></div>
         <p class="slot-empty-note" id="slot-empty-note" style="display:none;">
-            No times remain available for this date. Please choose another date.
+            {% trans "No times remain available for this date. Please choose another date." %}
         </p>
     </div>
 
     <div class="booking-step reveal">
         <h2 class="booking-step-title">
             <span class="booking-step-number" id="details-step-number">03</span>
-            Your details
+            {% trans "Your details" %}
         </h2>
 
         <form id="booking-form" method="POST" action="{% url 'booking' %}">
@@ -358,38 +346,38 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label class="form-label">First name</label>
+                    <label class="form-label">{% trans "First name" %}</label>
                     <input type="text" name="first_name" class="booking-input" required>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Last name</label>
+                    <label class="form-label">{% trans "Last name" %}</label>
                     <input type="text" name="last_name" class="booking-input" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Email address</label>
+                <label class="form-label">{% trans "Email address" %}</label>
                 <input type="email" name="email" class="booking-input" required>
             </div>
 
             <div class="form-group" id="phone-group" style="display:none;">
-                <label class="form-label">Phone number <span class="text-muted">(we'll call you at this number)</span></label>
+                <label class="form-label">{% trans "Phone number" %} <span class="text-muted">({% trans "we'll call you at this number" %})</span></label>
                 <input type="tel" name="phone" id="phone-input" class="booking-input">
             </div>
 
             <div class="form-group">
-                <label class="form-label">Your message <span class="text-muted">(optional)</span></label>
-                <textarea name="message" class="booking-input" rows="4" placeholder="Share your question, intention, or anything you would like me to know before your reading..."></textarea>
+                <label class="form-label">{% trans "Your message" %} <span class="text-muted">({% trans "optional" %})</span></label>
+                <textarea name="message" class="booking-input" rows="4" placeholder="{% trans 'Share your question, intention, or anything you would like me to know before your reading...' %}"></textarea>
             </div>
 
             <div class="booking-summary" id="booking-summary">
-                <strong>Your reading</strong><br>
-                Select a service and date to continue.
+                <strong>{% trans "Your reading" %}</strong><br>
+                {% trans "Select a service and date to continue." %}
             </div>
 
             <div style="text-align: center; margin-top: 2.5rem;">
-                <button type="submit" class="btn-gold">Proceed to payment</button>
+                <button type="submit" class="btn-gold">{% trans "Proceed to payment" %}</button>
             </div>
         </form>
     </div>
@@ -401,6 +389,23 @@
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
+    // Translated strings used by JS below — keeps runtime-generated text
+    // in sync with the same .po files as the template strings above.
+    const I18N = {
+        yourReading: "{% trans 'Your reading' %}",
+        chooseServiceAndDate: "{% trans 'Select a service and date to continue.' %}",
+        chooseDate: "{% trans 'Choose a date' %}",
+        chooseTime: "{% trans 'Choose a time' %}",
+        chooseService: "{% trans 'Choose a service' %}",
+        total: "{% trans 'Total' %}",
+        slotHelpText: "{% trans 'Choose an available date, then pick a time in the next step.' %}",
+        noSlotHelpText: "{% trans 'Each day is limited to two readings. Unavailable dates are greyed out.' %}",
+        loadingTimes: "{% trans 'Loading available times…' %}",
+        selectServiceAlert: "{% trans 'Please select a service before proceeding.' %}",
+        selectDateAlert: "{% trans 'Please select a date before proceeding.' %}",
+        selectTimeAlert: "{% trans 'Please select a time before proceeding.' %}",
+    };
+
     const SLOT_SERVICES = ['signature_guidance', 'zoom_session'];
 
     let selectedService = null;
@@ -422,17 +427,17 @@
         const needsSlot = usesSlots(selectedService);
 
         if (needsSlot && selectedServiceName && selectedDate && selectedSlot) {
-            summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · ${selectedDate} · ${selectedSlot} · Total: ${priceStr}`;
+            summary.innerHTML = `<strong>${I18N.yourReading}</strong><br>${selectedServiceName} · ${selectedDate} · ${selectedSlot} · ${I18N.total}: ${priceStr}`;
         } else if (!needsSlot && selectedServiceName && selectedDate) {
-            summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · ${selectedDate} · Total: ${priceStr}`;
+            summary.innerHTML = `<strong>${I18N.yourReading}</strong><br>${selectedServiceName} · ${selectedDate} · ${I18N.total}: ${priceStr}`;
         } else if (selectedServiceName && selectedDate && needsSlot) {
-            summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · ${selectedDate} · Choose a time · Total: ${priceStr}`;
+            summary.innerHTML = `<strong>${I18N.yourReading}</strong><br>${selectedServiceName} · ${selectedDate} · ${I18N.chooseTime} · ${I18N.total}: ${priceStr}`;
         } else if (selectedServiceName) {
-            summary.innerHTML = `<strong>Your reading</strong><br>${selectedServiceName} · Choose a date · Total: ${priceStr}`;
+            summary.innerHTML = `<strong>${I18N.yourReading}</strong><br>${selectedServiceName} · ${I18N.chooseDate} · ${I18N.total}: ${priceStr}`;
         } else if (selectedDate) {
-            summary.innerHTML = `<strong>Your reading</strong><br>Choose a service · ${selectedDate}`;
+            summary.innerHTML = `<strong>${I18N.yourReading}</strong><br>${I18N.chooseService} · ${selectedDate}`;
         } else {
-            summary.innerHTML = `<strong>Your reading</strong><br>Select a service and date to continue.`;
+            summary.innerHTML = `<strong>${I18N.yourReading}</strong><br>${I18N.chooseServiceAndDate}`;
         }
     }
 
@@ -472,8 +477,8 @@
 
         document.getElementById('booking-date').disabled = false;
         document.getElementById('date-help-text').textContent = usesSlots(selectedService)
-            ? 'Choose an available date, then pick a time in the next step.'
-            : 'Each day is limited to two readings. Unavailable dates are greyed out.';
+            ? I18N.slotHelpText
+            : I18N.noSlotHelpText;
 
         document.getElementById('details-step-number').textContent = usesSlots(selectedService) ? '04' : '03';
 
@@ -539,7 +544,7 @@
         const emptyNote = document.getElementById('slot-empty-note');
 
         step.classList.add('visible');
-        grid.innerHTML = '<p class="text-muted" style="font-style: italic;">Loading available times…</p>';
+        grid.innerHTML = `<p class="text-muted" style="font-style: italic;">${I18N.loadingTimes}</p>`;
         emptyNote.style.display = 'none';
 
         fetch(`{% url 'available_slots' %}?service=${encodeURIComponent(service)}&date=${encodeURIComponent(dateStr)}`)
@@ -584,17 +589,17 @@
     document.getElementById('booking-form').addEventListener('submit', function(e) {
         if (!selectedService) {
             e.preventDefault();
-            alert('Please select a service before proceeding.');
+            alert(I18N.selectServiceAlert);
             return;
         }
         if (!document.getElementById('date-input').value) {
             e.preventDefault();
-            alert('Please select a date before proceeding.');
+            alert(I18N.selectDateAlert);
             return;
         }
         if (usesSlots(selectedService) && !document.getElementById('time-slot-input').value) {
             e.preventDefault();
-            alert('Please select a time before proceeding.');
+            alert(I18N.selectTimeAlert);
             return;
         }
         document.querySelector('#booking-form button[type="submit"]').disabled = true;

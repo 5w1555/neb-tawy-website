@@ -1,0 +1,778 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-30 15:26+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\divination_site\core\templates\about.html:5
+#: .\divination_site\core\templates\base.html:23
+msgid "About"
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:29
+msgid "ABOUT"
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:29
+msgid "NEB TAWY"
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:39
+msgid "Neb Tawy portrait"
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:41
+msgid "My Philosophy"
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:43
+msgid ""
+"Ever since I was a kid and for many years, spirituality was something I "
+"explored through religion. In 2022, my path shifted in a way I never "
+"expected. What began as a personal search for meaning became a profound "
+"journey inward, one that transformed the way I understand intuition, "
+"consciousness and the unseen world."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:45
+msgid ""
+"Although I had experienced intuitive moments throughout my life, it was "
+"during this period that I became fully aware of my own intuitive abilities. "
+"Rather than learning tarot through traditional study, I discovered that my "
+"relationship with the cards developed naturally through practice, meditation "
+"and trust in my own inner guidance."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:47
+msgid ""
+"Today, tarot has become one of the ways I help others reconnect with "
+"themselves. I do not see tarot as a tool that predicts a fixed future."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:49
+msgid ""
+"To me, every reading is an invitation to better understand the present: to "
+"uncover hidden emotional patterns, recognize unconscious dynamics and "
+"explore the possibilities that exist within the current moment."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:51
+msgid ""
+"Our choices, our beliefs and our awareness all shape the paths available to "
+"us. Rather than telling you who you are or what must happen, the cards "
+"encourage reflection, clarity and empowerment."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:53
+msgid ""
+"This is why I ask for as little information as possible before each reading. "
+"A simple question is often enough. Allowing the cards to speak before the "
+"story helps me approach each reading with openness, intuition and as little "
+"personal bias as possible. Alongside tarot, I also work with dowsing rods "
+"when deeper energetic clarification is needed. They are another intuitive "
+"tool that occasionally complements my readings."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:55
+msgid ""
+"My personal spiritual path is deeply connected to what I describe as the "
+"energy of the Dragon Rider. Within my own practice, dragons represent "
+"wisdom, transformation, courage and protection. I experience them as "
+"spiritual allies who accompany my intuitive work and help me remain "
+"connected to my higher self and inner guidance. While every person's "
+"spiritual journey is unique, this symbolic relationship forms an important "
+"part of mine."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:57
+msgid ""
+"Above all, my intention is never simply to provide answers. It is to help "
+"you understand yourself more deeply."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:59
+msgid ""
+"My hope is that every reading leaves you with more than guidance, it leaves "
+"you feeling clearer, more empowered and more connected to your own path."
+msgstr ""
+
+#: .\divination_site\core\templates\about.html:67
+#: .\divination_site\core\templates\index.html:16
+#: .\divination_site\core\templates\index.html:31
+#: .\divination_site\core\templates\index.html:163
+msgid "Book a reading"
+msgstr ""
+
+#: .\divination_site\core\templates\base.html:22
+msgid "Home"
+msgstr ""
+
+#: .\divination_site\core\templates\base.html:24
+msgid "Book"
+msgstr ""
+
+#: .\divination_site\core\templates\base.html:25
+#: .\divination_site\core\templates\blog.html:4
+#: .\divination_site\core\templates\blog.html:10
+msgid "Blog"
+msgstr ""
+
+#: .\divination_site\core\templates\base.html:26
+#: .\divination_site\core\templates\mentions-legales.html:4
+#: .\divination_site\core\templates\mentions-legales.html:10
+msgid "Legal Notice"
+msgstr ""
+
+#: .\divination_site\core\templates\base.html:48
+msgid "© 2026 Neb Tawy — All rights reserved"
+msgstr ""
+
+#: .\divination_site\core\templates\blog.html:11
+msgid "My thoughts and musings"
+msgstr ""
+
+#: .\divination_site\core\templates\blog.html:23
+msgid "Read more"
+msgstr ""
+
+#: .\divination_site\core\templates\blog.html:29
+msgid "No posts yet — come back soon."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:4
+msgid "Book a Reading"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:219
+msgid "Book a Private Reading"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:220
+msgid "Private guidance · from €25"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:222
+msgid ""
+"Set your intentions, choose a session and received a reading prepared with "
+"care."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:230
+msgid ""
+"Each reading is private and centered on your question or intention. Select "
+"the service that calls to you, choose an available date, then leave a few "
+"words about what you are seeking."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:236
+msgid "Choose your service"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:241
+#: .\divination_site\core\templates\booking.html:243
+#: .\divination_site\core\templates\index.html:59
+msgid "Focused Reading"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:245
+msgid ""
+"Are you looking for clarity on a specific situation? This reading is ideal "
+"for answering a single question through a three-card draw. Every reading is "
+"fully personalized to offer you clear, nuanced guidance adapted to your "
+"situation."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:248
+#: .\divination_site\core\templates\index.html:64
+msgid "One specific question"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:249
+#: .\divination_site\core\templates\index.html:65
+msgid "Three-card draw"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:250
+msgid "Audio or text format"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:251
+msgid "Delivered within 48 hours"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:257
+#: .\divination_site\core\templates\booking.html:259
+#: .\divination_site\core\templates\index.html:74
+msgid "In-Depth Guidance"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:261
+msgid ""
+"For those who want to explore an important area of their life in depth: "
+"relationships, career, personal development, life choices, or a period of "
+"transition. Through a six-card draw, I read the energies at play, any "
+"blockages, the resources available to you, and the paths forward — to offer "
+"detailed, personalized guidance."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:264
+#: .\divination_site\core\templates\index.html:79
+msgid "One theme of your choice"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:265
+#: .\divination_site\core\templates\index.html:80
+msgid "Six-card draw"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:266
+#: .\divination_site\core\templates\index.html:81
+msgid "Detailed analysis"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:267
+#: .\divination_site\core\templates\index.html:66
+#: .\divination_site\core\templates\index.html:82
+msgid "Delivered in audio or text format"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:268
+#: .\divination_site\core\templates\index.html:67
+#: .\divination_site\core\templates\index.html:83
+msgid "Delivered within 48 hours (barring exceptional delays)"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:274
+#: .\divination_site\core\templates\booking.html:276
+#: .\divination_site\core\templates\index.html:90
+msgid "Signature Guidance"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:278
+#: .\divination_site\core\templates\index.html:92
+msgid ""
+"Designed for those seeking a deeper, more complete understanding of their "
+"situation. During a private phone call reading, we'll explore three themes "
+"of your choice in depth — from love and career to personal growth, family, "
+"finances, and more. As the reading unfolds, we can explore what comes "
+"through, go deeper where needed, and address your questions in real time, "
+"creating a truly personal and interactive experience."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:281
+#: .\divination_site\core\templates\index.html:95
+msgid "Personalized analysis"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:282
+#: .\divination_site\core\templates\index.html:96
+msgid "Explore up to 3 themes"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:283
+#: .\divination_site\core\templates\index.html:97
+msgid "30-minutes private phone call reading"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:284
+#: .\divination_site\core\templates\index.html:98
+msgid "Opportunity to ask questions during the reading"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:285
+#: .\divination_site\core\templates\index.html:99
+msgid "Phone call can be recorded upon request"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:291
+#: .\divination_site\core\templates\booking.html:293
+#: .\divination_site\core\templates\index.html:106
+msgid "Zoom Session"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:295
+#: .\divination_site\core\templates\index.html:108
+msgid ""
+"The most complete experience Neb Tawy offers. For 45 minutes, we connect "
+"live to talk through your situation. Tarot guides the session, and where it "
+"feels right, divination wands are used as well — reserved exclusively for "
+"live video sessions."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:298
+#: .\divination_site\core\templates\index.html:111
+msgid "45 minutes on Zoom"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:299
+#: .\divination_site\core\templates\index.html:112
+msgid "Live tarot draw"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:300
+#: .\divination_site\core\templates\index.html:113
+msgid "Personalized conversation"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:301
+msgid "Divination wands when appropriate"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:313
+#: .\divination_site\core\templates\booking.html:397
+msgid "Choose a date"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:317
+msgid "Please select a service first."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:320
+msgid "Select a date"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:326
+#: .\divination_site\core\templates\booking.html:398
+msgid "Choose a time"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:331
+msgid "No times remain available for this date. Please choose another date."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:338
+msgid "Your details"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:349
+msgid "First name"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:354
+msgid "Last name"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:360
+#: .\divination_site\core\templates\mentions-legales.html:81
+msgid "Email address"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:365
+msgid "Phone number"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:365
+msgid "we'll call you at this number"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:370
+msgid "Your message"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:370
+msgid "optional"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:371
+msgid ""
+"Share your question, intention, or anything you would like me to know before "
+"your reading..."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:375
+#: .\divination_site\core\templates\booking.html:395
+msgid "Your reading"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:376
+#: .\divination_site\core\templates\booking.html:396
+msgid "Select a service and date to continue."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:380
+msgid "Proceed to payment"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:399
+msgid "Choose a service"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:400
+msgid "Total"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:401
+msgid "Choose an available date, then pick a time in the next step."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:402
+msgid "Each day is limited to two readings. Unavailable dates are greyed out."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:403
+msgid "Loading available times…"
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:404
+msgid "Please select a service before proceeding."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:405
+msgid "Please select a date before proceeding."
+msgstr ""
+
+#: .\divination_site\core\templates\booking.html:406
+msgid "Please select a time before proceeding."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:5
+#: .\divination_site\core\templates\index.html:15
+msgid "Private Tarot Readings & Spiritual Guidance"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:20
+msgid "Scroll"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:29
+msgid "Guidance for the Path Ahead"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:30
+msgid ""
+"Thoughtful tarot readings for moments of uncertainty, growth, and "
+"transformation."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:38
+msgid "Guidance with care"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:41
+msgid ""
+"With Neb Tawy, tarot readings are a space for reflection, insight, and "
+"meaningful conversation. Each reading is designed to help you explore your "
+"questions, recognize patterns, and move forward with greater clarity and "
+"intention."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:51
+msgid "The Services"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:53
+msgid "Each guidance is prepared individually, with care and intention."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:61
+msgid ""
+"Looking for insight on a specific situation? This reading is ideal for "
+"answering a single question through a three-card draw. Every reading is "
+"fully personalized to offer you clear, nuanced guidance tailored to your "
+"situation."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:70
+#: .\divination_site\core\templates\index.html:86
+#: .\divination_site\core\templates\index.html:102
+#: .\divination_site\core\templates\index.html:117
+msgid "Book this session"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:76
+msgid ""
+"For those who want to explore an important area of their life in depth: "
+"relationships, career, personal development, life choices, or a period of "
+"transition. Through a six-card draw, I read the energies at play, any "
+"blockages, the resources available to you, and the paths forward, to offer "
+"detailed, personalized guidance."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:114
+msgid "Divination wands used when appropriate"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:125
+msgid "Before We Begin"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:127
+msgid ""
+"Bookings are intentionally limited to preserve the quality of every reading. "
+"The usual turnaround time is 48 hours. In the event of a delay, you will be "
+"notified and can choose to keep your booking or request a refund. These "
+"readings are offered as a space for reflection and personal support; they do "
+"not replace medical, legal, or psychological advice."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:137
+msgid "How it works"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:141
+msgid "Set Your Intention"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:142
+msgid ""
+"Begin with a clear question or the area of your life you would like to "
+"explore. A brief context is welcome if you feel it is necessary, but it is "
+"never required. Every guidance begins with your intention."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:145
+msgid "Choose Your Guidance"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:146
+msgid ""
+"Select the guidance that best suits your needs. Whether you are seeking "
+"clarity on a single question or a more in-depth exploration, each reading is "
+"prepared with the same care and attention."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:149
+msgid "Receive Your Guidance"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:150
+msgid ""
+"Your reading is prepared privately and delivered within 48 hours. Every "
+"guidance is created individually with care, intuition and respect for your "
+"personal journey."
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:159
+msgid "A respectful practice"
+msgstr ""
+
+#: .\divination_site\core\templates\index.html:161
+msgid ""
+"Readings are offered as spiritual insight, symbolic reflection, and personal "
+"guidance. They are not intended to replace medical, psychological, legal, or "
+"financial advice."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:16
+msgid "1. Site Publisher"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:17
+msgid "This website is published by:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:19
+msgid "Name:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:20
+msgid "Status:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:20
+msgid "Owner"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:21
+msgid "SIRET:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:22
+msgid "Email:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:23
+#: .\divination_site\core\templates\mentions-legales.html:33
+msgid "Address:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:24
+msgid "Phone:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:29
+msgid "2. Hosting"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:30
+msgid "This website is hosted by:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:32
+msgid "Host:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:34
+msgid "Website:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:39
+msgid "3. Services Offered"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:41
+msgid "Neb Tawy offers services for personal development purposes."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:44
+msgid ""
+"All sessions are conducted remotely. The reading is delivered by email "
+"within 2 business days of the chosen booking date."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:47
+msgid ""
+"In accordance with applicable law, all services are offered strictly for "
+"personal development purposes and do not constitute medical, psychological, "
+"or financial advice."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:52
+msgid "4. Payment Terms"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:54
+msgid ""
+"Payment is made online in full at the time of booking, via the secure "
+"platforms Stripe. No banking information is stored on this website."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:59
+msgid "5. Refund Policy"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:61
+msgid ""
+"If your reading cannot be provided by the practitioner for any reason, you "
+"will receive a full refund."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:64
+msgid ""
+"If the requested reading is not delivered within two (2) business days of "
+"your scheduled session, you will automatically receive a full refund."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:67
+msgid "This refund policy applies equally to phone and Zoom sessions."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:70
+msgid ""
+"Clients who do not attend their scheduled session, or who arrive more than "
+"fifteen (15) minutes late, will not be eligible for a refund. We recommend "
+"joining a few minutes early to avoid any delays."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:75
+msgid "6. Personal Data (GDPR)"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:77
+msgid "The following personal data is collected during the booking process:"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:80
+msgid "First and last name"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:82
+msgid "Optional message"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:85
+msgid ""
+"This data is used solely for processing the booking and delivering the "
+"service. It is never sold or shared with third parties."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:88
+msgid ""
+"Data is retained for 1 year / 3 years from the date of booking, after which "
+"it is permanently deleted."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:91
+msgid ""
+"In accordance with the General Data Protection Regulation (GDPR), you have "
+"the right to access, correct, or delete your personal data."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:96
+msgid "7. Intellectual Property"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:98
+msgid ""
+"All content on this website (text, visuals, design) is the exclusive "
+"property of Neb Tawy. Any reproduction without prior written permission is "
+"strictly prohibited."
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:103
+msgid "8. Applicable Law"
+msgstr ""
+
+#: .\divination_site\core\templates\mentions-legales.html:105
+msgid ""
+"This legal notice is governed by French law. In the event of a dispute, "
+"French courts shall have sole jurisdiction."
+msgstr ""
+
+#: .\divination_site\core\templates\payment_cancel.html:4
+#: .\divination_site\core\templates\payment_cancel.html:9
+msgid "Payment Cancelled"
+msgstr ""
+
+#: .\divination_site\core\templates\payment_cancel.html:10
+msgid "Your booking was not completed."
+msgstr ""
+
+#: .\divination_site\core\templates\payment_cancel.html:12
+msgid ""
+"There was an issue with your payment. Please try again or contact us for "
+"assistance."
+msgstr ""
+
+#: .\divination_site\core\templates\payment_cancel.html:14
+msgid "Try again"
+msgstr ""
+
+#: .\divination_site\core\templates\payment_success.html:4
+#: .\divination_site\core\templates\payment_success.html:9
+msgid "Booking Confirmed"
+msgstr ""
+
+#: .\divination_site\core\templates\payment_success.html:10
+msgid "Your reading has been reserved."
+msgstr ""
+
+#: .\divination_site\core\templates\payment_success.html:12
+msgid ""
+"You will receive a confirmation by email. If you included a question or "
+"intention, it will be used to prepare your session and may be addressed "
+"during your reading. If you have any questions or need to reschedule, please "
+"contact me at"
+msgstr ""
+
+#: .\divination_site\core\templates\payment_success.html:14
+msgid "Return home"
+msgstr ""
+
+#: .\divination_site\core\templates\post_detail.html:19
+msgid "← Back to blog"
+msgstr ""

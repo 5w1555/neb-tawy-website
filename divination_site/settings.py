@@ -40,6 +40,8 @@ CSRF_TRUSTED_ORIGINS = ["https://nebtawy.com", "https://www.nebtawy.com"]
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+ZOOM_MEETING_LINK = config("ZOOM_MEETING_LINK", default="")
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,6 +80,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -136,10 +139,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
+from django.utils.translation import gettext_lazy as _
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr"
+
+LANGUAGES = [
+    ("fr", _("Français")),
+    ("en", _("English")),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
 
 TIME_ZONE = "Europe/Paris"
 

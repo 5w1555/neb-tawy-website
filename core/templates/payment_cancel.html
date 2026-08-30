@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Payment Cancelled — Neb Tawy{% endblock %}
+{% block title %}{% trans "Payment Cancelled" %} — Neb Tawy{% endblock %}
 
 {% block content %}
 <section class="hero">
     <div class="gold-divider">◈</div>
-    <h1>Payment Cancelled</h1>
-    <p class="hero-tagline">Your booking was not completed.</p>
+    <h1>{% trans "Payment Cancelled" %}</h1>
+    <p class="hero-tagline">{% trans "Your booking was not completed." %}</p>
     <p class="text-muted" style="font-style: italic; margin-bottom: 2rem;">
-        There was an issue with your payment. Please try again or contact us for assistance.
+        {% trans "There was an issue with your payment. Please try again or contact us for assistance." %}
     </p>
-    <a href="{% url 'booking' %}" class="btn-gold">Try again</a>
+    <a href="{% url 'booking' %}" class="btn-gold">{% trans "Try again" %}</a>
 </section>
 {% endblock %}

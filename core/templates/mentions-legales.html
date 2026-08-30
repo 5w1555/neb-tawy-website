@@ -1,116 +1,108 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Legal Notice — Neb Tawy{% endblock %}
+{% block title %}{% trans "Legal Notice" %} — Neb Tawy{% endblock %}
 
 {% block content %}
 
 <section class="hero">
     <div class="gold-divider">◈</div>
-    <h1>Legal Notice</h1>
+    <h1>{% trans "Legal Notice" %}</h1>
 </section>
 
 <section class="section" style="max-width: 750px;">
 
     <div class="legal-block">
-        <h2>1. Site Publisher</h2>
-        <p>This website is published by:</p>
+        <h2>{% trans "1. Site Publisher" %}</h2>
+        <p>{% trans "This website is published by:" %}</p>
         <p>
-            <strong>Name:</strong> Kérima Idriss<br>
-            <strong>Status:</strong> Owner<br>
-            <strong>SIRET:</strong> 10898623300014<br>
-            <strong>Email:</strong> Nebtawy@outlook.com<br>
-            <strong>Address:</strong> 61 RUE DE LYON 75012 PARIS<br>
-            <strong>Phone:</strong> 
+            <strong>{% trans "Name:" %}</strong> Kérima Idriss<br>
+            <strong>{% trans "Status:" %}</strong> {% trans "Owner" %}<br>
+            <strong>{% trans "SIRET:" %}</strong> 10898623300014<br>
+            <strong>{% trans "Email:" %}</strong> Nebtawy@outlook.com<br>
+            <strong>{% trans "Address:" %}</strong> 61 RUE DE LYON 75012 PARIS<br>
+            <strong>{% trans "Phone:" %}</strong>
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>2. Hosting</h2>
-        <p>This website is hosted by:</p>
+        <h2>{% trans "2. Hosting" %}</h2>
+        <p>{% trans "This website is hosted by:" %}</p>
         <p>
-            <strong>Host:</strong> Render Services, Inc<br>
-            <strong>Address:</strong> 2261 Market Street, #4144, San Francisco, CA 94114, USA<br>
-            <strong>Website:</strong> render.com
+            <strong>{% trans "Host:" %}</strong> Render Services, Inc<br>
+            <strong>{% trans "Address:" %}</strong> 2261 Market Street, #4144, San Francisco, CA 94114, USA<br>
+            <strong>{% trans "Website:" %}</strong> render.com
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>3. Services Offered</h2>
+        <h2>{% trans "3. Services Offered" %}</h2>
         <p>
-            Neb Tawy offers services for personal development purposes.
+            {% trans "Neb Tawy offers services for personal development purposes." %}
         </p>
         <p>
-            All sessions are conducted remotely. The reading is delivered by email within 
-            2 business days of the chosen booking date.
+            {% blocktrans %}All sessions are conducted remotely. The reading is delivered by email within 2 business days of the chosen booking date.{% endblocktrans %}
         </p>
         <p style="font-style: italic; color: var(--text-muted);">
-            In accordance with applicable law, all services are offered strictly 
-            for personal development purposes and do not constitute medical, psychological, 
-            or financial advice.
+            {% blocktrans %}In accordance with applicable law, all services are offered strictly for personal development purposes and do not constitute medical, psychological, or financial advice.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>4. Payment Terms</h2>
+        <h2>{% trans "4. Payment Terms" %}</h2>
         <p>
-            Payment is made online in full at the time of booking, via the secure platforms 
-            Stripe. No banking information is stored on this website.
+            {% blocktrans %}Payment is made online in full at the time of booking, via the secure platforms Stripe. No banking information is stored on this website.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>5. Refund Policy</h2>
+        <h2>{% trans "5. Refund Policy" %}</h2>
         <p>
-            If your reading cannot be provided by the practitioner for any reason, you will receive a full refund.
+            {% trans "If your reading cannot be provided by the practitioner for any reason, you will receive a full refund." %}
         </p>
         <p>
-            If the requested reading is not delivered within two (2) business days of your scheduled session, you will automatically receive a full refund.
+            {% trans "If the requested reading is not delivered within two (2) business days of your scheduled session, you will automatically receive a full refund." %}
         </p>
         <p>
-            This refund policy applies equally to phone and Zoom sessions.
+            {% trans "This refund policy applies equally to phone and Zoom sessions." %}
         </p>
         <p>
-            Clients who do not attend their scheduled session, or who arrive more than fifteen (15) minutes late, will not be eligible for a refund. We recommend joining a few minutes early to avoid any delays.
+            {% blocktrans %}Clients who do not attend their scheduled session, or who arrive more than fifteen (15) minutes late, will not be eligible for a refund. We recommend joining a few minutes early to avoid any delays.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>6. Personal Data (GDPR)</h2>
+        <h2>{% trans "6. Personal Data (GDPR)" %}</h2>
         <p>
-            The following personal data is collected during the booking process:
+            {% trans "The following personal data is collected during the booking process:" %}
         </p>
         <ul class="legal-list">
-            <li>First and last name</li>
-            <li>Email address</li>
-            <li>Optional message</li>
+            <li>{% trans "First and last name" %}</li>
+            <li>{% trans "Email address" %}</li>
+            <li>{% trans "Optional message" %}</li>
         </ul>
         <p>
-            This data is used solely for processing the booking and delivering the service. 
-            It is never sold or shared with third parties.
+            {% blocktrans %}This data is used solely for processing the booking and delivering the service. It is never sold or shared with third parties.{% endblocktrans %}
         </p>
         <p>
-            Data is retained for 1 year / 3 years from the date of booking, 
-            after which it is permanently deleted.
+            {% blocktrans %}Data is retained for 1 year / 3 years from the date of booking, after which it is permanently deleted.{% endblocktrans %}
         </p>
         <p>
-            In accordance with the General Data Protection Regulation (GDPR), you have the 
-            right to access, correct, or delete your personal data.
+            {% blocktrans %}In accordance with the General Data Protection Regulation (GDPR), you have the right to access, correct, or delete your personal data.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>7. Intellectual Property</h2>
+        <h2>{% trans "7. Intellectual Property" %}</h2>
         <p>
-            All content on this website (text, visuals, design) is the exclusive property 
-            of Neb Tawy. Any reproduction without prior written permission is strictly prohibited.
+            {% blocktrans %}All content on this website (text, visuals, design) is the exclusive property of Neb Tawy. Any reproduction without prior written permission is strictly prohibited.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>8. Applicable Law</h2>
+        <h2>{% trans "8. Applicable Law" %}</h2>
         <p>
-            This legal notice is governed by French law. In the event of a dispute, 
-            French courts shall have sole jurisdiction.
+            {% blocktrans %}This legal notice is governed by French law. In the event of a dispute, French courts shall have sole jurisdiction.{% endblocktrans %}
         </p>
     </div>
 

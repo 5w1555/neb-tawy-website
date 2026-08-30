@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}About — Neb Tawy{% endblock %}
+{% block title %}{% trans "About" %} — Neb Tawy{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -25,7 +26,7 @@
     <div class="particles" id="particles"></div>
 
     <div class="hero-content about-hero-intro">
-        <h1>ABOUT<br>NEB TAWY</h1>
+        <h1>{% trans "ABOUT" %}<br>{% trans "NEB TAWY" %}</h1>
     </div>
 </section>
 
@@ -35,35 +36,35 @@
         <img 
         class="about-portrait" 
         src="{% static 'img/About.jpg' %}" 
-        alt="Neb Tawy portrait"
+        alt="{% trans "Neb Tawy portrait" %}"
     >
-        <h2>My Philosophy</h2>
-        <p class="text-muted intro-copy">
-Ever since I was a kid and for many years, spirituality was something I explored through religion. In 2022, my path shifted in a way I never expected. What began as a personal search for meaning became a profound journey inward, one that transformed the way I understand intuition, consciousness and the unseen world.
+        <h2>{% trans "My Philosophy" %}</h2>
+        <div class="text-muted intro-copy">
+            <p>{% blocktrans %}Ever since I was a kid and for many years, spirituality was something I explored through religion. In 2022, my path shifted in a way I never expected. What began as a personal search for meaning became a profound journey inward, one that transformed the way I understand intuition, consciousness and the unseen world.{% endblocktrans %}</p>
 
-Although I had experienced intuitive moments throughout my life, it was during this period that I became fully aware of my own intuitive abilities. Rather than learning tarot through traditional study, I discovered that my relationship with the cards developed naturally through practice, meditation and trust in my own inner guidance.
+            <p>{% blocktrans %}Although I had experienced intuitive moments throughout my life, it was during this period that I became fully aware of my own intuitive abilities. Rather than learning tarot through traditional study, I discovered that my relationship with the cards developed naturally through practice, meditation and trust in my own inner guidance.{% endblocktrans %}</p>
 
-Today, tarot has become one of the ways I help others reconnect with themselves. I do not see tarot as a tool that predicts a fixed future.
+            <p>{% blocktrans %}Today, tarot has become one of the ways I help others reconnect with themselves. I do not see tarot as a tool that predicts a fixed future.{% endblocktrans %}</p>
 
-To me, every reading is an invitation to better understand the present: to uncover hidden emotional patterns, recognize unconscious dynamics and explore the possibilities that exist within the current moment.
+            <p>{% blocktrans %}To me, every reading is an invitation to better understand the present: to uncover hidden emotional patterns, recognize unconscious dynamics and explore the possibilities that exist within the current moment.{% endblocktrans %}</p>
 
-Our choices, our beliefs and our awareness all shape the paths available to us. Rather than telling you who you are or what must happen, the cards encourage reflection, clarity and empowerment.
+            <p>{% blocktrans %}Our choices, our beliefs and our awareness all shape the paths available to us. Rather than telling you who you are or what must happen, the cards encourage reflection, clarity and empowerment.{% endblocktrans %}</p>
 
-This is why I ask for as little information as possible before each reading. A simple question is often enough. Allowing the cards to speak before the story helps me approach each reading with openness, intuition and as little personal bias as possible. Alongside tarot, I also work with dowsing rods when deeper energetic clarification is needed. They are another intuitive tool that occasionally complements my readings.
+            <p>{% blocktrans %}This is why I ask for as little information as possible before each reading. A simple question is often enough. Allowing the cards to speak before the story helps me approach each reading with openness, intuition and as little personal bias as possible. Alongside tarot, I also work with dowsing rods when deeper energetic clarification is needed. They are another intuitive tool that occasionally complements my readings.{% endblocktrans %}</p>
 
-My personal spiritual path is deeply connected to what I describe as the energy of the Dragon Rider. Within my own practice, dragons represent wisdom, transformation, courage and protection. I experience them as spiritual allies who accompany my intuitive work and help me remain connected to my higher self and inner guidance. While every person's spiritual journey is unique, this symbolic relationship forms an important part of mine.
+            <p>{% blocktrans %}My personal spiritual path is deeply connected to what I describe as the energy of the Dragon Rider. Within my own practice, dragons represent wisdom, transformation, courage and protection. I experience them as spiritual allies who accompany my intuitive work and help me remain connected to my higher self and inner guidance. While every person's spiritual journey is unique, this symbolic relationship forms an important part of mine.{% endblocktrans %}</p>
 
-Above all, my intention is never simply to provide answers. It is to help you understand yourself more deeply.
+            <p>{% blocktrans %}Above all, my intention is never simply to provide answers. It is to help you understand yourself more deeply.{% endblocktrans %}</p>
 
-My hope is that every reading leaves you with more than guidance, it leaves you feeling clearer, more empowered and more connected to your own path.
-        </p>
+            <p>{% blocktrans %}My hope is that every reading leaves you with more than guidance, it leaves you feeling clearer, more empowered and more connected to your own path.{% endblocktrans %}</p>
+        </div>
     </div>
 </section>
 
 <!-- FINAL CTA (kept simple as requested) -->
 <section class="section ethics-section reveal">
     <div class="text-center">
-        <a href="{% url 'booking' %}" class="btn-gold">Book a reading</a>
+        <a href="{% url 'booking' %}" class="btn-gold">{% trans "Book a reading" %}</a>
     </div>
 </section>
 
