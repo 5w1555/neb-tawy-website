@@ -17,11 +17,14 @@
         <p>{% trans "This website is published by:" %}</p>
         <p>
             <strong>{% trans "Name:" %}</strong> Kérima Idriss<br>
-            <strong>{% trans "Status:" %}</strong> {% trans "Owner" %}<br>
+            <strong>{% trans "Status:" %}</strong> {% trans "Sole trader (entrepreneur individuel)" %}<br>
             <strong>{% trans "SIRET:" %}</strong> 10898623300014<br>
-            <strong>{% trans "Email:" %}</strong> Nebtawy@outlook.com<br>
-            <strong>{% trans "Address:" %}</strong> 61 RUE DE LYON 75012 PARIS<br>
-            <strong>{% trans "Phone:" %}</strong>
+            <strong>{% trans "Publication director:" %}</strong> Kérima Idriss<br>
+            <strong>{% trans "Email:" %}</strong> <a href="mailto:Nebtawy@outlook.com">Nebtawy@outlook.com</a><br>
+            <strong>{% trans "Address:" %}</strong> 61 rue de Lyon, 75012 Paris
+        </p>
+        <p>
+            {% blocktrans %}VAT not applicable, Article 293 B of the French Tax Code (CGI).{% endblocktrans %}
         </p>
     </div>
 
@@ -29,7 +32,7 @@
         <h2>{% trans "2. Hosting" %}</h2>
         <p>{% trans "This website is hosted by:" %}</p>
         <p>
-            <strong>{% trans "Host:" %}</strong> Render Services, Inc<br>
+            <strong>{% trans "Host:" %}</strong> Render Services, Inc.<br>
             <strong>{% trans "Address:" %}</strong> 2261 Market Street, #4144, San Francisco, CA 94114, USA<br>
             <strong>{% trans "Website:" %}</strong> render.com
         </p>
@@ -38,41 +41,69 @@
     <div class="legal-block">
         <h2>{% trans "3. Services Offered" %}</h2>
         <p>
-            {% trans "Neb Tawy offers services for personal development purposes." %}
+            {% trans "Neb Tawy offers guidance and card-reading services for personal development purposes, in the following formats:" %}
         </p>
+        <ul class="legal-list">
+            <li>{% trans "Focused Reading (3 cards) — €25 — delivered by email" %}</li>
+            <li>{% trans "In-Depth Guidance (6 cards) — €50 — delivered by email" %}</li>
+            <li>{% trans "Signature Guidance — €135 — 30-minute live phone session" %}</li>
+            <li>{% trans "Zoom Session — €150 — 45-minute live video session" %}</li>
+        </ul>
         <p>
-            {% blocktrans %}All sessions are conducted remotely. The reading is delivered by email within 2 business days of the chosen booking date.{% endblocktrans %}
+            {% blocktrans %}All services are provided remotely. Written readings are delivered by email within 48 hours of the chosen booking date. Live sessions take place at the time slot selected during booking.{% endblocktrans %}
         </p>
         <p style="font-style: italic; color: var(--text-muted);">
-            {% blocktrans %}In accordance with applicable law, all services are offered strictly for personal development purposes and do not constitute medical, psychological, or financial advice.{% endblocktrans %}
+            {% blocktrans %}All services are offered strictly for personal development purposes and do not constitute medical, psychological, legal, or financial advice. They do not replace consultation with a qualified professional.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>{% trans "4. Payment Terms" %}</h2>
+        <h2>{% trans "4. Prices and Payment" %}</h2>
         <p>
-            {% blocktrans %}Payment is made online in full at the time of booking, via the secure platforms Stripe. No banking information is stored on this website.{% endblocktrans %}
+            {% blocktrans %}Prices are displayed in euros. Payment is made online in full at the time of booking, through the secure payment platform Stripe. No banking information is stored on this website.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>{% trans "5. Refund Policy" %}</h2>
+        <h2>{% trans "5. Right of Withdrawal and Refunds" %}</h2>
         <p>
-            {% trans "If your reading cannot be provided by the practitioner for any reason, you will receive a full refund." %}
+            {% blocktrans %}If you are a consumer, you have the right to withdraw from your booking within fourteen (14) days of payment, without giving any reason, provided that the service has not yet begun. To do so, send an email to the address above. You will be refunded in full.{% endblocktrans %}
         </p>
         <p>
-            {% trans "If the requested reading is not delivered within two (2) business days of your scheduled session, you will automatically receive a full refund." %}
+            {% blocktrans %}In accordance with Article L221-28 of the French Consumer Code, the right of withdrawal does not apply to a service that has been fully performed before the end of the withdrawal period, where performance began with your prior express request and your acknowledgement that you lose your right of withdrawal once the service is fully performed. By ticking the corresponding box at checkout, you confirm this request and acknowledgement.{% endblocktrans %}
         </p>
         <p>
-            {% trans "This refund policy applies equally to phone and Zoom sessions." %}
+            {% trans "If your reading or session cannot be provided by the practitioner for any reason, you will receive a full refund." %}
         </p>
         <p>
-            {% blocktrans %}Clients who do not attend their scheduled session, or who arrive more than fifteen (15) minutes late, will not be eligible for a refund. We recommend joining a few minutes early to avoid any delays.{% endblocktrans %}
+            {% trans "If a written reading is not delivered within two (2) business days of your scheduled date, you will automatically receive a full refund." %}
+        </p>
+        <p>
+            {% blocktrans %}For live sessions (phone or Zoom), clients who do not attend their scheduled session, or who arrive more than fifteen (15) minutes late, are not eligible for a refund, since the time slot was reserved for them. We recommend joining a few minutes early.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>{% trans "6. Personal Data (GDPR)" %}</h2>
+        <h2>{% trans "6. Limitation of Liability" %}</h2>
+        <p>
+            {% blocktrans %}Readings and guidance are interpretive and subjective. No result, outcome, or prediction is guaranteed, and you remain solely responsible for the decisions you make in your life.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}The website is made available as is. Access may be interrupted for technical maintenance or for reasons beyond our control (network failure, hosting or payment provider outage). We cannot be held liable for such interruptions, nor for damage to your equipment resulting from the use of the website.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}The website may contain links to third-party sites, whose content we do not control and for which we accept no responsibility.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}Nothing in this section excludes or limits liability where the law does not allow it, in particular towards consumers.{% endblocktrans %}
+        </p>
+    </div>
+
+    <div class="legal-block">
+        <h2>{% trans "7. Personal Data (GDPR)" %}</h2>
+        <p>
+            {% blocktrans %}The data controller is Kérima Idriss (see contact details above).{% endblocktrans %}
+        </p>
         <p>
             {% trans "The following personal data is collected during the booking process:" %}
         </p>
@@ -82,27 +113,40 @@
             <li>{% trans "Optional message" %}</li>
         </ul>
         <p>
-            {% blocktrans %}This data is used solely for processing the booking and delivering the service. It is never sold or shared with third parties.{% endblocktrans %}
+            {% blocktrans %}This data is used solely to process your booking and deliver the service you ordered (performance of a contract). It is never sold or used for advertising.{% endblocktrans %}
         </p>
         <p>
-            {% blocktrans %}Data is retained for 1 year / 3 years from the date of booking, after which it is permanently deleted.{% endblocktrans %}
+            {% blocktrans %}To provide the service, your data is processed by the following technical providers: Stripe (payment), Brevo (transactional emails), Render and Neon (hosting and database), and Zoom (video sessions). Some of these providers are located outside the European Union and operate under appropriate safeguards.{% endblocktrans %}
         </p>
         <p>
-            {% blocktrans %}In accordance with the General Data Protection Regulation (GDPR), you have the right to access, correct, or delete your personal data.{% endblocktrans %}
+            {% blocktrans %}Data is retained for [1 / 3] year(s) from the date of booking, after which it is permanently deleted, except for accounting records that must be kept for longer under French law.{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}In accordance with the General Data Protection Regulation (GDPR), you have the right to access, correct, delete, restrict the processing of, and port your personal data, and to object to its processing. You may also give instructions on what happens to your data after your death. To exercise these rights, contact us at the email address above; we may ask for proof of identity. You also have the right to lodge a complaint with the CNIL (cnil.fr).{% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans %}We take reasonable technical measures to protect your data. If a security breach affecting your data occurs, we will inform you and the competent authority as required by law.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>{% trans "7. Intellectual Property" %}</h2>
+        <h2>{% trans "8. Cookies" %}</h2>
+        <p>
+            {% blocktrans %}This website only uses cookies that are strictly necessary for its operation (language selection, security, and secure payment). No analytics or advertising cookies are used. Stripe may set cookies for fraud prevention during payment.{% endblocktrans %}
+        </p>
+    </div>
+
+    <div class="legal-block">
+        <h2>{% trans "9. Intellectual Property" %}</h2>
         <p>
             {% blocktrans %}All content on this website (text, visuals, design) is the exclusive property of Neb Tawy. Any reproduction without prior written permission is strictly prohibited.{% endblocktrans %}
         </p>
     </div>
 
     <div class="legal-block">
-        <h2>{% trans "8. Applicable Law" %}</h2>
+        <h2>{% trans "10. Applicable Law" %}</h2>
         <p>
-            {% blocktrans %}This legal notice is governed by French law. In the event of a dispute, French courts shall have sole jurisdiction.{% endblocktrans %}
+            {% blocktrans %}This legal notice is governed by French law. In the event of a dispute, French courts shall have jurisdiction, without prejudice to the mandatory rights of consumers.{% endblocktrans %}
         </p>
     </div>
 
