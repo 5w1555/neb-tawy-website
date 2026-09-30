@@ -934,3 +934,117 @@ msgstr "Retour à la page d'accueil"
 #: .\divination_site\core\templates\post_detail.html:19
 msgid "← Back to blog"
 msgstr "← Retour au blog"
+
+
+# French translations for the new legal notice (mentions-legales.html).
+# Only msgids that are NOT already in your django.po are included, so these can be
+# appended to the end of locale/fr/LC_MESSAGES/django.po without duplicates.
+
+msgid "Sole trader (entrepreneur individuel)"
+msgstr "Entrepreneur individuel"
+
+msgid "Publication director:"
+msgstr "Directeur de la publication :"
+
+msgid "VAT not applicable, Article 293 B of the French Tax Code (CGI)."
+msgstr "TVA non applicable, article 293 B du Code général des impôts (CGI)."
+
+msgid "Neb Tawy offers guidance and card-reading services for personal development purposes, in the following formats:"
+msgstr "Neb Tawy propose des services d'accompagnement et de tirage de cartes à des fins de développement personnel, sous les formats suivants :"
+
+msgid "Focused Reading (3 cards) — €25 — delivered by email"
+msgstr "Tirage ciblé (3 cartes) — 25 € — envoyé par e-mail"
+
+msgid "In-Depth Guidance (6 cards) — €50 — delivered by email"
+msgstr "Accompagnement détaillé (6 cartes) — 50 € — envoyé par e-mail"
+
+msgid "Signature Guidance — €135 — 30-minute live phone session"
+msgstr "Accompagnement signature — 135 € — séance téléphonique en direct de 30 minutes"
+
+msgid "Zoom Session — €150 — 45-minute live video session"
+msgstr "Séance Zoom — 150 € — séance en visioconférence en direct de 45 minutes"
+
+msgid "All services are provided remotely. Written readings are delivered by email within 48 hours of the chosen booking date. Live sessions take place at the time slot selected during booking."
+msgstr "Tous les services sont fournis à distance. Les tirages écrits sont envoyés par e-mail dans les 48 heures suivant la date de réservation choisie. Les séances en direct ont lieu au créneau horaire sélectionné lors de la réservation."
+
+msgid "All services are offered strictly for personal development purposes and do not constitute medical, psychological, legal, or financial advice. They do not replace consultation with a qualified professional."
+msgstr "Tous les services sont proposés exclusivement à des fins de développement personnel et ne constituent en aucun cas des conseils médicaux, psychologiques, juridiques ou financiers. Ils ne remplacent pas la consultation d'un professionnel qualifié."
+
+msgid "4. Prices and Payment"
+msgstr "4. Prix et paiement"
+
+msgid "Prices are displayed in euros. Payment is made online in full at the time of booking, through the secure payment platform Stripe. No banking information is stored on this website."
+msgstr "Les prix sont affichés en euros. Le paiement s'effectue en ligne, en totalité, au moment de la réservation, via la plateforme de paiement sécurisée Stripe. Aucune information bancaire n'est conservée sur ce site web."
+
+msgid "5. Right of Withdrawal and Refunds"
+msgstr "5. Droit de rétractation et remboursements"
+
+msgid "If you are a consumer, you have the right to withdraw from your booking within fourteen (14) days of payment, without giving any reason, provided that the service has not yet begun. To do so, send an email to the address above. You will be refunded in full."
+msgstr "Si vous êtes un consommateur, vous disposez du droit de vous rétracter de votre réservation dans un délai de quatorze (14) jours à compter du paiement, sans avoir à justifier votre décision, à condition que la prestation n'ait pas encore commencé. Pour ce faire, envoyez un e-mail à l'adresse indiquée ci-dessus. Vous serez intégralement remboursé."
+
+msgid "In accordance with Article L221-28 of the French Consumer Code, the right of withdrawal does not apply to a service that has been fully performed before the end of the withdrawal period, where performance began with your prior express request and your acknowledgement that you lose your right of withdrawal once the service is fully performed. By ticking the corresponding box at checkout, you confirm this request and acknowledgement."
+msgstr "Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne s'applique pas à une prestation de services pleinement exécutée avant la fin du délai de rétractation, lorsque son exécution a commencé avec votre demande préalable expresse et votre reconnaissance que vous perdez votre droit de rétractation une fois la prestation pleinement exécutée. En cochant la case correspondante lors du paiement, vous confirmez cette demande et cette reconnaissance."
+
+msgid "If your reading or session cannot be provided by the practitioner for any reason, you will receive a full refund."
+msgstr "Si, pour quelque raison que ce soit, le praticien ne peut pas assurer votre tirage ou votre séance, vous serez intégralement remboursé."
+
+msgid "If a written reading is not delivered within two (2) business days of your scheduled date, you will automatically receive a full refund."
+msgstr "Si un tirage écrit n'est pas envoyé dans les deux (2) jours ouvrés suivant la date prévue, vous serez automatiquement et intégralement remboursé."
+
+msgid "For live sessions (phone or Zoom), clients who do not attend their scheduled session, or who arrive more than fifteen (15) minutes late, are not eligible for a refund, since the time slot was reserved for them. We recommend joining a few minutes early."
+msgstr "Pour les séances en direct (téléphone ou Zoom), les clients qui ne se présentent pas à leur séance prévue, ou qui arrivent avec plus de quinze (15) minutes de retard, ne peuvent prétendre à aucun remboursement, le créneau ayant été réservé à leur intention. Nous vous recommandons de vous connecter quelques minutes à l'avance."
+
+msgid "6. Limitation of Liability"
+msgstr "6. Limitation de responsabilité"
+
+msgid "Readings and guidance are interpretive and subjective. No result, outcome, or prediction is guaranteed, and you remain solely responsible for the decisions you make in your life."
+msgstr "Les tirages et l'accompagnement relèvent de l'interprétation et sont subjectifs. Aucun résultat, aucune issue ni aucune prédiction n'est garanti, et vous restez seul(e) responsable des décisions que vous prenez dans votre vie."
+
+msgid "The website is made available as is. Access may be interrupted for technical maintenance or for reasons beyond our control (network failure, hosting or payment provider outage). We cannot be held liable for such interruptions, nor for damage to your equipment resulting from the use of the website."
+msgstr "Le site web est mis à disposition en l'état. L'accès peut être interrompu pour des raisons de maintenance technique ou pour des raisons indépendantes de notre volonté (panne de réseau, défaillance de l'hébergeur ou du prestataire de paiement). Nous ne pouvons être tenus responsables de ces interruptions, ni des dommages causés à votre matériel du fait de l'utilisation du site web."
+
+msgid "The website may contain links to third-party sites, whose content we do not control and for which we accept no responsibility."
+msgstr "Le site web peut contenir des liens vers des sites tiers, dont nous ne contrôlons pas le contenu et dont nous déclinons toute responsabilité."
+
+msgid "Nothing in this section excludes or limits liability where the law does not allow it, in particular towards consumers."
+msgstr "Aucune disposition de la présente section n'exclut ni ne limite la responsabilité lorsque la loi ne le permet pas, en particulier à l'égard des consommateurs."
+
+msgid "7. Personal Data (GDPR)"
+msgstr "7. Données à caractère personnel (RGPD)"
+
+msgid "The data controller is Kérima Idriss (see contact details above)."
+msgstr "Le responsable du traitement est Kérima Idriss (voir les coordonnées ci-dessus)."
+
+msgid "This data is used solely to process your booking and deliver the service you ordered (performance of a contract). It is never sold or used for advertising."
+msgstr "Ces données sont utilisées exclusivement pour traiter votre réservation et fournir le service commandé (exécution d'un contrat). Elles ne sont jamais vendues ni utilisées à des fins publicitaires."
+
+msgid "To provide the service, your data is processed by the following technical providers: Stripe (payment), Brevo (transactional emails), Render and Neon (hosting and database), and Zoom (video sessions). Some of these providers are located outside the European Union and operate under appropriate safeguards."
+msgstr "Pour fournir le service, vos données sont traitées par les prestataires techniques suivants : Stripe (paiement), Brevo (e-mails transactionnels), Render et Neon (hébergement et base de données) et Zoom (séances en visioconférence). Certains de ces prestataires sont situés en dehors de l'Union européenne et opèrent dans le cadre de garanties appropriées."
+
+msgid "Data is retained for [1 / 3] year(s) from the date of booking, after which it is permanently deleted, except for accounting records that must be kept for longer under French law."
+msgstr "Les données sont conservées pendant [1 / 3] an(s) à compter de la date de réservation, après quoi elles sont définitivement supprimées, à l'exception des pièces comptables qui doivent être conservées plus longtemps en vertu du droit français."
+
+msgid "In accordance with the General Data Protection Regulation (GDPR), you have the right to access, correct, delete, restrict the processing of, and port your personal data, and to object to its processing. You may also give instructions on what happens to your data after your death. To exercise these rights, contact us at the email address above; we may ask for proof of identity. You also have the right to lodge a complaint with the CNIL (cnil.fr)."
+msgstr "Conformément au Règlement général sur la protection des données (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement et de portabilité de vos données à caractère personnel, ainsi que d'un droit d'opposition à leur traitement. Vous pouvez également donner des directives sur le sort de vos données après votre décès. Pour exercer ces droits, contactez-nous à l'adresse e-mail indiquée ci-dessus ; nous pourrons vous demander un justificatif d'identité. Vous avez également le droit d'introduire une réclamation auprès de la CNIL (cnil.fr)."
+
+msgid "We take reasonable technical measures to protect your data. If a security breach affecting your data occurs, we will inform you and the competent authority as required by law."
+msgstr "Nous prenons des mesures techniques raisonnables pour protéger vos données. En cas de violation de sécurité affectant vos données, nous vous en informerons, ainsi que l'autorité compétente, conformément à la loi."
+
+msgid "8. Cookies"
+msgstr "8. Cookies"
+
+msgid "This website only uses cookies that are strictly necessary for its operation (language selection, security, and secure payment). No analytics or advertising cookies are used. Stripe may set cookies for fraud prevention during payment."
+msgstr "Ce site web utilise uniquement des cookies strictement nécessaires à son fonctionnement (choix de la langue, sécurité et paiement sécurisé). Aucun cookie d'analyse ou de publicité n'est utilisé. Stripe peut déposer des cookies à des fins de prévention de la fraude lors du paiement."
+
+msgid "9. Intellectual Property"
+msgstr "9. Propriété intellectuelle"
+
+msgid "10. Applicable Law"
+msgstr "10. Droit applicable"
+
+msgid "This legal notice is governed by French law. In the event of a dispute, French courts shall have jurisdiction, without prejudice to the mandatory rights of consumers."
+msgstr "Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux français sont compétents, sans préjudice des droits impératifs des consommateurs."
+
+# Only needed if you add <li>{% trans "Phone number (for phone sessions)" %}</li> to the data list:
+msgid "Phone number (for phone sessions)"
+msgstr "Numéro de téléphone (pour les séances téléphoniques)"
