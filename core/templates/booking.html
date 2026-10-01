@@ -6,6 +6,9 @@
 {% block extra_css %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <style>
+    /* Booking-only overrides.
+       Global card/form styling stays in style.css. */
+
     .flatpickr-calendar {
         background: var(--bg-secondary) !important;
         border: 1px solid var(--border-gold) !important;
@@ -55,8 +58,9 @@
         text-align: center;
     }
 
+    /* .section already provides the same 1100px width used by the homepage. */
     .booking-shell {
-        max-width: 900px;
+        max-width: 1100px;
         margin: 0 auto;
     }
 
@@ -85,38 +89,60 @@
         font-size: 0.65rem;
         letter-spacing: 0.22em;
         color: var(--gold);
+        flex-shrink: 0;
+    }
+
+    /* Match the homepage pricing-grid geometry more closely. */
+    .service-grid {
+        gap: 2px;
     }
 
     .service-card {
-        min-height: 320px;
+        min-height: 520px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background:
-            linear-gradient(180deg, rgba(201,168,76,0.035), transparent 55%),
-            rgba(26,18,8,0.22);
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .service-card > div {
+        width: 100%;
     }
 
     .service-card p {
-        line-height: 1.9;
-        font-style: italic;
+        color: var(--text-muted);
+        text-align: justify;
+        text-align-last: left;
+        hyphens: auto;
     }
 
     .service-card-includes {
         list-style: none;
         padding: 0;
-        margin: 1rem 0 0;
-        color: var(--text-muted);
-        font-size: 0.85rem;
+        margin: 2rem 0 0;
+        color: var(--text-primary);
+        font-size: 0.9rem;
         font-style: normal;
         line-height: 1.8;
+        text-align: left;
+    }
+
+    .service-card-includes li {
+        margin-bottom: 0.2rem;
     }
 
     .service-card-includes li::before {
         content: '✦';
         color: var(--gold);
-        margin-right: 0.5rem;
+        margin-right: 0.55rem;
         font-size: 0.6rem;
+    }
+
+    .service-price {
+        align-self: flex-start;
+        text-align: left;
+        font-size: 1.5rem;
     }
 
     .booking-summary {
@@ -202,8 +228,18 @@
             gap: 0.35rem;
         }
 
+        .service-grid {
+            gap: 1.5rem;
+        }
+
         .service-card {
             min-height: auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .service-card p {
+            text-align: left;
+            hyphens: none;
         }
     }
 </style>
@@ -246,8 +282,8 @@
                     </p>
                     <ul class="service-card-includes">
                         <li>{% trans "One specific question" %}</li>
-                        <li>{% trans "Three-card draw" %}</li>
-                        <li>{% trans "Audio or text format" %}</li>
+                        <li>{% trans "Five-card draw" %}</li>
+                        <li>{% trans "Delivered in text format" %}</li>
                         <li>{% trans "Delivered within 48 hours" %}</li>
                     </ul>
                 </div>
@@ -263,8 +299,7 @@
                     <ul class="service-card-includes">
                         <li>{% trans "One theme of your choice" %}</li>
                         <li>{% trans "Six-card draw" %}</li>
-                        <li>{% trans "Detailed analysis" %}</li>
-                        <li>{% trans "Delivered in audio or text format" %}</li>
+                        <li>{% trans "Delivered in text format" %}</li>
                         <li>{% trans "Delivered within 48 hours (barring exceptional delays)" %}</li>
                     </ul>
                 </div>
@@ -278,14 +313,13 @@
                 {% blocktrans %}Designed for those seeking a deeper, more complete understanding of their situation. During a private phone call reading, we'll explore three themes of your choice in depth — from love and career to personal growth, family, finances, and more. As the reading unfolds, we can explore what comes through, go deeper where needed, and address your questions in real time, creating a truly personal and interactive experience.{% endblocktrans %}
                 </p>
                     <ul class="service-card-includes">
-                        <li>{% trans "Personalized analysis" %}</li>
                         <li>{% trans "Explore up to 3 themes" %}</li>
                         <li>{% trans "30-minutes private phone call reading" %}</li>
                         <li>{% trans "Opportunity to ask questions during the reading" %}</li>
                         <li>{% trans "Phone call can be recorded upon request" %}</li>
                     </ul>
                 </div>
-                <span class="service-price">€135</span>
+                <span class="service-price">€111</span>
             </div>
 
             <div class="service-card reveal reveal-delay-1" data-service="zoom_session" data-price="150" data-label="{% trans 'Zoom Session' %}" onclick="selectService(this)">

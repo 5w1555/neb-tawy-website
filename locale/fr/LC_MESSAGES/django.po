@@ -233,7 +233,7 @@ msgstr "Choisissez votre service"
 #: .\divination_site\core\templates\booking.html:243
 #: .\divination_site\core\templates\index.html:59
 msgid "Focused Reading"
-msgstr "Tirage ciblé"
+msgstr "Formule découverte"
 
 #: .\divination_site\core\templates\booking.html:245
 msgid ""
@@ -245,7 +245,7 @@ msgstr ""
 "Vous cherchez à y voir plus clair dans une situation précise ? Ce tirage est"
 " idéal pour répondre à une seule question grâce à un tirage de trois cartes."
 " Chaque tirage est entièrement personnalisé afin de vous offrir un "
-"accompagnement clair et nuancé, adapté à votre situation."
+" accompagnement clair et nuancé, adapté à votre situation."
 
 #: .\divination_site\core\templates\booking.html:248
 #: .\divination_site\core\templates\index.html:64
@@ -254,12 +254,12 @@ msgstr "Une question précise"
 
 #: .\divination_site\core\templates\booking.html:249
 #: .\divination_site\core\templates\index.html:65
-msgid "Three-card draw"
-msgstr "Tirage de trois cartes"
+msgid "Five-card draw"
+msgstr "Tirage de minimum 5 cartes"
 
 #: .\divination_site\core\templates\booking.html:250
-msgid "Audio or text format"
-msgstr "Format audio ou texte"
+msgid "Text format"
+msgstr "⁠Disponible sous format texte"
 
 #: .\divination_site\core\templates\booking.html:251
 msgid "Delivered within 48 hours"
@@ -269,7 +269,7 @@ msgstr "Livré sous 48 heures"
 #: .\divination_site\core\templates\booking.html:259
 #: .\divination_site\core\templates\index.html:74
 msgid "In-Depth Guidance"
-msgstr "Accompagnement détaillé"
+msgstr "Formule Éveil"
 
 #: .\divination_site\core\templates\booking.html:261
 msgid ""
@@ -289,35 +289,30 @@ msgstr ""
 #: .\divination_site\core\templates\booking.html:264
 #: .\divination_site\core\templates\index.html:79
 msgid "One theme of your choice"
-msgstr "Un thème de votre choix"
+msgstr "Un thème précis"
 
 #: .\divination_site\core\templates\booking.html:265
 #: .\divination_site\core\templates\index.html:80
 msgid "Six-card draw"
-msgstr "Tirage de six cartes"
-
-#: .\divination_site\core\templates\booking.html:266
-#: .\divination_site\core\templates\index.html:81
-msgid "Detailed analysis"
-msgstr "Analyse détaillée"
+msgstr "Maximum 3 questions autour d’un thème"
 
 #: .\divination_site\core\templates\booking.html:267
 #: .\divination_site\core\templates\index.html:66
 #: .\divination_site\core\templates\index.html:82
-msgid "Delivered in audio or text format"
-msgstr "Disponible au format audio ou texte"
+msgid "Delivered in text format"
+msgstr "⁠Disponible sous format texte"
 
 #: .\divination_site\core\templates\booking.html:268
 #: .\divination_site\core\templates\index.html:67
 #: .\divination_site\core\templates\index.html:83
 msgid "Delivered within 48 hours (barring exceptional delays)"
-msgstr "Livraison sous 48 heures (sauf retards exceptionnels)"
+msgstr "⁠Livraison sous 48 heures (sauf retard exceptionnel)"
 
 #: .\divination_site\core\templates\booking.html:274
 #: .\divination_site\core\templates\booking.html:276
 #: .\divination_site\core\templates\index.html:90
 msgid "Signature Guidance"
-msgstr "Accompagnement signature"
+msgstr "Formule Alignement"
 
 #: .\divination_site\core\templates\booking.html:278
 #: .\divination_site\core\templates\index.html:92
@@ -338,11 +333,6 @@ msgstr ""
 "répondre à vos questions en temps réel, créant ainsi une expérience "
 "véritablement personnalisée et interactive."
 
-#: .\divination_site\core\templates\booking.html:281
-#: .\divination_site\core\templates\index.html:95
-msgid "Personalized analysis"
-msgstr "Analyse personnalisée"
-
 #: .\divination_site\core\templates\booking.html:282
 #: .\divination_site\core\templates\index.html:96
 msgid "Explore up to 3 themes"
@@ -356,7 +346,7 @@ msgstr "Séance téléphonique privée de 30 minutes"
 #: .\divination_site\core\templates\booking.html:284
 #: .\divination_site\core\templates\index.html:98
 msgid "Opportunity to ask questions during the reading"
-msgstr "Possibilité de poser des questions pendant le tirage"
+msgstr "⁠Conversation personalisé"
 
 #: .\divination_site\core\templates\booking.html:285
 #: .\divination_site\core\templates\index.html:99
@@ -367,7 +357,7 @@ msgstr "L'appel téléphonique peut être enregistré sur demande"
 #: .\divination_site\core\templates\booking.html:293
 #: .\divination_site\core\templates\index.html:106
 msgid "Zoom Session"
-msgstr "Séance Zoom"
+msgstr "Formule souveraineté"
 
 #: .\divination_site\core\templates\booking.html:295
 #: .\divination_site\core\templates\index.html:108
@@ -386,12 +376,12 @@ msgstr ""
 #: .\divination_site\core\templates\booking.html:298
 #: .\divination_site\core\templates\index.html:111
 msgid "45 minutes on Zoom"
-msgstr "45 minutes sur Zoom"
+msgstr "Séance de 45 minutes sur zoom"
 
 #: .\divination_site\core\templates\booking.html:299
 #: .\divination_site\core\templates\index.html:112
 msgid "Live tarot draw"
-msgstr "Tirage de tarot en direct"
+msgstr "Tirage de carte en direct"
 
 #: .\divination_site\core\templates\booking.html:300
 #: .\divination_site\core\templates\index.html:113
@@ -400,7 +390,7 @@ msgstr "Conversation personnalisée"
 
 #: .\divination_site\core\templates\booking.html:301
 msgid "Divination wands when appropriate"
-msgstr "Des baguettes de divination, le cas échéant"
+msgstr "Baguettes divinatoires utilisées lorsque cela s’avère pertinent"
 
 #: .\divination_site\core\templates\booking.html:313
 #: .\divination_site\core\templates\booking.html:397
@@ -520,7 +510,7 @@ msgstr "Veuillez choisir une heure avant de continuer."
 #: .\divination_site\core\templates\index.html:5
 #: .\divination_site\core\templates\index.html:15
 msgid "Private Tarot Readings & Spiritual Guidance"
-msgstr "Consultations privées de tirages de tarot et accompagnement spirituel"
+msgstr "Consultations privées de tarot et accompagnement spirituel"
 
 #: .\divination_site\core\templates\index.html:20
 msgid "Scroll"
@@ -528,15 +518,15 @@ msgstr "Faire défiler"
 
 #: .\divination_site\core\templates\index.html:29
 msgid "Guidance for the Path Ahead"
-msgstr "Accompagnement pour l'avenir"
+msgstr "Se reconnecter à son pouvoir intérieur"
 
 #: .\divination_site\core\templates\index.html:30
 msgid ""
 "Thoughtful tarot readings for moments of uncertainty, growth, and "
 "transformation."
 msgstr ""
-"Des tirages de tarot approfondis pour accompagner les moments d'incertitude,"
-" d'épanouissement et de transformation."
+"Des tirages de tarot approfondis pour vous guider dans les moments d’incertitude,"
+" d’évolution et de transformation. "
 
 #: .\divination_site\core\templates\index.html:38
 msgid "Guidance with care"
@@ -551,7 +541,7 @@ msgid ""
 msgstr ""
 "Avec Neb Tawy, les tirages de tarot constituent un espace propice à la "
 "réflexion, à la prise de conscience et à des échanges enrichissants. Chaque "
-"tirage est conçu pour vous aider à explorer vos interrogations, à identifier"
+"lectures est conçu pour vous aider à explorer vos interrogations, à identifier"
 " des schémas récurrents et à aller de l'avant avec plus de clarté et de "
 "détermination."
 
@@ -952,17 +942,17 @@ msgstr "TVA non applicable, article 293 B du Code général des impôts (CGI)."
 msgid "Neb Tawy offers guidance and card-reading services for personal development purposes, in the following formats:"
 msgstr "Neb Tawy propose des services d'accompagnement et de tirage de cartes à des fins de développement personnel, sous les formats suivants :"
 
-msgid "Focused Reading (3 cards) — €25 — delivered by email"
-msgstr "Tirage ciblé (3 cartes) — 25 € — envoyé par e-mail"
+msgid "Focused Reading (5 cards) — €25 — delivered by email"
+msgstr "Formule découverte (5 cartes) — 25 € — envoyé par e-mail"
 
 msgid "In-Depth Guidance (6 cards) — €50 — delivered by email"
-msgstr "Accompagnement détaillé (6 cartes) — 50 € — envoyé par e-mail"
+msgstr "Formule Éveil (6 cartes) — 50 € — envoyé par e-mail"
 
-msgid "Signature Guidance — €135 — 30-minute live phone session"
-msgstr "Accompagnement signature — 135 € — séance téléphonique en direct de 30 minutes"
+msgid "Signature Guidance — €111 — 30-minute live phone session"
+msgstr "Accompagnement signature — 111 € — séance téléphonique en direct de 30 minutes"
 
 msgid "Zoom Session — €150 — 45-minute live video session"
-msgstr "Séance Zoom — 150 € — séance en visioconférence en direct de 45 minutes"
+msgstr "Formule souveraineté — 150 € — séance en visioconférence en direct de 45 minutes"
 
 msgid "All services are provided remotely. Written readings are delivered by email within 48 hours of the chosen booking date. Live sessions take place at the time slot selected during booking."
 msgstr "Tous les services sont fournis à distance. Les tirages écrits sont envoyés par e-mail dans les 48 heures suivant la date de réservation choisie. Les séances en direct ont lieu au créneau horaire sélectionné lors de la réservation."
