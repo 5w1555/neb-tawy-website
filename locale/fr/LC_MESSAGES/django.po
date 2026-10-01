@@ -925,11 +925,6 @@ msgstr "Retour à la page d'accueil"
 msgid "← Back to blog"
 msgstr "← Retour au blog"
 
-
-# French translations for the new legal notice (mentions-legales.html).
-# Only msgids that are NOT already in your django.po are included, so these can be
-# appended to the end of locale/fr/LC_MESSAGES/django.po without duplicates.
-
 msgid "Sole trader (entrepreneur individuel)"
 msgstr "Entrepreneur individuel"
 
@@ -943,16 +938,16 @@ msgid "Neb Tawy offers guidance and card-reading services for personal developme
 msgstr "Neb Tawy propose des services d'accompagnement et de tirage de cartes à des fins de développement personnel, sous les formats suivants :"
 
 msgid "Focused Reading (5 cards) — €25 — delivered by email"
-msgstr "Formule découverte (5 cartes) — 25 € — envoyé par e-mail"
+msgstr "Formule Découverte (5 cartes) — 25 € — envoyé par e-mail"
 
 msgid "In-Depth Guidance (6 cards) — €50 — delivered by email"
 msgstr "Formule Éveil (6 cartes) — 50 € — envoyé par e-mail"
 
 msgid "Signature Guidance — €111 — 30-minute live phone session"
-msgstr "Accompagnement signature — 111 € — séance téléphonique en direct de 30 minutes"
+msgstr "Formule Alignement — 111 € — séance téléphonique en direct de 30 minutes"
 
 msgid "Zoom Session — €150 — 45-minute live video session"
-msgstr "Formule souveraineté — 150 € — séance en visioconférence en direct de 45 minutes"
+msgstr "Formule Souveraineté — 150 € — séance en visioconférence en direct de 45 minutes"
 
 msgid "All services are provided remotely. Written readings are delivered by email within 48 hours of the chosen booking date. Live sessions take place at the time slot selected during booking."
 msgstr "Tous les services sont fournis à distance. Les tirages écrits sont envoyés par e-mail dans les 48 heures suivant la date de réservation choisie. Les séances en direct ont lieu au créneau horaire sélectionné lors de la réservation."
