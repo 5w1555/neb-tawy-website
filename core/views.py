@@ -23,7 +23,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 PRICES = {
     'focused_reading':    2500,   # €25
     'indepth_guidance':   5000,   # €50
-    'signature_guidance': 13500,  # €135
+    'signature_guidance': 11100,  # €111
     'zoom_session':       15000,  # €150
 }
 
