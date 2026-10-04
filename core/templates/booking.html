@@ -166,6 +166,41 @@
         font-size: 0.7rem;
     }
 
+    .booking-disclosure {
+        margin-top: 2.5rem;
+        padding: 1.5rem;
+        border: 1px solid var(--border-gold);
+        color: var(--text-muted);
+        line-height: 1.8;
+    }
+
+    .booking-disclosure h3 {
+        margin: 0 0 1rem;
+        color: var(--gold-light);
+    }
+
+    .booking-disclosure p {
+        margin: 0 0 1rem;
+    }
+
+    .booking-acknowledgement {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        color: var(--text-primary);
+        cursor: pointer;
+    }
+
+    .booking-acknowledgement input {
+        flex: 0 0 auto;
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-top: 0.3rem;
+        accent-color: var(--gold);
+        cursor: pointer;
+    }
+
     #slot-step {
         display: none;
     }
@@ -284,7 +319,7 @@
                         <li>{% trans "One specific question" %}</li>
                         <li>{% trans "Five-card draw" %}</li>
                         <li>{% trans "Delivered in text format" %}</li>
-                        <li>{% trans "Delivered within 48 hours" %}</li>
+                        <li>{% trans "Delivered within 48 hours (barring exceptional delays)" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€25</span>
@@ -372,6 +407,10 @@
             {% trans "Your details" %}
         </h2>
 
+        {% if error %}
+            <p class="booking-note" role="alert">{{ error }}</p>
+        {% endif %}
+
         <form id="booking-form" method="POST" action="{% url 'booking' %}">
             {% csrf_token %}
             <input type="hidden" name="service" id="service-input">
@@ -409,6 +448,18 @@
                 <strong>{% trans "Your reading" %}</strong><br>
                 {% trans "Select a service and date to continue." %}
             </div>
+
+            <section class="booking-disclosure" aria-labelledby="booking-disclosure-title">
+                <h3 id="booking-disclosure-title">{% trans "Before booking" %}</h3>
+                <p>{% blocktrans %}The readings offered by Neb Tawy are based on a subjective interpretation of the cards and are intended to offer you a space for reflection and perspective.{% endblocktrans %}</p>
+                <p>{% blocktrans %}They do not constitute medical, psychological, legal or financial advice and do not replace support from a qualified professional. No result, outcome or prediction is guaranteed.{% endblocktrans %}</p>
+                <p>{% blocktrans %}You remain entirely free and responsible for the decisions you make following your reading.{% endblocktrans %}</p>
+                <p>{% blocktrans %}By confirming your booking, you acknowledge that you have read this information and the conditions applicable to your booking.{% endblocktrans %}</p>
+                <label class="booking-acknowledgement" for="booking-conditions-accepted">
+                    <input type="checkbox" id="booking-conditions-accepted" name="booking_conditions_accepted" value="yes" required>
+                    <span>{% trans "I have read and understood the information above and accept the booking conditions." %}</span>
+                </label>
+            </section>
 
             <div style="text-align: center; margin-top: 2.5rem;">
                 <button type="submit" class="btn-gold">{% trans "Proceed to payment" %}</button>

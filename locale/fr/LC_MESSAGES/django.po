@@ -126,14 +126,7 @@ msgid ""
 "connected to my higher self and inner guidance. While every person's "
 "spiritual journey is unique, this symbolic relationship forms an important "
 "part of mine."
-msgstr ""
-"Mon parcours spirituel personnel est profondément lié à ce que je qualifie "
-"d’« énergie du Cavalier du Dragon ». Dans ma pratique personnelle, les "
-"dragons symbolisent la sagesse, la transformation, le courage et la "
-"protection. Je les perçois comme des alliés spirituels qui accompagnent mon "
-"travail intuitif et m’aident à rester connectée à mon moi supérieur et à mon"
-" accompagnement intérieur. Bien que le parcours spirituel de chacun soit "
-"unique, cette relation symbolique constitue une partie importante du mien."
+msgstr "Mon parcours spirituel personnel est profondément lié à ce que je qualifie d’énergie du « Dragonnier ». Dans ma pratique personnelle, les dragons symbolisent la sagesse, la transformation, le courage et la protection. Je les perçois comme des alliés spirituels qui accompagnent mon travail intuitif et m’aident à rester connectée à mon moi supérieur et à mon accompagnement intérieur. Bien que le parcours spirituel de chacun soit unique, cette relation symbolique constitue une partie importante du mien."
 
 #: .\divination_site\core\templates\about.html:57
 msgid ""
@@ -205,7 +198,7 @@ msgstr "Réserver un tirage privé"
 
 #: .\divination_site\core\templates\booking.html:220
 msgid "Private guidance · from €25"
-msgstr "Accompagnement particulier · à partir de 25 €"
+msgstr "Accompagnement spirituel · à partir de 25 €"
 
 #: .\divination_site\core\templates\booking.html:222
 msgid ""
@@ -241,11 +234,7 @@ msgid ""
 "for answering a single question through a three-card draw. Every reading is "
 "fully personalized to offer you clear, nuanced guidance adapted to your "
 "situation."
-msgstr ""
-"Vous cherchez à y voir plus clair dans une situation précise ? Ce tirage est"
-" idéal pour répondre à une seule question grâce à un tirage de trois cartes."
-" Chaque tirage est entièrement personnalisé afin de vous offrir un "
-" accompagnement clair et nuancé, adapté à votre situation."
+msgstr "Vous cherchez à y voir plus clair dans une situation précise ? Ce tirage est idéal pour répondre à une seule question grâce à un tirage de cinq cartes. Chaque tirage est entièrement personnalisé afin de vous offrir un accompagnement clair et nuancé, adapté à votre situation."
 
 #: .\divination_site\core\templates\booking.html:248
 #: .\divination_site\core\templates\index.html:64
@@ -278,13 +267,7 @@ msgid ""
 "transition. Through a six-card draw, I read the energies at play, any "
 "blockages, the resources available to you, and the paths forward — to offer "
 "detailed, personalized guidance."
-msgstr ""
-"Pour celles et ceux qui souhaitent explorer en profondeur un domaine "
-"important de leur vie : les relations, la carrière, le développement "
-"personnel, les choix de vie ou une période de transition. À travers un "
-"tirage de six cartes, j’analyse les énergies en jeu, les éventuels blocages,"
-" les ressources à votre disposition et les voies à suivre, afin de vous "
-"offrir un accompagnement détaillé et personnalisé."
+msgstr "Pour celles et ceux qui souhaitent explorer en profondeur un domaine important de leur vie. Qu’il s’agisse des relations, de la carrière, du développement personnel, d’un choix de vie ou d’une période de transition, la formule Éveil vous permet de vous concentrer sur un thème spécifique et d’explorer jusqu’à trois questions qui lui sont liées."
 
 #: .\divination_site\core\templates\booking.html:264
 #: .\divination_site\core\templates\index.html:79
@@ -300,13 +283,13 @@ msgstr "Maximum 3 questions autour d’un thème"
 #: .\divination_site\core\templates\index.html:66
 #: .\divination_site\core\templates\index.html:82
 msgid "Delivered in text format"
-msgstr "⁠Disponible sous format texte"
+msgstr "Disponible sous format texte"
 
 #: .\divination_site\core\templates\booking.html:268
 #: .\divination_site\core\templates\index.html:67
 #: .\divination_site\core\templates\index.html:83
 msgid "Delivered within 48 hours (barring exceptional delays)"
-msgstr "⁠Livraison sous 48 heures (sauf retard exceptionnel)"
+msgstr "Livraison sous 48 heures (sauf retard exceptionnel)"
 
 #: .\divination_site\core\templates\booking.html:274
 #: .\divination_site\core\templates\booking.html:276
@@ -323,15 +306,7 @@ msgid ""
 "finances, and more. As the reading unfolds, we can explore what comes "
 "through, go deeper where needed, and address your questions in real time, "
 "creating a truly personal and interactive experience."
-msgstr ""
-"Conçu pour ceux qui souhaitent acquérir une compréhension plus approfondie "
-"et plus complète de leur situation. Au cours d'un tirage téléphonique privé,"
-" nous explorerons en profondeur trois thèmes de votre choix — de l'amour à "
-"la carrière, en passant par le développement personnel, la famille, les "
-"finances et bien plus encore. Au fur et à mesure du tirage, nous pourrons "
-"explorer ce qui se dégage, approfondir certains points si nécessaire et "
-"répondre à vos questions en temps réel, créant ainsi une expérience "
-"véritablement personnalisée et interactive."
+msgstr "Conçu pour ceux qui souhaitent acquérir une compréhension plus approfondie et plus complète de leur situation. Au cours d'un tirage téléphonique privé, nous explorerons en profondeur trois thèmes de votre choix, de l'amour à la carrière, en passant par le développement personnel, la famille, les finances et bien plus encore. Au fur et à mesure du tirage, nous pourrons explorer ce qui se dégage, approfondir certains points si nécessaire et répondre à vos questions en temps réel, créant ainsi une expérience véritablement personnalisée et interactive."
 
 #: .\divination_site\core\templates\booking.html:282
 #: .\divination_site\core\templates\index.html:96
@@ -346,7 +321,7 @@ msgstr "Séance téléphonique privée de 30 minutes"
 #: .\divination_site\core\templates\booking.html:284
 #: .\divination_site\core\templates\index.html:98
 msgid "Opportunity to ask questions during the reading"
-msgstr "⁠Conversation personalisé"
+msgstr "Discussion en direct autour de votre situation"
 
 #: .\divination_site\core\templates\booking.html:285
 #: .\divination_site\core\templates\index.html:99
@@ -366,31 +341,26 @@ msgid ""
 "live to talk through your situation. Tarot guides the session, and where it "
 "feels right, divination wands are used as well — reserved exclusively for "
 "live video sessions."
-msgstr ""
-"L'expérience la plus complète proposée par Neb Tawy. Pendant 45 minutes, "
-"nous nous connectons en direct pour discuter de votre situation. Le tarot "
-"guide la séance et, lorsque cela semble approprié, nous utilisons également "
-"des baguettes de divination — une technique réservée exclusivement aux "
-"séances vidéo en direct."
+msgstr "L'expérience la plus complète proposée par Neb Tawy. Pendant 45 minutes, nous nous connectons en direct pour discuter de votre situation. Le tarot guide la séance et, lorsque cela semble approprié, nous utilisons également des baguettes de divination, une technique réservée exclusivement aux séances vidéo en direct."
 
 #: .\divination_site\core\templates\booking.html:298
 #: .\divination_site\core\templates\index.html:111
 msgid "45 minutes on Zoom"
-msgstr "Séance de 45 minutes sur zoom"
+msgstr "Séance de 45 minutes sur Zoom"
 
 #: .\divination_site\core\templates\booking.html:299
 #: .\divination_site\core\templates\index.html:112
 msgid "Live tarot draw"
-msgstr "Tirage de carte en direct"
+msgstr "Tirage de cartes en direct"
 
 #: .\divination_site\core\templates\booking.html:300
 #: .\divination_site\core\templates\index.html:113
 msgid "Personalized conversation"
-msgstr "Conversation personnalisée"
+msgstr "Discussion en direct autour de votre situation"
 
 #: .\divination_site\core\templates\booking.html:301
 msgid "Divination wands when appropriate"
-msgstr "Baguettes divinatoires utilisées lorsque cela s’avère pertinent"
+msgstr "Utilisation des baguettes divinatoires lorsque cela est pertinent"
 
 #: .\divination_site\core\templates\booking.html:313
 #: .\divination_site\core\templates\booking.html:397
@@ -560,11 +530,7 @@ msgid ""
 "answering a single question through a three-card draw. Every reading is "
 "fully personalized to offer you clear, nuanced guidance tailored to your "
 "situation."
-msgstr ""
-"Vous cherchez des éclaircissements sur une situation précise ? Ce tirage est"
-" idéal pour répondre à une seule question grâce à un tirage de trois cartes."
-" Chaque tirage est entièrement personnalisé afin de vous offrir un "
-"accompagnement clair et nuancé, adapté à votre situation."
+msgstr "Vous cherchez à y voir plus clair dans une situation précise ? Ce tirage est idéal pour répondre à une seule question grâce à un tirage de cinq cartes. Chaque tirage est entièrement personnalisé afin de vous offrir un accompagnement clair et nuancé, adapté à votre situation."
 
 #: .\divination_site\core\templates\index.html:70
 #: .\divination_site\core\templates\index.html:86
@@ -580,13 +546,7 @@ msgid ""
 "transition. Through a six-card draw, I read the energies at play, any "
 "blockages, the resources available to you, and the paths forward, to offer "
 "detailed, personalized guidance."
-msgstr ""
-"Pour celles et ceux qui souhaitent explorer en profondeur un domaine "
-"important de leur vie : les relations, la carrière, le développement "
-"personnel, les choix de vie ou une période de transition. À travers un "
-"tirage de six cartes, j’analyse les énergies en jeu, les éventuels blocages,"
-" les ressources dont vous disposez et les voies à suivre, afin de vous "
-"offrir un accompagnement détaillé et personnalisé."
+msgstr "Pour celles et ceux qui souhaitent explorer en profondeur un domaine important de leur vie. Qu’il s’agisse des relations, de la carrière, du développement personnel, d’un choix de vie ou d’une période de transition, la formule Éveil vous permet de vous concentrer sur un thème spécifique et d’explorer jusqu’à trois questions qui lui sont liées."
 
 #: .\divination_site\core\templates\index.html:114
 msgid "Divination wands used when appropriate"
