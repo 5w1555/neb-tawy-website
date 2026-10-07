@@ -3,6 +3,16 @@
 
 {% block title %}{% trans "Legal Notice" %} — Neb Tawy{% endblock %}
 
+{% block extra_css %}
+<style>
+    .legal-block p {
+        text-align: justify !important;
+        text-align-last: left;
+        hyphens: auto;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 
 <section class="hero">
@@ -44,10 +54,10 @@
             {% trans "Neb Tawy offers guidance and card-reading services for personal development purposes, in the following formats:" %}
         </p>
         <ul class="legal-list">
-            <li>{% trans "Focused Reading (5 cards) — €25 — delivered by email" %}</li>
-            <li>{% trans "In-Depth Guidance (6 cards) — €50 — delivered by email" %}</li>
-            <li>{% trans "Signature Guidance — €111 — 30-minute live phone session" %}</li>
-            <li>{% trans "Zoom Session — €150 — 45-minute live video session" %}</li>
+            <li>{% trans "Discovery Reading (minimum 5 cards, one specific question) — €25 — delivered by email" %}</li>
+            <li>{% trans "Awakening Reading (one specific theme, up to 3 related questions) — €50 — delivered by email" %}</li>
+            <li>{% trans "Alignment Reading — €111 — 30-minute live phone session" %}</li>
+            <li>{% trans "Sovereignty Reading — €150 — 45-minute live video session" %}</li>
         </ul>
         <p>
             {% blocktrans %}All services are provided remotely. Written readings are delivered by email within 48 hours of the chosen booking date. Live sessions take place at the time slot selected during booking.{% endblocktrans %}

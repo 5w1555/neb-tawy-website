@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -311,7 +310,7 @@ msgstr "Conçu pour ceux qui souhaitent acquérir une compréhension plus approf
 #: .\divination_site\core\templates\booking.html:282
 #: .\divination_site\core\templates\index.html:96
 msgid "Explore up to 3 themes"
-msgstr "Découvrez jusqu'à 3 thèmes"
+msgstr "Explorez jusqu’à 3 thèmes"
 
 #: .\divination_site\core\templates\booking.html:283
 #: .\divination_site\core\templates\index.html:97
@@ -511,7 +510,7 @@ msgid ""
 msgstr ""
 "Avec Neb Tawy, les tirages de tarot constituent un espace propice à la "
 "réflexion, à la prise de conscience et à des échanges enrichissants. Chaque "
-"lectures est conçu pour vous aider à explorer vos interrogations, à identifier"
+"tirage est conçu pour vous aider à explorer vos interrogations, à identifier"
 " des schémas récurrents et à aller de l'avant avec plus de clarté et de "
 "détermination."
 
@@ -993,3 +992,136 @@ msgstr "Les présentes mentions légales sont régies par le droit français. En
 # Only needed if you add <li>{% trans "Phone number (for phone sessions)" %}</li> to the data list:
 msgid "Phone number (for phone sessions)"
 msgstr "Numéro de téléphone (pour les séances téléphoniques)"
+
+
+#: core/templates/index.html:72
+#: core/templates/booking.html:312
+#: core/templates/booking.html:314
+msgid "Discovery Reading"
+msgstr "Formule Découverte"
+
+#: core/templates/index.html:74
+#: core/templates/booking.html:316
+msgid "Looking for clarity on a specific situation? This reading is designed to explore one clear question through a minimum five-card spread. Each reading is fully personalized to provide you with a thoughtful and nuanced interpretation tailored to your situation."
+msgstr "Vous cherchez à y voir plus clair dans une situation précise ? Ce tirage est conçu pour explorer une question précise à travers un tirage de minimum cinq cartes. Chaque tirage est entièrement personnalisé afin de vous offrir une interprétation réfléchie et nuancée, adaptée à votre situation."
+
+#: core/templates/index.html:78
+#: core/templates/booking.html:320
+msgid "Minimum 5-card spread"
+msgstr "Tirage de minimum 5 cartes"
+
+#: core/templates/index.html:87
+#: core/templates/booking.html:328
+#: core/templates/booking.html:330
+msgid "Awakening Reading"
+msgstr "Formule Éveil"
+
+#: core/templates/index.html:89
+#: core/templates/booking.html:332
+msgid "For those who wish to explore an important area of their life in greater depth. Whether it concerns relationships, career, personal growth, a life decision or a period of transition, the Awakening Reading allows you to focus on one specific theme and explore up to three related questions."
+msgstr "Pour celles et ceux qui souhaitent explorer en profondeur un domaine important de leur vie. Qu’il s’agisse des relations, de la carrière, du développement personnel, d’un choix de vie ou d’une période de transition, la formule Éveil vous permet de vous concentrer sur un thème spécifique et d’explorer jusqu’à trois questions qui lui sont liées."
+
+#: core/templates/index.html:92
+#: core/templates/booking.html:335
+msgid "One specific theme"
+msgstr "Un thème précis"
+
+#: core/templates/index.html:93
+#: core/templates/booking.html:336
+msgid "Up to 3 questions related to that theme"
+msgstr "Jusqu’à 3 questions autour de ce thème"
+
+#: core/templates/index.html:102
+#: core/templates/booking.html:344
+#: core/templates/booking.html:346
+msgid "Alignment Reading"
+msgstr "Formule Alignement"
+
+#: core/templates/index.html:104
+#: core/templates/booking.html:348
+msgid "Designed for those seeking a deeper and more complete understanding of their situation. During a private phone reading, we will explore up to three themes of your choice in depth, from love and career to personal growth, family, finances and more. As the reading unfolds, we can explore what comes through, go deeper into certain areas when needed and address your questions in real time, creating a truly personalized and interactive experience."
+msgstr "Conçue pour celles et ceux qui souhaitent mieux comprendre leur situation, de manière plus approfondie et plus complète. Au cours d’un tirage téléphonique privé, nous explorerons en profondeur jusqu’à trois thèmes de votre choix : amour, carrière, développement personnel, famille, finances et bien plus encore. Au fil du tirage, nous pourrons explorer ce qui se dégage, approfondir certains points si nécessaire et répondre à vos questions en temps réel, créant ainsi une expérience véritablement personnalisée et interactive."
+
+#: core/templates/index.html:108
+#: core/templates/booking.html:352
+msgid "Private 30-minute phone session"
+msgstr "Séance téléphonique privée de 30 minutes"
+
+#: core/templates/index.html:109
+#: core/templates/index.html:124
+#: core/templates/booking.html:353
+#: core/templates/booking.html:369
+msgid "Live discussion around your situation"
+msgstr "Discussion en direct autour de votre situation"
+
+#: core/templates/index.html:110
+#: core/templates/booking.html:354
+msgid "The call can be recorded upon request"
+msgstr "L’appel téléphonique peut être enregistré sur demande"
+
+#: core/templates/index.html:117
+#: core/templates/booking.html:360
+#: core/templates/booking.html:362
+msgid "Sovereignty Reading"
+msgstr "Formule Souveraineté"
+
+#: core/templates/index.html:119
+#: core/templates/booking.html:364
+msgid "The most complete experience offered by Neb Tawy. During this 45-minute live session, we will explore your situation together in real time. Tarot serves as the foundation of the reading, allowing us to go deeper into your questions as they arise. When appropriate, dowsing rods may also be used to bring an additional perspective to the session, a practice reserved exclusively for live video readings."
+msgstr "L’expérience la plus complète proposée par Neb Tawy. Au cours de cette séance en direct de 45 minutes, nous explorerons ensemble votre situation en temps réel. Le tarot constitue la base du tirage et nous permet d’approfondir vos questions au fur et à mesure qu’elles se présentent. Lorsque cela est pertinent, les baguettes divinatoires peuvent également être utilisées pour apporter un éclairage supplémentaire à la séance, une pratique réservée exclusivement aux tirages en visioconférence en direct."
+
+#: core/templates/index.html:122
+#: core/templates/booking.html:367
+msgid "Private 45-minute Zoom session"
+msgstr "Séance privée de 45 minutes sur Zoom"
+
+#: core/templates/index.html:123
+#: core/templates/booking.html:368
+msgid "Live tarot reading"
+msgstr "Tirage de tarot en direct"
+
+#: core/templates/index.html:125
+#: core/templates/booking.html:370
+msgid "Use of dowsing rods when appropriate"
+msgstr "Utilisation des baguettes divinatoires lorsque cela est pertinent"
+
+#: core/templates/index.html:126
+#: core/templates/booking.html:371
+msgid "The Zoom session can be recorded upon request"
+msgstr "La séance Zoom peut être enregistrée sur demande"
+
+#: core/templates/index.html:139
+msgid "Bookings are intentionally limited to preserve the quality of every reading. Written readings are delivered within 48 hours (barring exceptional delays). Phone and Zoom sessions take place at your booked date and time. In the event of a delay, you will be notified and can choose to keep your booking or request a refund. These readings are offered as a space for reflection and personal support; they do not replace medical, legal, or psychological advice."
+msgstr "Les réservations sont volontairement limitées afin de préserver la qualité de chaque tirage. Les tirages écrits sont livrés sous 48 heures (sauf retard exceptionnel). Les séances par téléphone et sur Zoom ont lieu à la date et à l’heure réservées. En cas de retard, vous en serez informé(e) et pourrez choisir de conserver votre réservation ou de demander un remboursement. Ces tirages sont proposés comme un espace de réflexion et de soutien personnel ; ils ne remplacent en aucun cas un avis médical, juridique ou psychologique."
+
+#: core/templates/index.html:162
+msgid "Your written reading is prepared privately and delivered within 48 hours (barring exceptional delays), or we meet for your phone or Zoom session at your booked date and time. Every reading is created individually with care, intuition and respect for your personal journey."
+msgstr "Votre tirage écrit est préparé en privé et livré sous 48 heures (sauf retard exceptionnel), ou nous nous retrouvons pour votre séance par téléphone ou sur Zoom à la date et à l’heure réservées. Chaque tirage est créé individuellement avec soin, intuition et respect pour votre cheminement personnel."
+
+#: core/templates/booking.html:293
+msgid "Set your intentions, choose a session and receive a reading prepared with care."
+msgstr "Définissez vos intentions, choisissez une séance et recevez un tirage préparé avec soin."
+
+#: core/templates/booking.html:454
+msgid "Before booking"
+msgstr "Avant de réserver"
+
+#: core/templates/booking.html:455
+msgid "The readings offered by Neb Tawy are based on a subjective interpretation of the cards and are intended to offer you a space for reflection and perspective."
+msgstr "Les lectures proposées par Neb Tawy reposent sur une interprétation subjective des cartes et sont destinées à vous offrir un espace de réflexion et de mise en perspective."
+
+#: core/templates/booking.html:456
+msgid "They do not constitute medical, psychological, legal or financial advice and do not replace support from a qualified professional. No result, outcome or prediction is guaranteed."
+msgstr "Elles ne constituent pas un avis médical, psychologique, juridique ou financier et ne remplacent pas l’accompagnement d’un professionnel qualifié. Aucun résultat, aucune issue ni aucune prédiction n’est garanti."
+
+#: core/templates/booking.html:457
+msgid "You remain entirely free and responsible for the decisions you make following your reading."
+msgstr "Vous restez entièrement libre et responsable des décisions que vous prenez à la suite de votre lecture."
+
+#: core/templates/booking.html:458
+msgid "By confirming your booking, you acknowledge that you have read this information and the conditions applicable to your booking."
+msgstr "En confirmant votre réservation, vous reconnaissez avoir pris connaissance de ces informations ainsi que des conditions applicables à votre réservation."
+
+#: core/templates/booking.html:461
+msgid "I have read and understood the information above and accept the booking conditions."
+msgstr "J’ai lu et compris les informations ci-dessus et j’accepte les conditions de réservation."

@@ -112,7 +112,11 @@
 
     .service-card p {
         color: var(--text-muted);
-        text-align: justify;
+    }
+
+    .booking-hero p,
+    .booking-shell p {
+        text-align: justify !important;
         text-align-last: left;
         hyphens: auto;
     }
@@ -272,10 +276,6 @@
             padding: 2.5rem 1.5rem;
         }
 
-        .service-card p {
-            text-align: left;
-            hyphens: none;
-        }
     }
 </style>
 {% endblock %}
@@ -290,7 +290,7 @@
         <h1>{% trans "Book a Private Reading" %}</h1>
         <p class="hero-subtitle">{% blocktrans %}Private guidance · from €25{% endblocktrans %}</p>
         <p class="hero-tagline">
-            {% trans "Set your intentions, choose a session and received a reading prepared with care." %}
+            {% trans "Set your intentions, choose a session and receive a reading prepared with care." %}
         </p>
     </div>
 </section>
@@ -309,15 +309,15 @@
 
         <div class="service-grid">
 
-            <div class="service-card reveal reveal-delay-1" data-service="focused_reading" data-price="25" data-label="{% trans 'Focused Reading' %}" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-1" data-service="focused_reading" data-price="25" data-label="{% trans 'Discovery Reading' %}" onclick="selectService(this)">
                 <div>
-                    <h3>{% trans "Focused Reading" %}</h3>
+                    <h3>{% trans "Discovery Reading" %}</h3>
                     <p class="text-muted">
-                        {% blocktrans %}Are you looking for clarity on a specific situation? This reading is ideal for answering a single question through a three-card draw. Every reading is fully personalized to offer you clear, nuanced guidance adapted to your situation.{% endblocktrans %}
+                        {% blocktrans %}Looking for clarity on a specific situation? This reading is designed to explore one clear question through a minimum five-card spread. Each reading is fully personalized to provide you with a thoughtful and nuanced interpretation tailored to your situation.{% endblocktrans %}
                     </p>
                     <ul class="service-card-includes">
                         <li>{% trans "One specific question" %}</li>
-                        <li>{% trans "Five-card draw" %}</li>
+                        <li>{% trans "Minimum 5-card spread" %}</li>
                         <li>{% trans "Delivered in text format" %}</li>
                         <li>{% trans "Delivered within 48 hours (barring exceptional delays)" %}</li>
                     </ul>
@@ -325,15 +325,15 @@
                 <span class="service-price">€25</span>
             </div>
 
-            <div class="service-card reveal reveal-delay-2" data-service="indepth_guidance" data-price="50" data-label="{% trans 'In-Depth Guidance' %}" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-2" data-service="indepth_guidance" data-price="50" data-label="{% trans 'Awakening Reading' %}" onclick="selectService(this)">
                 <div>
-                    <h3>{% trans "In-Depth Guidance" %}</h3>
+                    <h3>{% trans "Awakening Reading" %}</h3>
                     <p class="text-muted">
-                        {% blocktrans %}For those who want to explore an important area of their life in depth: relationships, career, personal development, life choices, or a period of transition. Through a six-card draw, I read the energies at play, any blockages, the resources available to you, and the paths forward — to offer detailed, personalized guidance.{% endblocktrans %}
+                        {% blocktrans %}For those who wish to explore an important area of their life in greater depth. Whether it concerns relationships, career, personal growth, a life decision or a period of transition, the Awakening Reading allows you to focus on one specific theme and explore up to three related questions.{% endblocktrans %}
                     </p>
                     <ul class="service-card-includes">
-                        <li>{% trans "One theme of your choice" %}</li>
-                        <li>{% trans "Six-card draw" %}</li>
+                        <li>{% trans "One specific theme" %}</li>
+                        <li>{% trans "Up to 3 questions related to that theme" %}</li>
                         <li>{% trans "Delivered in text format" %}</li>
                         <li>{% trans "Delivered within 48 hours (barring exceptional delays)" %}</li>
                     </ul>
@@ -341,33 +341,34 @@
                 <span class="service-price">€50</span>
             </div>
 
-            <div class="service-card reveal reveal-delay-3" data-service="signature_guidance" data-price="135" data-label="{% trans 'Signature Guidance' %}" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-3" data-service="signature_guidance" data-price="111" data-label="{% trans 'Alignment Reading' %}" onclick="selectService(this)">
                 <div>
-                    <h3>{% trans "Signature Guidance" %}</h3>
+                    <h3>{% trans "Alignment Reading" %}</h3>
                 <p class="text-muted">
-                {% blocktrans %}Designed for those seeking a deeper, more complete understanding of their situation. During a private phone call reading, we'll explore three themes of your choice in depth — from love and career to personal growth, family, finances, and more. As the reading unfolds, we can explore what comes through, go deeper where needed, and address your questions in real time, creating a truly personal and interactive experience.{% endblocktrans %}
+                {% blocktrans %}Designed for those seeking a deeper and more complete understanding of their situation. During a private phone reading, we will explore up to three themes of your choice in depth, from love and career to personal growth, family, finances and more. As the reading unfolds, we can explore what comes through, go deeper into certain areas when needed and address your questions in real time, creating a truly personalized and interactive experience.{% endblocktrans %}
                 </p>
                     <ul class="service-card-includes">
                         <li>{% trans "Explore up to 3 themes" %}</li>
-                        <li>{% trans "30-minutes private phone call reading" %}</li>
-                        <li>{% trans "Opportunity to ask questions during the reading" %}</li>
-                        <li>{% trans "Phone call can be recorded upon request" %}</li>
+                        <li>{% trans "Private 30-minute phone session" %}</li>
+                        <li>{% trans "Live discussion around your situation" %}</li>
+                        <li>{% trans "The call can be recorded upon request" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€111</span>
             </div>
 
-            <div class="service-card reveal reveal-delay-1" data-service="zoom_session" data-price="150" data-label="{% trans 'Zoom Session' %}" onclick="selectService(this)">
+            <div class="service-card reveal reveal-delay-1" data-service="zoom_session" data-price="150" data-label="{% trans 'Sovereignty Reading' %}" onclick="selectService(this)">
                 <div>
-                    <h3>{% trans "Zoom Session" %}</h3>
+                    <h3>{% trans "Sovereignty Reading" %}</h3>
                     <p class="text-muted">
-                        {% blocktrans %}The most complete experience Neb Tawy offers. For 45 minutes, we connect live to talk through your situation. Tarot guides the session, and where it feels right, divination wands are used as well — reserved exclusively for live video sessions.{% endblocktrans %}
+                        {% blocktrans %}The most complete experience offered by Neb Tawy. During this 45-minute live session, we will explore your situation together in real time. Tarot serves as the foundation of the reading, allowing us to go deeper into your questions as they arise. When appropriate, dowsing rods may also be used to bring an additional perspective to the session, a practice reserved exclusively for live video readings.{% endblocktrans %}
                     </p>
                     <ul class="service-card-includes">
-                        <li>{% trans "45 minutes on Zoom" %}</li>
-                        <li>{% trans "Live tarot draw" %}</li>
-                        <li>{% trans "Personalized conversation" %}</li>
-                        <li>{% trans "Divination wands when appropriate" %}</li>
+                        <li>{% trans "Private 45-minute Zoom session" %}</li>
+                        <li>{% trans "Live tarot reading" %}</li>
+                        <li>{% trans "Live discussion around your situation" %}</li>
+                        <li>{% trans "Use of dowsing rods when appropriate" %}</li>
+                        <li>{% trans "The Zoom session can be recorded upon request" %}</li>
                     </ul>
                 </div>
                 <span class="service-price">€150</span>
