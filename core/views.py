@@ -97,7 +97,7 @@ SLOT_CONFIG = {
 
         'allowed_weekdays': {0, 1, 2, 3, 4, 5},        # Monday–Saturday
 
-        'slots': ['18:30', '19:00'],
+        'slots': ['17:30', '18:30'],
 
     },
 
