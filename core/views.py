@@ -83,15 +83,13 @@ SLOT_SERVICES = ('signature_guidance', 'zoom_session')
 
 
 
-# weekday(): Monday=0 ... Sunday=6
-
 SLOT_CONFIG = {
 
     'zoom_session': {
 
         'allowed_weekdays': {5},                      # Saturday only
 
-        'slots': ['10:00', '11:00', '14:00', '16:00'],
+        'slots': ['10:00', '11:30', '14:00', '15:30'],
 
     },
 
