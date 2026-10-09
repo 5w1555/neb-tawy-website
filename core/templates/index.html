@@ -4,19 +4,6 @@
 
 {% block title %}{% trans "Private Tarot Readings & Spiritual Guidance" %} — Neb Tawy{% endblock %}
 
-{% block extra_css %}
-<style>
-    .hero p,
-    .scene p,
-    .section p,
-    .services-preview p {
-        text-align: justify !important;
-        text-align-last: left;
-        hyphens: auto;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
 
 <!-- HERO -->
@@ -46,7 +33,7 @@
 </section>
 
 <!-- TRUST / INTENTION -->
-<section class="section intro-section">
+<section class="section intro-section reading-body">
     <div class="reveal text-center">
         <h2>{% trans "Guidance with care" %}</h2>
         <div class="gold-divider">◈</div>
@@ -59,7 +46,7 @@
 <div class="section-line reveal"></div>
 
 <!-- OFFERINGS -->
-<section class="services-preview">
+<section class="services-preview reading-body">
     <div class="services-preview-header reveal">
         <h2>{% trans "The Services" %}</h2>
         <p class="text-muted" style="font-style: italic; margin-top: 1rem;">
@@ -132,7 +119,7 @@
 </section>
 
 <!-- IMPORTANT INFORMATION -->
-<section class="section important-info-section reveal">
+<section class="section important-info-section reveal reading-body">
     <div class="text-center">
         <h2>{% trans "Before We Begin" %}</h2>
         <p class="text-muted intro-copy">
@@ -144,7 +131,7 @@
 <!-- SYMBOL GALLERY / VISUAL BREAK REMOVED -->
 
 <!-- HOW IT WORKS -->
-<section class="section process-section">
+<section class="section process-section reading-body">
     <div class="reveal text-center">
         <h2>{% trans "How it works" %}</h2>
     </div>
@@ -165,7 +152,7 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="section ethics-section reveal">
+<section class="section ethics-section reveal reading-body">
     <div class="text-center">
         <div class="gold-divider">◈</div>
         <h2>{% trans "A respectful practice" %}</h2>

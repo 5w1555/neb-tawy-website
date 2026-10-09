@@ -889,7 +889,7 @@ section.philosophy-section {
    HOMEPAGE SECTIONS (Cleaned & Merged)
    ============================================================ */
 .intro-section {
-    text-align: center;
+    text-align: justify;
 }
 
 .intro-copy {
@@ -1221,4 +1221,19 @@ section.philosophy-section {
         transition-duration: 0.001ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* Reading pages: body paragraphs justified; image banners centered.
+   These rules apply at every viewport width. */
+.reading-body p {
+    text-align: justify !important;
+    text-align-last: left !important;
+    hyphens: auto;
+}
+
+.hero p,
+.scene p {
+    text-align: center !important;
+    text-align-last: center !important;
+    hyphens: manual;
 }

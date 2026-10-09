@@ -114,13 +114,6 @@
         color: var(--text-muted);
     }
 
-    .booking-hero p,
-    .booking-shell p {
-        text-align: justify !important;
-        text-align-last: left;
-        hyphens: auto;
-    }
-
     .service-card-includes {
         list-style: none;
         padding: 0;
@@ -295,7 +288,7 @@
     </div>
 </section>
 
-<section class="section booking-shell">
+<section class="section booking-shell reading-body">
 
     <p class="booking-note reveal">
         {% blocktrans %}Each reading is private and centered on your question or intention. Select the service that calls to you, choose an available date, then leave a few words about what you are seeking.{% endblocktrans %}
@@ -450,7 +443,7 @@
                 {% trans "Select a service and date to continue." %}
             </div>
 
-            <section class="booking-disclosure" aria-labelledby="booking-disclosure-title">
+            <section class="booking-disclosure reading-body" aria-labelledby="booking-disclosure-title">
                 <h3 id="booking-disclosure-title">{% trans "Before booking" %}</h3>
                 <p>{% blocktrans %}The readings offered by Neb Tawy are based on a subjective interpretation of the cards and are intended to offer you a space for reflection and perspective.{% endblocktrans %}</p>
                 <p>{% blocktrans %}They do not constitute medical, psychological, legal or financial advice and do not replace support from a qualified professional. No result, outcome or prediction is guaranteed.{% endblocktrans %}</p>
