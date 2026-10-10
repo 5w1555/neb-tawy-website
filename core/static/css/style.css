@@ -1226,8 +1226,8 @@ section.philosophy-section {
 /* Reading pages: body paragraphs justified; image banners centered.
    These rules apply at every viewport width. */
 .reading-body p {
-    text-align: justify !important;
-    text-align-last: left !important;
+    text-align: center !important;
+    text-align-last: center !important;
     hyphens: auto;
 }
 
